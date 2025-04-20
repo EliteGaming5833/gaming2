@@ -5,7 +5,6 @@
   <title>ELITE GAMING SCHWEIZ - High Performance PCs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Grundlegende Stile */
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
@@ -31,8 +30,6 @@
       color: #aaa;
       margin-top: 10px;
     }
-
-    /* Navigationsmenü */
     nav {
       position: absolute;
       top: 20px;
@@ -58,8 +55,6 @@
     nav ul li a:hover {
       background: #0066ff;
     }
-
-    /* Grid für PC-Boxen */
     .grid {
       display: flex;
       flex-wrap: wrap;
@@ -98,15 +93,9 @@
       width: calc(100% - 20px);
       box-sizing: border-box;
     }
-    .beginner {
-      background-color: #4CAF50; /* Grün für Einsteiger */
-    }
-    .midrange {
-      background-color: #FF9800; /* Orange für Midrange */
-    }
-    .high-end {
-      background-color: #F44336; /* Rot für High-End */
-    }
+    .beginner { background-color: #4CAF50; }
+    .midrange { background-color: #FF9800; }
+    .high-end { background-color: #F44336; }
     .specs {
       margin: 15px 0;
       font-size: 0.95em;
@@ -150,8 +139,6 @@
       background: linear-gradient(to right, #0055dd, #0088ee);
       box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
     }
-
-    /* Konfigurator */
     .configurator {
       background: #1e1e1e;
       padding: 30px;
@@ -169,7 +156,7 @@
       margin-top: 15px;
       font-weight: bold;
     }
-    .configurator select, .configurator input[type="text"], .configurator textarea {
+    .configurator select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
@@ -192,8 +179,6 @@
     .configurator button:hover {
       background: #0055dd;
     }
-
-    /* Footer */
     footer {
       background: #1a1a1a;
       padding: 20px;
@@ -201,7 +186,91 @@
       margin-top: 40px;
       border-top: 1px solid #333;
     }
+    @media (max-width: 768px) {
+      .grid {
+        padding: 15px;
+      }
+      .pc-box {
+        width: 100%;
+      }
+      nav ul {
+        flex-direction: column;
+        background: #222;
+        padding: 10px;
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Start</a></li>
+        <li><a href="#konfigurator">Konfigurator</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <h1>ELITE GAMING SCHWEIZ</h1>
+    <div class="subtitle">Premium Gaming Systems für Schweizer Gamer</div>
+  </header>
 
-    /*
-::contentReference[oaicite:3]{index=3}
- 
+  <div class="grid">
+    <!-- Beispiel-PC-Boxen hier -->
+  </div>
+
+  <div class="configurator" id="konfigurator">
+    <h2>PC Konfigurator</h2>
+    <label for="cpu">Prozessor:</label>
+    <select id="cpu">
+      <option>Intel Core i5-14600K</option>
+      <option>Intel Core i7-14700K</option>
+      <option>AMD Ryzen 5 7600X</option>
+      <option>AMD Ryzen 7 7800X3D</option>
+    </select>
+
+    <label for="gpu">Grafikkarte:</label>
+    <select id="gpu">
+      <option>NVIDIA RTX 4060 Ti</option>
+      <option>NVIDIA RTX 4070 Super</option>
+      <option>NVIDIA RTX 4080 Super</option>
+      <option>NVIDIA RTX 4090</option>
+      <option>AMD Radeon RX 7800 XT</option>
+    </select>
+
+    <label for="ram">Arbeitsspeicher:</label>
+    <select id="ram">
+      <option>16GB DDR5 5200MHz</option>
+      <option>32GB DDR5 5600MHz</option>
+      <option>64GB DDR5 6000MHz</option>
+    </select>
+
+    <label for="storage">Speicher:</label>
+    <select id="storage">
+      <option>1TB NVMe SSD</option>
+      <option>2TB NVMe SSD + 2TB HDD</option>
+      <option>2TB Gen4 NVMe + 4TB HDD</option>
+    </select>
+
+    <label for="mainboard">Mainboard:</label>
+    <select id="mainboard">
+      <option>MSI B650M WiFi</option>
+      <option>ASUS TUF Z790-Plus WiFi</option>
+      <option>ASUS ROG Crosshair X670E</option>
+    </select>
+
+    <label for="cooling">Kühlung:</label>
+    <select id="cooling">
+      <option>Standard Luftkühlung</option>
+      <option>240mm AIO Wasserkühlung</option>
+      <option>360mm AIO Wasserkühlung</option>
+    </select>
+
+    <button>Konfiguration übernehmen</button>
+  </div>
+
+  <footer id="kontakt">
+    &copy; 2025 ELITE GAMING SCHWEIZ | Kontakt: info@elite-gaming.ch
+  </footer>
+</body>
+</html>
