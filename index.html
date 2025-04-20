@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELITE GAMING SCHWEIZ - High Performance PCs</title>
   <style>
     body {
@@ -11,23 +12,92 @@
       background: #121212;
       color: #e0e0e0;
     }
+
+    /* Header + Menü */
     header {
       background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-      padding: 30px 0;
-      text-align: center;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
       border-bottom: 3px solid #0066ff;
     }
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
+
+    .logo {
       color: #fff;
+      font-size: 1.8em;
+      font-weight: bold;
       text-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
     }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #0066ff;
+      color: #fff;
+    }
+
     .subtitle {
-      font-size: 1.2em;
+      width: 100%;
+      font-size: 1.1em;
       color: #aaa;
       margin-top: 10px;
+      text-align: center;
     }
+
+    /* Burger Menü */
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #222;
+        margin-top: 10px;
+        border-radius: 5px;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .burger {
+        display: flex;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
     .grid {
       display: flex;
       flex-wrap: wrap;
@@ -37,6 +107,7 @@
       max-width: 1400px;
       margin: 0 auto;
     }
+
     .pc-box {
       background: #1e1e1e;
       border: 1px solid #333;
@@ -46,15 +117,19 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s;
     }
+
     .pc-box:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 102, 255, 0.2);
     }
+
     .pc-box img {
       width: 100%;
+      height: auto;
       border-radius: 5px;
       border: 1px solid #333;
     }
+
     .pc-name {
       font-size: 1.3em;
       color: #fff;
@@ -62,36 +137,32 @@
       text-align: center;
       padding: 5px 10px;
       border-radius: 4px;
-      display: inline-block;
-      width: calc(100% - 20px);
-      box-sizing: border-box;
     }
-    .beginner {
-      background-color: #4CAF50; /* Grün für Einsteiger */
-    }
-    .midrange {
-      background-color: #FF9800; /* Orange für Midrange */
-    }
-    .high-end {
-      background-color: #F44336; /* Rot für High-End */
-    }
+
+    .beginner { background-color: #4CAF50; }
+    .midrange { background-color: #FF9800; }
+    .high-end { background-color: #F44336; }
+
     .specs {
       margin: 15px 0;
       font-size: 0.95em;
       border-top: 1px solid #333;
       padding-top: 10px;
     }
+
     .specs li {
       margin-bottom: 8px;
       position: relative;
       padding-left: 20px;
     }
+
     .specs li:before {
       content: "•";
       color: #0066ff;
       position: absolute;
       left: 0;
     }
+
     .price {
       font-size: 1.6em;
       color: #00cc66;
@@ -99,10 +170,12 @@
       margin: 20px 0;
       text-align: center;
     }
+
     .price:after {
       content: " CHF";
       font-size: 0.8em;
     }
+
     .details-btn {
       background: linear-gradient(to right, #0066ff, #0099ff);
       color: white;
@@ -114,10 +187,12 @@
       font-weight: bold;
       transition: all 0.3s;
     }
+
     .details-btn:hover {
       background: linear-gradient(to right, #0055dd, #0088ee);
       box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
     }
+
     footer {
       background: #1a1a1a;
       padding: 20px;
@@ -125,34 +200,72 @@
       margin-top: 40px;
       border-top: 1px solid #333;
     }
-    @media (max-width: 768px) {
-      .grid {
-        padding: 15px;
-      }
-      .pc-box {
-        width: 100%;
-      }
+
+    /* Konfigurator */
+    .configurator {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #1f1f1f;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .configurator label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .configurator select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: #2c2c2c;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>ELITE GAMING SCHWEIZ</h1>
+    <div class="logo">ELITE GAMING SCHWEIZ</div>
+    <div class="burger" onclick="document.querySelector('nav').classList.toggle('active')">
+      <div></div><div></div><div></div>
+    </div>
+    <nav>
+      <a href="#">Startseite</a>
+      <a href="#configurator">Konfigurator</a>
+      <a href="#komplett-pcs">Komplett-PCs</a>
+      <a href="#">Kontakt</a>
+    </nav>
     <div class="subtitle">Premium Gaming Systems für Schweizer Gamer</div>
   </header>
 
-  <div class="grid">
+  <section class="configurator" id="configurator">
+    <h2>PC Konfigurator</h2>
+    <label for="cpu">Wähle dein System:</label>
+    <select id="cpu" onchange="updateOptions()">
+      <option value="">Bitte wählen</option>
+      <option value="intel">Intel</option>
+      <option value="amd">AMD</option>
+    </select>
+
+    <div id="output"></div>
+  </section>
+
+  <section class="grid" id="komplett-pcs">
     <div class="pc-box">
-      <img src="https://via.placeholder.com/350x200/333/cccccc?text=EINSTEIGER+GAMING" alt="                      ">
+      <img src="https://via.placeholder.com/350x200/333/cccccc?text=EINSTEIGER+GAMING" alt="Einsteiger Gaming PC mit Ryzen 5 und RTX 4060 Ti">
       <div class="pc-name beginner">Einsteiger Gaming PC</div>
       <div class="specs">
         <ul>
-          <li>AMD Ryzen 5 7600X (6-Core)</li>
-          <li>NVIDIA RTX 4060 Ti 8GB</li>
-          <li>16GB DDR5 5200MHz RAM</li>
-          <li>1TB Gen4 NVMe SSD</li>
-          <li>MSI B650M WiFi</li>
-          <li>Air Cooling Lösung</li>
+          <li>AMD Ryzen 5 7600X</li>
+          <li>RTX 4060 Ti 8GB</li>
+          <li>16GB DDR5 RAM</li>
+          <li>1TB NVMe SSD</li>
         </ul>
       </div>
       <div class="price">1.299</div>
@@ -160,16 +273,14 @@
     </div>
 
     <div class="pc-box">
-      <img src="https://via.placeholder.com/350x200/333/cccccc?text=MIDRANGE+GAMING" alt="                      ">
+      <img src="https://via.placeholder.com/350x200/333/cccccc?text=MIDRANGE+GAMING" alt="Midrange Gaming PC mit i7 und RTX 4070 Super">
       <div class="pc-name midrange">Midrange Gaming PC</div>
       <div class="specs">
         <ul>
-          <li>Intel Core i7-13700KF (8+8 Core)</li>
-          <li>NVIDIA RTX 4070 Super 12GB</li>
-          <li>32GB DDR5 5600MHz RAM</li>
-          <li>1TB Gen4 NVMe + 1TB SSD</li>
-          <li>ASUS TUF Z790-Plus WiFi</li>
-          <li>240mm RGB Liquid Cooling</li>
+          <li>Intel Core i7-13700KF</li>
+          <li>RTX 4070 Super 12GB</li>
+          <li>32GB DDR5 RAM</li>
+          <li>1TB NVMe + 1TB SSD</li>
         </ul>
       </div>
       <div class="price">2.199</div>
@@ -177,25 +288,51 @@
     </div>
 
     <div class="pc-box">
-      <img src="https://via.placeholder.com/350x200/333/cccccc?text=HIGH+END+GAMING" alt="                      ">
+      <img src="https://via.placeholder.com/350x200/333/cccccc?text=HIGH+END+GAMING" alt="High-End Gaming PC mit Ryzen 9 und RTX 4090">
       <div class="pc-name high-end">High End Gaming PC</div>
       <div class="specs">
         <ul>
-          <li>AMD Ryzen 9 7950X3D (16-Core)</li>
-          <li>NVIDIA RTX 4090 24GB</li>
-          <li>64GB DDR5 6000MHz RAM</li>
-          <li>2TB Gen4 NVMe + 4TB HDD</li>
-          <li>ASUS ROG Crosshair X670E</li>
-          <li>360mm AIO Liquid Cooling</li>
+          <li>AMD Ryzen 9 7950X3D</li>
+          <li>RTX 4090 24GB</li>
+          <li>64GB DDR5 RAM</li>
+          <li>2TB NVMe + 4TB HDD</li>
         </ul>
       </div>
       <div class="price">3.999</div>
       <a href="#" class="details-btn">JETZT KONFIGURIEREN</a>
     </div>
-  </div>
+  </section>
 
   <footer>
-    &copy; 2023 ELITE GAMING SCHWEIZ | Kontakt: info@elite-gaming.ch
+    &copy; 2025 ELITE GAMING SCHWEIZ | Kontakt: info@elite-gaming.ch
   </footer>
+
+  <script>
+    function updateOptions() {
+      const selection = document.getElementById('cpu').value;
+      const output = document.getElementById('output');
+      let content = '';
+
+      if (selection === 'intel') {
+        content = `
+          <p><strong>Intel Z790 Mainboard</strong> empfohlen.</p>
+          <ul>
+            <li>Intel i5 / i7 / i9 der 13. oder 14. Generation</li>
+            <li>DDR5 RAM Unterstützung</li>
+            <li>PCIe Gen5 GPU Unterstützung</li>
+          </ul>`;
+      } else if (selection === 'amd') {
+        content = `
+          <p><strong>AMD B650 oder X670 Mainboard</strong> empfohlen.</p>
+          <ul>
+            <li>AMD Ryzen 5 / 7 / 9 der 7000er Serie</li>
+            <li>DDR5 RAM & PCIe 5.0 Support</li>
+            <li>AM5 Sockel erforderlich</li>
+          </ul>`;
+      }
+
+      output.innerHTML = content;
+    }
+  </script>
 </body>
 </html>
