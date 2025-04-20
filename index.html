@@ -1,338 +1,979 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ELITE GAMING SCHWEIZ - High Performance PCs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ELITE GAMING SCHWEIZ - Hochleistungs-Gaming-PCs nach Maß. Konfiguriere deinen Traum-PC oder wähle eines unserer Premium-Systeme.">
+  <title>ELITE GAMING SCHWEIZ | Premium Gaming PCs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #121212;
-      color: #e0e0e0;
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --dark: #0f172a;
+      --darker: #020617;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --card-bg: #1e293b;
+      --success: #22c55e;
+      --warning: #f97316;
+      --danger: #ef4444;
     }
 
-    /* Header + Menü */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
     header {
-      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-      padding: 15px 30px;
+      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      position: relative;
-      border-bottom: 3px solid #0066ff;
     }
 
     .logo {
-      color: #fff;
-      font-size: 1.8em;
-      font-weight: bold;
-      text-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--light);
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-decoration: none;
     }
 
+    .logo-icon {
+      color: var(--primary);
+      font-size: 2rem;
+    }
+
+    /* Navigation */
     nav {
       display: flex;
-      gap: 20px;
+      gap: 1.5rem;
     }
 
-    nav a {
-      color: #e0e0e0;
+    .nav-link {
+      color: var(--light);
       text-decoration: none;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background: #0066ff;
-      color: #fff;
-    }
-
-    .subtitle {
-      width: 100%;
-      font-size: 1.1em;
-      color: #aaa;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    /* Burger Menü */
-    .burger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .burger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #222;
-        margin-top: 10px;
-        border-radius: 5px;
-        padding: 10px 0;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .burger {
-        display: flex;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    .grid {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-      padding: 30px;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-link i {
+      font-size: 1.1rem;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9)), 
+                  url('https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 80vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .hero-content {
       max-width: 1400px;
       margin: 0 auto;
-    }
-
-    .pc-box {
-      background: #1e1e1e;
-      border: 1px solid #333;
-      width: 350px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
-    }
-
-    .pc-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.2);
-    }
-
-    .pc-box img {
       width: 100%;
-      height: auto;
-      border-radius: 5px;
-      border: 1px solid #333;
     }
 
-    .pc-name {
-      font-size: 1.3em;
-      color: #fff;
-      margin: 10px 0;
-      text-align: center;
-      padding: 5px 10px;
-      border-radius: 4px;
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      background: linear-gradient(to right, var(--light), var(--gray));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .beginner { background-color: #4CAF50; }
-    .midrange { background-color: #FF9800; }
-    .high-end { background-color: #F44336; }
-
-    .specs {
-      margin: 15px 0;
-      font-size: 0.95em;
-      border-top: 1px solid #333;
-      padding-top: 10px;
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      color: var(--gray);
     }
 
-    .specs li {
-      margin-bottom: 8px;
+    /* Main Content */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
       position: relative;
-      padding-left: 20px;
+      display: inline-block;
     }
 
-    .specs li:before {
-      content: "•";
-      color: #0066ff;
+    .section-title::after {
+      content: '';
       position: absolute;
+      bottom: -10px;
       left: 0;
+      width: 60%;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), transparent);
+      border-radius: 2px;
     }
 
-    .price {
-      font-size: 1.6em;
-      color: #00cc66;
-      font-weight: bold;
-      margin: 20px 0;
+    /* PC Grid */
+    .pc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .pc-card {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pc-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary);
+    }
+
+    .pc-image {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pc-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .pc-content {
+      padding: 1.5rem;
+    }
+
+    .pc-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .pc-specs {
+      margin: 1.5rem 0;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .spec-icon {
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .pc-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin: 1.5rem 0;
       text-align: center;
     }
 
-    .price:after {
+    .pc-price::after {
       content: " CHF";
       font-size: 0.8em;
     }
 
-    .details-btn {
-      background: linear-gradient(to right, #0066ff, #0099ff);
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: all 0.3s;
+    .pc-actions {
+      display: flex;
+      gap: 1rem;
     }
 
-    .details-btn:hover {
-      background: linear-gradient(to right, #0055dd, #0088ee);
-      box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
-    }
-
-    footer {
-      background: #1a1a1a;
-      padding: 20px;
-      text-align: center;
-      margin-top: 40px;
-      border-top: 1px solid #333;
-    }
-
-    /* Konfigurator */
+    /* Configurator */
     .configurator {
-      max-width: 600px;
-      margin: 40px auto;
-      background: #1f1f1f;
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 2rem;
+      margin: 4rem 0;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .configurator label {
-      font-weight: bold;
+    .config-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .config-step {
+      margin-bottom: 1.5rem;
+    }
+
+    .config-step label {
       display: block;
-      margin-bottom: 10px;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: white;
     }
 
-    .configurator select {
+    .config-step select, .config-step input {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      background: #2c2c2c;
+      padding: 0.875rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
       color: white;
-      border: 1px solid #444;
-      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .config-step select:focus, .config-step input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+    }
+
+    .config-summary {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-top: 2rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    .total-price {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-top: 1rem;
+      text-align: right;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      margin: 4rem 0;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      position: relative;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      color: white;
+    }
+
+    .author-info p {
+      color: var(--gray);
+      font-size: 0.875rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      margin: 4rem 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--darker);
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--light);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-about p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-link {
+      color: var(--gray);
+      font-size: 1.25rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
+      color: var(--primary);
+    }
+
+    .footer-links h3 {
+      color: white;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-links h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-links i {
+      font-size: 0.875rem;
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact i {
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--gray);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        height: auto;
+        padding: 6rem 1rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pc-actions {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .pc-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-
+  <!-- Header -->
   <header>
-    <div class="logo">ELITE GAMING SCHWEIZ</div>
-    <div class="burger" onclick="document.querySelector('nav').classList.toggle('active')">
-      <div></div><div></div><div></div>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <i class="fas fa-gamepad logo-icon"></i>
+        ELITE GAMING
+      </a>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <a href="#" class="nav-link active"><i class="fas fa-home"></i> Startseite</a>
+        <a href="#configurator" class="nav-link"><i class="fas fa-sliders-h"></i> Konfigurator</a>
+        <a href="#pcs" class="nav-link"><i class="fas fa-desktop"></i> Gaming PCs</a>
+        <a href="#features" class="nav-link"><i class="fas fa-star"></i> Vorteile</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Kontakt</a>
+        <a href="#" class="cta-button">
+          <i class="fas fa-shopping-cart"></i> Zum Shop
+        </a>
+      </nav>
     </div>
-    <nav>
-      <a href="#">Startseite</a>
-      <a href="#configurator">Konfigurator</a>
-      <a href="#komplett-pcs">Komplett-PCs</a>
-      <a href="#">Kontakt</a>
-    </nav>
-    <div class="subtitle">Premium Gaming Systems für Schweizer Gamer</div>
   </header>
 
-  <section class="configurator" id="configurator">
-    <h2>PC Konfigurator</h2>
-    <label for="cpu">Wähle dein System:</label>
-    <select id="cpu" onchange="updateOptions()">
-      <option value="">Bitte wählen</option>
-      <option value="intel">Intel</option>
-      <option value="amd">AMD</option>
-    </select>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" class="nav-link active"><i class="fas fa-home"></i> Startseite</a>
+    <a href="#configurator" class="nav-link"><i class="fas fa-sliders-h"></i> Konfigurator</a>
+    <a href="#pcs" class="nav-link"><i class="fas fa-desktop"></i> Gaming PCs</a>
+    <a href="#features" class="nav-link"><i class="fas fa-star"></i> Vorteile</a>
+    <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Kontakt</a>
+    <a href="#" class="cta-button" style="justify-content: center; margin-top: 0.5rem;">
+      <i class="fas fa-shopping-cart"></i> Zum Shop
+    </a>
+  </div>
 
-    <div id="output"></div>
-  </section>
-
-  <section class="grid" id="komplett-pcs">
-    <div class="pc-box">
-      <img src="https://via.placeholder.com/350x200/333/cccccc?text=EINSTEIGER+GAMING" alt="Einsteiger Gaming PC mit Ryzen 5 und RTX 4060 Ti">
-      <div class="pc-name beginner">Einsteiger Gaming PC</div>
-      <div class="specs">
-        <ul>
-          <li>AMD Ryzen 5 7600X</li>
-          <li>RTX 4060 Ti 8GB</li>
-          <li>16GB DDR5 RAM</li>
-          <li>1TB NVMe SSD</li>
-        </ul>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Dein perfekter Gaming PC aus der Schweiz</h1>
+      <p>Hochleistungs-Systeme maßgeschneidert für deine Bedürfnisse. 100% Schweizer Qualität mit Premium-Komponenten.</p>
+      <div style="display: flex; gap: 1rem;">
+        <a href="#configurator" class="cta-button">
+          <i class="fas fa-sliders-h"></i> PC konfigurieren
+        </a>
+        <a href="#pcs" class="cta-button" style="background: transparent; border: 2px solid var(--primary);">
+          <i class="fas fa-eye"></i> Systeme entdecken
+        </a>
       </div>
-      <div class="price">1.299</div>
-      <a href="#" class="details-btn">JETZT KONFIGURIEREN</a>
-    </div>
-
-    <div class="pc-box">
-      <img src="https://via.placeholder.com/350x200/333/cccccc?text=MIDRANGE+GAMING" alt="Midrange Gaming PC mit i7 und RTX 4070 Super">
-      <div class="pc-name midrange">Midrange Gaming PC</div>
-      <div class="specs">
-        <ul>
-          <li>Intel Core i7-13700KF</li>
-          <li>RTX 4070 Super 12GB</li>
-          <li>32GB DDR5 RAM</li>
-          <li>1TB NVMe + 1TB SSD</li>
-        </ul>
-      </div>
-      <div class="price">2.199</div>
-      <a href="#" class="details-btn">JETZT KONFIGURIEREN</a>
-    </div>
-
-    <div class="pc-box">
-      <img src="https://via.placeholder.com/350x200/333/cccccc?text=HIGH+END+GAMING" alt="High-End Gaming PC mit Ryzen 9 und RTX 4090">
-      <div class="pc-name high-end">High End Gaming PC</div>
-      <div class="specs">
-        <ul>
-          <li>AMD Ryzen 9 7950X3D</li>
-          <li>RTX 4090 24GB</li>
-          <li>64GB DDR5 RAM</li>
-          <li>2TB NVMe + 4TB HDD</li>
-        </ul>
-      </div>
-      <div class="price">3.999</div>
-      <a href="#" class="details-btn">JETZT KONFIGURIEREN</a>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 ELITE GAMING SCHWEIZ | Kontakt: info@elite-gaming.ch
-  </footer>
+  <!-- Main Content -->
+  <main>
+    <!-- Gaming PCs Section -->
+    <section id="pcs">
+      <h2 class="section-title">Unsere Gaming PC Kollektion</h2>
+      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
+        Wähle aus unseren sorgfältig zusammengestellten High-End Gaming Systemen oder konfiguriere deinen individuellen Traum-PC.
+      </p>
+      
+      <div class="pc-grid">
+        <!-- PC Card 1 -->
+        <div class="pc-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1552831388-6a0b3575b32a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Einsteiger Gaming PC" class="pc-image">
+            <span class="pc-badge">Bestseller</span>
+          </div>
+          <div class="pc-content">
+            <h3 class="pc-title">EINSTEIGER EDITION</h3>
+            <div class="pc-specs">
+              <div class="spec-item">
+                <i class="fas fa-microchip spec-icon"></i>
+                <span>AMD Ryzen 5 7600X (6x 4.7GHz)</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gamepad spec-icon"></i>
+                <span>NVIDIA RTX 4060 Ti 8GB</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-memory spec-icon"></i>
+                <span>32GB DDR5 RAM 5600MHz</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-hdd spec-icon"></i>
+                <span>1TB NVMe SSD + 1TB HDD</span>
+              </div>
+            </div>
+            <div class="pc-price">1,299</div>
+            <div class="pc-actions">
+              <a href="#" class="cta-button" style="flex-grow: 1;">
+                <i class="fas fa-shopping-cart"></i> Kaufen
+              </a>
+              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+                <i class="fas fa-cog"></i> Anpassen
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PC Card 2 -->
+        <div class="pc-card">
+          <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Midrange Gaming PC" class="pc-image">
+          <div class="pc-content">
+            <h3 class="pc-title">PRO GAMER EDITION</h3>
+            <div class="pc-specs">
+              <div class="spec-item">
+                <i class="fas fa-microchip spec-icon"></i>
+                <span>Intel Core i7-13700KF (16x 5.4GHz)</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gamepad spec-icon"></i>
+                <span>NVIDIA RTX 4070 Super 12GB</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-memory spec-icon"></i>
+                <span>32GB DDR5 RAM 6000MHz</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-hdd spec-icon"></i>
+                <span>1TB NVMe SSD + 2TB SSD</span>
+              </div>
+            </div>
+            <div class="pc-price">2,499</div>
+            <div class="pc-actions">
+              <a href="#" class="cta-button" style="flex-grow: 1;">
+                <i class="fas fa-shopping-cart"></i> Kaufen
+              </a>
+              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+                <i class="fas fa-cog"></i> Anpassen
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PC Card 3 -->
+        <div class="pc-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1563212034-a5fdd953a6b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="High-End Gaming PC" class="pc-image">
+            <span class="pc-badge">Premium</span>
+          </div>
+          <div class="pc-content">
+            <h3 class="pc-title">ELITE PERFORMANCE</h3>
+            <div class="pc-specs">
+              <div class="spec-item">
+                <i class="fas fa-microchip spec-icon"></i>
+                <span>AMD Ryzen 9 7950X3D (16x 5.7GHz)</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gamepad spec-icon"></i>
+                <span>NVIDIA RTX 4090 24GB</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-memory spec-icon"></i>
+                <span>64GB DDR5 RAM 6400MHz</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-hdd spec-icon"></i>
+                <span>2TB NVMe SSD + 4TB SSD</span>
+              </div>
+            </div>
+            <div class="pc-price">4,299</div>
+            <div class="pc-actions">
+              <a href="#" class="cta-button" style="flex-grow: 1;">
+                <i class="fas fa-shopping-cart"></i> Kaufen
+              </a>
+              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+                <i class="fas fa-cog"></i> Anpassen
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    function updateOptions() {
-      const selection = document.getElementById('cpu').value;
-      const output = document.getElementById('output');
-      let content = '';
+    <!-- Configurator Section -->
+    <section class="configurator" id="configurator">
+      <h2 class="section-title">PC Konfigurator</h2>
+      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
+        Stelle deinen individuellen Gaming PC zusammen. Wähle aus hochwertigen Komponenten und erhalte eine sofortige Preisberechnung.
+      </p>
+      
+      <div class="config-steps">
+        <!-- Step 1 -->
+        <div class="config-step">
+          <label for="cpu-type"><i class="fas fa-microchip"></i> Prozessor</label>
+          <select id="cpu-type" onchange="updateConfig()">
+            <option value="">Bitte wählen</option>
+            <option value="amd-ryzen5">AMD Ryzen 5 7600X</option>
+            <option value="amd-ryzen7">AMD Ryzen 7 7800X3D</option>
+            <option value="amd-ryzen9">AMD Ryzen 9 7950X3D</option>
+            <option value="intel-i5">Intel Core i5-13600KF</option>
+            <option value="intel-i7">Intel Core i7-13700KF</option>
+            <option value="intel-i9">Intel Core i9-13900K</option>
+          </select>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="config-step">
+          <label for="gpu"><i class="fas fa-gamepad"></i> Grafikkarte</label>
+          <select id="gpu" onchange="updateConfig()">
+            <option value="">Bitte wählen</option>
+            <option value="rtx4060">NVIDIA RTX 4060 Ti 8GB</option>
+            <option value="rtx4070">NVIDIA RTX 4070 Super 12GB</option>
+            <option value="rtx4080">NVIDIA RTX 4080 Super 16GB</option>
+            <option value="rtx4090">NVIDIA RTX 4090 24GB</option>
+            <option value="rx7800">AMD RX 7800 XT 16GB</option>
+            <option value="rx7900">AMD RX 7900 XTX 24GB</option>
+          </select>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="config-step">
+          <label for="ram"><i class="fas fa-memory"></i> Arbeitsspeicher</label>
+          <select id="ram" onchange="updateConfig()">
+            <option value="">Bitte wählen</option>
+            <option value="16gb">16GB DDR5</option>
+            <option value="32gb">32GB DDR5</option>
+            <option value="64gb">64GB DDR5</option>
+            <option value="128gb">128GB DDR5</option>
+          </select>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="config-step">
+          <label for="storage"><i class="fas fa-hdd"></i> Speicher</label>
+          <select id="storage" onchange="updateConfig()">
+            <option value="">Bitte wählen</option>
+            <option value="1tb">1TB NVMe SSD</option>
+            <option value="2tb">2TB NVMe SSD</option>
+            <option value="4tb">4TB NVMe SSD</option>
+            <option value="1tb+2tb">1TB NVMe + 2TB SSD</option>
+            <option value="2tb+4tb">2TB NVMe + 4TB SSD</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="config-summary">
+        <h3><i class="fas fa-file-invoice-dollar"></i> Zusammenfassung</h3>
+        <div id="config-output" style="margin-top: 1rem;">
+          <p>Bitte wähle deine Komponenten aus.</p>
+        </div>
+        <div class="total-price" id="total-price">0.00</div>
+      </div>
+    </section>
 
-      if (selection === 'intel') {
-        content = `
-          <p><strong>Intel Z790 Mainboard</strong> empfohlen.</p>
-          <ul>
-            <li>Intel i5 / i7 / i9 der 13. oder 14. Generation</li>
-            <li>DDR5 RAM Unterstützung</li>
-            <li>PCIe Gen5 GPU Unterstützung</li>
-          </ul>`;
-      } else if (selection === 'amd') {
-        content = `
-          <p><strong>AMD B650 oder X670 Mainboard</strong> empfohlen.</p>
-          <ul>
-            <li>AMD Ryzen 5 / 7 / 9 der 7000er Serie</li>
-            <li>DDR5 RAM & PCIe 5.0 Support</li>
-            <li>AM5 Sockel erforderlich</li>
-          </ul>`;
-      }
+    <!-- Features Section -->
+    <section id="features">
+      <h2 class="section-title">Warum ELITE GAMING?</h2>
+      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
+        Wir bieten nicht nur hochwertige Gaming PCs, sondern ein komplettes Premium-Erlebnis aus der Schweiz.
+      </p>
+      
+      <div class="features">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="feature-title">3 Jahre Garantie</h3>
+          <p style="color: var(--gray);">
+            Alle unsere Systeme werden mit 3 Jahren Vollgarantie geliefert, inklusive Vor-Ort-Service in der ganzen Schweiz.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="feature-title">Individuelle Konfiguration</h3>
+          <p style="color: var(--gray);">
+            Jeder PC wird nach deinen Wünschen zusammengestellt und vor der Auslieferung ausführlich getestet.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3 class="feature-title">Kostenloser Versand</h3>
+          <p style="color: var(--gray);">
+            Kostenfreier und versicherter Expressversand in die ganze Schweiz innerhalb von 1-3 Werktagen.
+          </p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <h3 class="feature-title">Finanzierung möglich</h3>
+          <p style="color: var(--gray);">
+            Flexible Ratenzahlung über 6-36 Monate möglich. 0% Finanzierung bei Zahlung innerhalb von 12 Monaten.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      output.innerHTML = content;
-    }
-  </script>
-</body>
-</html>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2 class="section-title">Das sagen unsere Kunden</h2>
+      
+      <div class="testimonial-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Mein ELITE GAMING PC übertrifft alle Erwartungen! Der Kundenservice war hervorragend und die Lieferung blitzschnell. Absolute Empfehlung!"
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Markus B." class="author-avatar">
+            <div class="author-info">
+              <h4>Markus B.</h4>
+              <p>Zürich</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Endlich ein Schweizer Anbieter, der echte Gaming-Power zu fairen Preisen bietet. Mein PC läuft seit Monaten einwandfrei."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K." class="author-avatar">
+            <div class="author-info">
+              <h4>Sarah K.</h4>
+              <p>Bern</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Die individuelle Beratung und die Möglichkeit, den PC genau nach meinen Wünschen zu konfigurieren, haben mich überzeugt."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Thomas L." class="author-avatar">
+            <div class="author-info">
+              <h4>Thomas L.</h4>
+              <p>Genf</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
