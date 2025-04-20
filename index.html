@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>ELITE GAMING SCHWEIZ - High Performance PCs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      color: #e0e0e0;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+      padding: 30px 0;
+      text-align: center;
+      border-bottom: 3px solid #0066ff;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+    }
+    .subtitle {
+      font-size: 1.2em;
+      color: #aaa;
+      margin-top: 10px;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      padding: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .pc-box {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      width: 350px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    .pc-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.2);
+    }
+    .pc-box img {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #333;
+    }
+    .pc-name {
+      font-size: 1.3em;
+      color: #fff;
+      margin: 10px 0;
+      text-align: center;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      width: calc(100% - 20px);
+      box-sizing: border-box;
+    }
+    .beginner {
+      background-color: #4CAF50; /* Grün für Einsteiger */
+    }
+    .midrange {
+      background-color: #FF9800; /* Orange für Midrange */
+    }
+    .high-end {
+      background-color: #F44336; /* Rot für High-End */
+    }
+    .specs {
+      margin: 15px 0;
+      font-size: 0.95em;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+    }
+    .specs li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .specs li:before {
+      content: "•";
+      color: #0066ff;
+      position: absolute;
+      left: 0;
+    }
+    .price {
+      font-size: 1.6em;
+      color: #00cc66;
+      font-weight: bold;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .price:after {
+      content: " CHF";
+      font-size: 0.8em;
+    }
+    .details-btn {
+      background: linear-gradient(to right, #0066ff, #0099ff);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .details-btn:hover {
+      background: linear-gradient(to right, #0055dd, #0088ee);
+      box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+    }
+    footer {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      border-top: 1px solid #333;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        padding: 15px;
+      }
+      .pc-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ELITE GAMING SCHWEIZ</h1>
+    <div class="subtitle">Premium Gaming Systems für Schweizer Gamer</div>
+  </header>
+
+  <div class="grid">
+    <div class="pc-box">
+      <img src="https://via.placeholder.com/350x200/333/cccccc?text=EINSTEIGER+GAMING" alt="                      ">
+      <div class="pc-name beginner">Einsteiger Gaming PC</div>
+      <div class="specs">
+        <ul>
+          <li>AMD Ryzen 5 7600X (6-Core)</li>
+          <li>NVIDIA RTX 4060 Ti 8GB</li>
+          <li>16GB DDR5 5200MHz RAM</li>
+          <li>1TB Gen4 NVMe SSD</li>
+          <li>MSI B650M WiFi</li>
+          <li>Air Cooling Lösung</li>
+        </ul>
+      </div>
+      <div class="price">1.299</div>
+      <a href="#" class="details-btn">JETZT KONFIGURIEREN</a>
+    </div>
+
+    <div class="pc-box">
+      <img src="https://via.placeholder.com/350x200/333/cccccc?text=MIDRANGE+GAMING" alt="                      ">
+      <div class="pc-name midrange">Midrange Gaming PC</div>
+      <div class="specs">
+        <ul>
+          <li>Intel Core i7-13700KF (8+8 Core)</li>
+          <li>NVIDIA RTX 4070 Super 12GB</li>
+          <li>32GB DDR5 5600MHz RAM</li>
+          <li>1TB Gen4 NVMe + 1TB SSD</li>
+          <li>ASUS TUF Z790-Plus WiFi</li>
+          <li>240mm RGB Liquid Cooling</li>
+        </ul>
+      </div>
+      <div class="price">2.199</div>
+      <a href="#" class="details-btn">JETZT KONFIGURIEREN</a>
+    </div>
+
+    <div class="pc-box">
+      <img src="https://via.placeholder.com/350x200/333/cccccc?text=HIGH+END+GAMING" alt="                      ">
+      <div class="pc-name high-end">High End Gaming PC</div>
+      <div class="specs">
+        <ul>
+          <li>AMD Ryzen 9 7950X3D (16-Core)</li>
+          <li>NVIDIA RTX 4090 24GB</li>
+          <li>64GB DDR5 6000MHz RAM</li>
+          <li>2TB Gen4 NVMe + 4TB HDD</li>
+          <li>ASUS ROG Crosshair X670E</li>
+          <li>360mm AIO Liquid Cooling</li>
+        </ul>
+      </div>
+      <div class="price">3.999</div>
+      <a href="#" class="details-btn">JETZT KONFIGURIEREN</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 ELITE GAMING SCHWEIZ | Kontakt: info@elite-gaming.ch
+  </footer>
+</body>
+</html>
