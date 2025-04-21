@@ -1,6 +1,3 @@
-Here's the updated HTML with a more compact hero section that shows the pre-configured PCs immediately:
-
-```html
 <!DOCTYPE html>
 <html lang="de-CH">
 <head>
@@ -144,52 +141,50 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       display: flex;
     }
 
-    /* Compact Hero Section */
+    /* Hero Section */
     .hero {
       background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9)), 
                   url('https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: auto;
-      padding: 3rem 2rem;
-      text-align: center;
+      height: 80vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
     }
 
     .hero-content {
       max-width: 1400px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
       line-height: 1.2;
-      color: var(--light);
+      background: linear-gradient(to right, var(--light), var(--gray));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       max-width: 600px;
-      margin: 0 auto 1.5rem;
+      margin-bottom: 2rem;
       color: var(--gray);
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
     }
 
     /* Main Content */
     main {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 4rem 2rem;
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
       position: relative;
       display: inline-block;
     }
@@ -197,7 +192,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -10px;
       left: 0;
       width: 60%;
       height: 4px;
@@ -210,7 +205,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 2rem;
-      margin: 2rem 0;
+      margin: 3rem 0;
     }
 
     .pc-card {
@@ -223,13 +218,13 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     }
 
     .pc-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
       border-color: var(--primary);
     }
 
     .pc-image {
-      height: 200px;
+      height: 220px;
       width: 100%;
       object-fit: cover;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -252,33 +247,32 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     }
 
     .pc-title {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
       color: white;
     }
 
     .pc-specs {
-      margin: 1rem 0;
+      margin: 1.5rem 0;
     }
 
     .spec-item {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
     }
 
     .spec-icon {
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .pc-price {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--secondary);
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       text-align: center;
     }
 
@@ -297,7 +291,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       background: var(--card-bg);
       border-radius: 0.75rem;
       padding: 2rem;
-      margin: 3rem 0;
+      margin: 4rem 0;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -305,24 +299,24 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     .config-steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .config-step {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .config-step label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       color: white;
     }
 
     .config-step select, .config-step input {
       width: 100%;
-      padding: 0.75rem 1rem;
+      padding: 0.875rem 1rem;
       background: rgba(255, 255, 255, 0.05);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -341,12 +335,12 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       background: rgba(255, 255, 255, 0.05);
       padding: 1.5rem;
       border-radius: 0.5rem;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       border-left: 4px solid var(--primary);
     }
 
     .total-price {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--secondary);
       margin-top: 1rem;
@@ -356,52 +350,52 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     /* Features Section */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
     }
 
     .feature-card {
       background: var(--card-bg);
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 0.75rem;
       text-align: center;
       transition: all 0.3s ease;
     }
 
     .feature-icon {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .feature-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       color: white;
     }
 
     /* Testimonials */
     .testimonials {
-      margin: 3rem 0;
+      margin: 4rem 0;
     }
 
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
 
     .testimonial-card {
       background: var(--card-bg);
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 0.75rem;
       position: relative;
     }
 
     .testimonial-quote {
       font-style: italic;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .testimonial-author {
@@ -431,11 +425,11 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       background: var(--card-bg);
       padding: 2rem;
       border-radius: 0.75rem;
-      margin: 3rem 0;
+      margin: 4rem 0;
     }
 
     .form-group {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .form-group label {
@@ -447,7 +441,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
 
     .form-group input, .form-group textarea, .form-group select {
       width: 100%;
-      padding: 0.75rem 1rem;
+      padding: 0.875rem 1rem;
       background: rgba(255, 255, 255, 0.05);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -456,14 +450,14 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     }
 
     .form-group textarea {
-      min-height: 120px;
+      min-height: 150px;
       resize: vertical;
     }
 
     /* Footer */
     footer {
       background: var(--darker);
-      padding: 3rem 2rem 2rem;
+      padding: 4rem 2rem 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -471,8 +465,8 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       max-width: 1400px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
     }
 
     .footer-logo {
@@ -480,16 +474,15 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       align-items: center;
       gap: 0.75rem;
       color: var(--light);
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
       text-decoration: none;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .footer-about p {
       color: var(--gray);
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
     }
 
     .social-links {
@@ -499,7 +492,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
 
     .social-link {
       color: var(--gray);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       transition: color 0.3s ease;
     }
 
@@ -509,20 +502,20 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
 
     .footer-links h3 {
       color: white;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
       position: relative;
     }
 
     .footer-links h3::after {
       content: '';
       position: absolute;
-      bottom: -6px;
+      bottom: -8px;
       left: 0;
-      width: 30px;
-      height: 2px;
+      width: 40px;
+      height: 3px;
       background: var(--primary);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     .footer-links ul {
@@ -530,7 +523,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     }
 
     .footer-links li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .footer-links a {
@@ -540,7 +533,6 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.9rem;
     }
 
     .footer-links a:hover {
@@ -548,21 +540,20 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     }
 
     .footer-links i {
-      font-size: 0.8rem;
+      font-size: 0.875rem;
     }
 
     .footer-contact p {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       color: var(--gray);
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
+      margin-bottom: 1rem;
     }
 
     .footer-contact i {
       color: var(--primary);
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
 
     .copyright {
@@ -571,13 +562,12 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       margin-top: 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--gray);
-      font-size: 0.85rem;
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 3rem;
       }
     }
 
@@ -595,14 +585,22 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
       }
 
       .hero {
-        padding: 2rem 1rem;
+        height: auto;
+        padding: 6rem 1rem;
+        text-align: center;
       }
 
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
       }
 
-      .hero-buttons {
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-content {
+        display: flex;
         flex-direction: column;
         align-items: center;
       }
@@ -614,11 +612,11 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
 
     @media (max-width: 480px) {
       .hero h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
       }
 
       .section-title {
-        font-size: 1.6rem;
+        font-size: 2rem;
       }
 
       .pc-grid {
@@ -665,12 +663,12 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     </a>
   </div>
 
-  <!-- Compact Hero Section -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Dein perfekter Gaming PC aus der Schweiz</h1>
       <p>Hochleistungs-Systeme maßgeschneidert für deine Bedürfnisse. 100% Schweizer Qualität mit Premium-Komponenten.</p>
-      <div class="hero-buttons">
+      <div style="display: flex; gap: 1rem;">
         <a href="#configurator" class="cta-button">
           <i class="fas fa-sliders-h"></i> PC konfigurieren
         </a>
@@ -686,7 +684,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     <!-- Gaming PCs Section -->
     <section id="pcs">
       <h2 class="section-title">Unsere Gaming PC Kollektion</h2>
-      <p style="max-width: 800px; margin-bottom: 1rem; color: var(--gray);">
+      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
         Wähle aus unseren sorgfältig zusammengestellten High-End Gaming Systemen oder konfiguriere deinen individuellen Traum-PC.
       </p>
       
@@ -694,7 +692,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
         <!-- PC Card 1 -->
         <div class="pc-card">
           <div style="position: relative;">
-            src="https://res.cloudinary.com/dajusgncz/image/upload/c_fill,g_north,h_220,w_350,q_auto:best/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="Bestseller" class="pc-image">
+            <img src="https://images.unsplash.com/photo-1552831388-6a0b3575b32a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Einsteiger Gaming PC" class="pc-image">
             <span class="pc-badge">Bestseller</span>
           </div>
           <div class="pc-content">
@@ -807,7 +805,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     <!-- Configurator Section -->
     <section class="configurator" id="configurator">
       <h2 class="section-title">PC Konfigurator</h2>
-      <p style="max-width: 800px; margin-bottom: 1rem; color: var(--gray);">
+      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
         Stelle deinen individuellen Gaming PC zusammen. Wähle aus hochwertigen Komponenten und erhalte eine sofortige Preisberechnung.
       </p>
       
@@ -878,7 +876,7 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     <!-- Features Section -->
     <section id="features">
       <h2 class="section-title">Warum ELITE GAMING?</h2>
-      <p style="max-width: 800px; margin-bottom: 1rem; color: var(--gray);">
+      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
         Wir bieten nicht nur hochwertige Gaming PCs, sondern ein komplettes Premium-Erlebnis aus der Schweiz.
       </p>
       
@@ -979,4 +977,3 @@ Here's the updated HTML with a more compact hero section that shows the pre-conf
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-form"
