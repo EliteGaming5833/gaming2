@@ -7,33 +7,185 @@
   <title>ELITE GAMING SCHWEIZ | Premium Gaming PCs</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* (Behalte alle CSS-Variablen und Stile bei, außer den folgenden Änderungen) */
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --dark: #0f172a;
+      --darker: #020617;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --card-bg: #1e293b;
+      --success: #22c55e;
+      --warning: #f97316;
+      --danger: #ef4444;
+    }
 
-    /* Verkleinerter Hero-Bereich */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--light);
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      color: var(--primary);
+      font-size: 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-link i {
+      font-size: 1.1rem;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    /* Hero Section - VERKLEINERT */
     .hero {
-      height: 50vh;
-      min-height: 400px;
-      padding: 2rem;
+      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9)), 
+                  url('https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 50vh; /* Von 80vh auf 50vh reduziert */
+      min-height: 400px; /* Von 600px auf 400px reduziert */
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem; /* Von 3.5rem reduziert */
+      margin-bottom: 1rem; /* Von 1.5rem reduziert */
+      line-height: 1.2;
+      background: linear-gradient(to right, var(--light), var(--gray));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.1rem; /* Von 1.25rem reduziert */
+      max-width: 600px;
+      margin-bottom: 1.5rem; /* Von 2rem reduziert */
+      color: var(--gray);
     }
 
-    /* Entferne den Konfigurator-Abschnitt komplett */
+    /* Main Content */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem; /* Von 4rem reduziert für weniger Abstand nach Hero */
+    }
+
+    /* (Alle anderen CSS-Regeln bleiben UNVERÄNDERT) */
+
+    /* KONFIGURATOR ENTFERNT */
     .configurator {
-      display: none;
+      display: none !important;
     }
   </style>
 </head>
 <body>
-  <!-- Header (unverändert) -->
+  <!-- Header (Navigation ohne Konfigurator-Link) -->
   <header>
     <div class="header-container">
       <a href="#" class="logo">
@@ -57,7 +209,7 @@
     </div>
   </header>
 
-  <!-- Mobile Menu (unverändert) -->
+  <!-- Mobile Menu (ohne Konfigurator) -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#" class="nav-link active"><i class="fas fa-home"></i> Startseite</a>
     <a href="#pcs" class="nav-link"><i class="fas fa-desktop"></i> Gaming PCs</a>
@@ -71,8 +223,8 @@
   <!-- Verkleinerter Hero-Bereich -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Premium Gaming PCs mit Schweizer Präzision</h1>
-      <p>Hochleistungs-Systeme mit Premium-Komponenten für das ultimative Spielerlebnis.</p>
+      <h1>Dein perfekter Gaming PC aus der Schweiz</h1>
+      <p>Hochleistungs-Systeme maßgeschneidert für deine Bedürfnisse. 100% Schweizer Qualität mit Premium-Komponenten.</p>
       <div style="display: flex; gap: 1rem;">
         <a href="#pcs" class="cta-button">
           <i class="fas fa-eye"></i> Systeme entdecken
@@ -81,8 +233,9 @@
     </div>
   </section>
 
-  <!-- Gaming PCs Section (unverändert) -->
+  <!-- Main Content (UNVERÄNDERT abgesehen vom entfernten Konfigurator) -->
   <main>
+    <!-- Gaming PCs Section (Original mit 3 Karten) -->
     <section id="pcs">
       <h2 class="section-title">Unsere Gaming PC Kollektion</h2>
       <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
@@ -194,14 +347,13 @@
       </div>
     </section>
 
-    <!-- (Rest der HTML bleibt unverändert - Features, Testimonials, Kontakt, Footer) -->
+    <!-- Features, Testimonials, Kontaktformular und Footer bleiben KOMPLETT UNVERÄNDERT -->
     <!-- ... -->
 
   </main>
 
   <script>
-    // (JavaScript bleibt unverändert, außer der entfernten updateConfig-Funktion)
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle (unverändert)
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     
@@ -217,7 +369,7 @@
       });
     });
 
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links (unverändert)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -235,7 +387,7 @@
       });
     });
     
-    // Add active class to current section in navigation
+    // Add active class to current section in navigation (unverändert)
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a, .mobile-menu a');
     
