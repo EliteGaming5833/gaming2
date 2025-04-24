@@ -1,415 +1,151 @@
 <!DOCTYPE html>
-<html lang="de-CH">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ELITE GAMING SCHWEIZ - Hochleistungs-Gaming-PCs nach Maß. Konfiguriere deinen Traum-PC oder wähle eines unserer Premium-Systeme.">
-  <title>ELITE GAMING SCHWEIZ | Premium Gaming PCs</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Elite Gaming Schweiz – Hochleistungs-Gaming-PCs made in Switzerland">
+  <title>Elite Gaming Schweiz</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #10b981;
-      --accent: #f59e0b;
-      --dark: #0f172a;
-      --darker: #020617;
-      --light: #f8fafc;
-      --gray: #94a3b8;
-      --card-bg: #1e293b;
-      --success: #22c55e;
-      --warning: #f97316;
-      --danger: #ef4444;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background-color: var(--dark);
-      color: var(--light);
-      line-height: 1.6;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #000;
+      color: #00ffff;
     }
-
-    /* Header */
     header {
-      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-bottom: 3px solid var(--primary);
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
     }
-
-    .header-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    header img {
+      max-width: 200px;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: var(--light);
-      font-size: 1.75rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .logo-icon {
-      color: var(--primary);
-      font-size: 2rem;
-    }
-
-    /* Navigation */
     nav {
-      display: flex;
-      gap: 1.5rem;
+      background-color: #111;
+      padding: 10px;
+      text-align: center;
     }
-
-    .nav-link {
-      color: var(--light);
+    nav a {
+      color: #00ffff;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
-
-    .nav-link:hover, .nav-link.active {
-      background-color: var(--primary);
-      color: white;
-      transform: translateY(-2px);
+    section {
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .nav-link i {
-      font-size: 1.1rem;
+    h1, h2, h3 {
+      color: #ff0033;
     }
-
-    .cta-button {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+    .product {
+      border: 1px solid #00ffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
     }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+    footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 20px;
+      text-align: center;
     }
-
-    /* Mobile Menu */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--light);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    .mobile-menu {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1rem 0;
-    }
-
-    .mobile-menu.active {
-      display: flex;
-    }
-
-    /* Hero Section - VERKLEINERT */
-    .hero {
-      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9)), 
-                  url('https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 50vh; /* Von 80vh auf 50vh reduziert */
-      min-height: 400px; /* Von 600px auf 400px reduziert */
-      display: flex;
-      align-items: center;
-      padding: 0 2rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem; /* Von 3.5rem reduziert */
-      margin-bottom: 1rem; /* Von 1.5rem reduziert */
-      line-height: 1.2;
-      background: linear-gradient(to right, var(--light), var(--gray));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.1rem; /* Von 1.25rem reduziert */
-      max-width: 600px;
-      margin-bottom: 1.5rem; /* Von 2rem reduziert */
-      color: var(--gray);
-    }
-
-    /* Main Content */
-    main {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 2rem; /* Von 4rem reduziert für weniger Abstand nach Hero */
-    }
-
-    /* (Alle anderen CSS-Regeln bleiben UNVERÄNDERT) */
-
-    /* KONFIGURATOR ENTFERNT */
-    .configurator {
-      display: none !important;
+    .kontakt, .rechtliches {
+      background-color: #111;
+      color: #ccc;
+      padding: 20px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- Header (Navigation ohne Konfigurator-Link) -->
   <header>
-    <div class="header-container">
-      <a href="#" class="logo">
-        <i class="fas fa-gamepad logo-icon"></i>
-        ELITE GAMING
-      </a>
-      
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
-      </button>
-      
-      <nav>
-        <a href="#" class="nav-link active"><i class="fas fa-home"></i> Startseite</a>
-        <a href="#pcs" class="nav-link"><i class="fas fa-desktop"></i> Gaming PCs</a>
-        <a href="#features" class="nav-link"><i class="fas fa-star"></i> Vorteile</a>
-        <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Kontakt</a>
-        <a href="#" class="cta-button">
-          <i class="fas fa-shopping-cart"></i> Zum Shop
-        </a>
-      </nav>
-    </div>
+    <img src="/mnt/data/WhatsApp Bild 2025-04-21 um 19.25.40_10ecf5a6.jpg" alt="Elite Gaming Schweiz Logo">
+    <h1>Elite Gaming Schweiz</h1>
+    <p>High-Performance PCs – Swiss Made</p>
   </header>
+  <nav>
+    <a href="#pcs">Komplett-PCs</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#rechtliches">Rechtliches</a>
+  </nav>
+  <section id="pcs">
+    <h2>Unsere Gaming-PCs</h2>
 
-  <!-- Mobile Menu (ohne Konfigurator) -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#" class="nav-link active"><i class="fas fa-home"></i> Startseite</a>
-    <a href="#pcs" class="nav-link"><i class="fas fa-desktop"></i> Gaming PCs</a>
-    <a href="#features" class="nav-link"><i class="fas fa-star"></i> Vorteile</a>
-    <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Kontakt</a>
-    <a href="#" class="cta-button" style="justify-content: center; margin-top: 0.5rem;">
-      <i class="fas fa-shopping-cart"></i> Zum Shop
-    </a>
-  </div>
-
-  <!-- Verkleinerter Hero-Bereich -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Dein perfekter Gaming PC aus der Schweiz</h1>
-      <p>Hochleistungs-Systeme maßgeschneidert für deine Bedürfnisse. 100% Schweizer Qualität mit Premium-Komponenten.</p>
-      <div style="display: flex; gap: 1rem;">
-        <a href="#pcs" class="cta-button">
-          <i class="fas fa-eye"></i> Systeme entdecken
-        </a>
-      </div>
+    <div class="product">
+      <h3>Elite Starter</h3>
+      <p>Intel Core i3, GTX 1650, 16GB RAM, 512GB SSD</p>
+      <p><strong>CHF 699.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Gamer</h3>
+      <p>Intel Core i5, RTX 3060, 16GB RAM, 1TB SSD</p>
+      <p><strong>CHF 1099.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Creator</h3>
+      <p>AMD Ryzen 7, RTX 3070, 32GB RAM, 2TB SSD</p>
+      <p><strong>CHF 1499.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Beast</h3>
+      <p>Intel i9, RTX 4080, 64GB RAM, 2TB NVMe</p>
+      <p><strong>CHF 2899.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Mini</h3>
+      <p>Ryzen 5, RTX 3060 Ti, 16GB RAM, 1TB SSD – ITX Format</p>
+      <p><strong>CHF 1149.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Budget</h3>
+      <p>Intel i3, RX 6600, 16GB RAM, 500GB SSD</p>
+      <p><strong>CHF 799.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Workstation</h3>
+      <p>Ryzen 9, RTX 3090, 64GB RAM, 4TB SSD</p>
+      <p><strong>CHF 3299.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Streamer</h3>
+      <p>Intel i7, RTX 4060 Ti, 32GB RAM, 1TB SSD</p>
+      <p><strong>CHF 1599.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Ultra</h3>
+      <p>AMD Threadripper, RTX 4090, 128GB RAM, 4TB NVMe</p>
+      <p><strong>CHF 4999.–</strong></p>
+    </div>
+    <div class="product">
+      <h3>Elite Silent</h3>
+      <p>Intel i5, RTX 3050, 16GB RAM, 1TB SSD – lautloses Gehäuse</p>
+      <p><strong>CHF 1099.–</strong></p>
     </div>
   </section>
 
-  <!-- Main Content (UNVERÄNDERT abgesehen vom entfernten Konfigurator) -->
-  <main>
-    <!-- Gaming PCs Section (Original mit 3 Karten) -->
-    <section id="pcs">
-      <h2 class="section-title">Unsere Gaming PC Kollektion</h2>
-      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
-        Wähle aus unseren sorgfältig zusammengestellten High-End Gaming Systemen.
-      </p>
-      
-      <div class="pc-grid">
-        <!-- PC Card 1 -->
-        <div class="pc-card">
-          <div style="position: relative;">
-            <img src="https://images.unsplash.com/photo-1552831388-6a0b3575b32a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Einsteiger Gaming PC" class="pc-image">
-            <span class="pc-badge">Bestseller</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">EINSTEIGER EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7600X (6x 4.7GHz)</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>NVIDIA RTX 4060 Ti 8GB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 RAM 5600MHz</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB NVMe SSD + 1TB HDD</span>
-              </div>
-            </div>
-            <div class="pc-price">1,299</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- PC Card 2 -->
-        <div class="pc-card">
-          <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Midrange Gaming PC" class="pc-image">
-          <div class="pc-content">
-            <h3 class="pc-title">PRO GAMER EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>Intel Core i7-13700KF (16x 5.4GHz)</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>NVIDIA RTX 4070 Super 12GB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 RAM 6000MHz</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB NVMe SSD + 2TB SSD</span>
-              </div>
-            </div>
-            <div class="pc-price">2,499</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- PC Card 3 -->
-        <div class="pc-card">
-          <div style="position: relative;">
-            <img src="https://images.unsplash.com/photo-1563212034-a5fdd953a6b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="High-End Gaming PC" class="pc-image">
-            <span class="pc-badge">Premium</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">ELITE PERFORMANCE</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 9 7950X3D (16x 5.7GHz)</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>NVIDIA RTX 4090 24GB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>64GB DDR5 RAM 6400MHz</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>2TB NVMe SSD + 4TB SSD</span>
-              </div>
-            </div>
-            <div class="pc-price">4,299</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section id="kontakt" class="kontakt">
+    <h2>Kontakt</h2>
+    <p>Elite Gaming Schweiz<br>
+       Musterstrasse 42<br>
+       8000 Zürich<br>
+       Schweiz</p>
+    <p>Email: info@elite-gaming.ch<br>
+       Telefon: +41 44 123 45 67</p>
+    <p>Kontaktformular: [Hier könnte ein Formular eingefügt werden]</p>
+  </section>
 
-    <!-- Features, Testimonials, Kontaktformular und Footer bleiben KOMPLETT UNVERÄNDERT -->
-    <!-- ... -->
+  <section id="rechtliches" class="rechtliches">
+    <h2>Rechtliches</h2>
+    <p><strong>AGB:</strong> Unsere Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen über unsere Webseite. Es gilt Schweizer Recht. Rückgabe innerhalb von 14 Tagen möglich. Garantie: 2 Jahre auf alle PCs.</p>
+    <p><strong>Datenschutz:</strong> Ihre Daten werden gemäß dem Schweizer Datenschutzgesetz (DSG) verarbeitet und nicht an Dritte weitergegeben.</p>
+    <p><strong>Impressum:</strong> Elite Gaming Schweiz, vertreten durch Neer, Zürich, Schweiz.</p>
+    <p><strong>Cookie-Hinweis:</strong> Diese Website verwendet Cookies zur Verbesserung der Nutzerfreundlichkeit. Durch die Nutzung stimmen Sie der Verwendung zu.</p>
+  </section>
 
-  </main>
-
-  <script>
-    // Mobile Menu Toggle (unverändert)
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const mobileLinks = document.querySelectorAll('.mobile-menu .nav-link');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    // Smooth scrolling for anchor links (unverändert)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    
-    // Add active class to current section in navigation (unverändert)
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a, .mobile-menu a');
-    
-    window.addEventListener('scroll', () => {
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= (sectionTop - 150)) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}` || (current === '' && link.getAttribute('href') === '#')) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
+  <footer>
+    <p>&copy; 2025 Elite Gaming Schweiz – All rights reserved.</p>
+  </footer>
 </body>
 </html>
