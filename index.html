@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="High-Performance Gaming-PCs aus der Schweiz - maßgeschneiderte Lösungen für jeden Gamer">
-    <title>Elite Gaming Schweiz - Premium Gaming-PCs</title>
+    <title>Elite Gaming Schweiz - Vorkonfigurierte Gaming-PCs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -36,7 +35,7 @@
             padding: 0 20px;
         }
         
-        /* Header & Navigation */
+        /* Header */
         header {
             background-color: rgba(10, 10, 26, 0.9);
             position: fixed;
@@ -86,26 +85,10 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-            position: relative;
         }
         
         nav ul li a:hover {
             color: var(--primary);
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
         }
         
         .mobile-menu-btn {
@@ -117,23 +100,32 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
+        /* Hero mit direkter PC-Verknüpfung */
         .hero {
             background: linear-gradient(rgba(10, 10, 26, 0.7), rgba(10, 10, 26, 0.9)), url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 100vh;
+            height: 80vh;
             display: flex;
             align-items: center;
-            text-align: center;
             padding-top: 80px;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
@@ -142,11 +134,49 @@
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
             color: rgba(255, 255, 255, 0.8);
         }
         
+        .hero-pc {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(106, 0, 244, 0.3);
+        }
+        
+        .hero-pc-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .hero-pc-specs li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .hero-pc-specs li::before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .hero-pc-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--primary);
+        }
+        
+        /* Button Styles */
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -158,7 +188,6 @@
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
-            margin: 10px;
         }
         
         .btn:hover {
@@ -166,70 +195,28 @@
             box-shadow: 0 10px 20px rgba(106, 0, 244, 0.3);
         }
         
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
         }
         
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* About Section */
-        .section {
-            padding: 80px 0;
+        /* PCs Section - Direkt nach Hero */
+        .pcs-section {
+            padding: 60px 0;
+            background-color: rgba(10, 10, 26, 0.7);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            position: relative;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
         }
         
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* PCs Section */
         .pcs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 25px;
         }
         
         .pc-card {
@@ -267,7 +254,7 @@
         }
         
         .pc-name {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
             color: white;
         }
@@ -310,70 +297,12 @@
             margin-right: 8px;
         }
         
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-details p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-details i {
-            margin-right: 10px;
-            color: var(--primary);
-            width: 20px;
-            text-align: center;
-        }
-        
-        .opening-hours {
-            margin-top: 30px;
-        }
-        
-        .opening-hours-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        
-        .opening-hours-table tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .opening-hours-table tr:last-child {
-            border-bottom: none;
-        }
-        
-        .opening-hours-table td {
-            padding: 8px 0;
-        }
-        
-        .opening-hours-table td:first-child {
-            font-weight: 500;
-        }
-        
+        /* Kontaktformular */
         .contact-form {
-            flex: 1;
             background-color: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 10px;
+            margin-top: 40px;
         }
         
         .form-group {
@@ -401,27 +330,6 @@
         .form-group textarea {
             min-height: 150px;
             resize: vertical;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-            background-color: rgba(106, 0, 244, 0.1);
-        }
-        
-        .map-container {
-            margin-top: 50px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
         }
         
         /* Footer */
@@ -462,29 +370,6 @@
             color: var(--primary);
         }
         
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
@@ -493,59 +378,19 @@
             font-size: 0.9rem;
         }
         
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--dark);
-            padding: 20px;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            display: none;
-        }
-        
-        .cookie-banner.active {
-            display: block;
-        }
-        
-        .cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .cookie-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .cookie-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
         /* Responsive */
         @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
+            .hero-content {
                 flex-direction: column;
             }
             
-            .about-image,
-            .about-text,
-            .contact-info,
-            .contact-form {
-                width: 100%;
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
+            .pcs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
         
@@ -574,36 +419,19 @@
                 display: block;
             }
             
+            .hero {
+                height: auto;
+                padding: 100px 0 60px;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
-            }
-            
             .section-title {
-                font-size: 2rem;
-            }
-            
-            .pcs-grid {
-                grid-template-columns: 1fr;
+                font-size: 1.8rem;
             }
         }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
@@ -619,8 +447,8 @@
             </button>
             <nav>
                 <ul id="mainMenu">
-                    <li><a href="#home">Startseite</a></li>
-                    <li><a href="#pcs">Komplett-PCs</a></li>
+                    <li><a href="#pcs">PCs</a></li>
+                    <li><a href="#configurator">Konfigurator</a></li>
                     <li><a href="#about">Über uns</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
@@ -628,45 +456,33 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="fade-in">High-Performance Gaming-PCs aus der Schweiz</h1>
-                <p class="fade-in delay-1">Premium-Systeme für anspruchsvolle Gamer - maßgeschneidert, getestet und bereit für dein nächstes Gaming-Abenteuer</p>
-                <div class="fade-in delay-2">
-                    <a href="#pcs" class="btn">Komplett-PCs entdecken</a>
-                    <a href="#contact" class="btn btn-outline">Jetzt anfragen</a>
-                </div>
+    <!-- Hero mit PC-Teil -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>High-Performance Gaming-PCs aus der Schweiz</h1>
+                <p>Premium-Systeme für anspruchsvolle Gamer - maßgeschneidert, getestet und bereit für dein nächstes Gaming-Abenteuer</p>
+                <a href="#pcs" class="btn">Alle PCs anzeigen</a>
+            </div>
+            
+            <div class="hero-pc">
+                <h3 class="hero-pc-title">Top-Angebot: Pro Gamer</h3>
+                <ul class="hero-pc-specs">
+                    <li>Intel Core i7-12700K (12x 3.6GHz)</li>
+                    <li>NVIDIA GeForce RTX 3070 Ti (8GB)</li>
+                    <li>32GB DDR4 RAM (3600MHz)</li>
+                    <li>1TB NVMe SSD + 2TB HDD</li>
+                </ul>
+                <div class="hero-pc-price">CHF 2'199.-</div>
+                <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
+    <!-- PCs Section - Direkt nach Hero -->
+    <section class="pcs-section" id="pcs">
         <div class="container">
-            <h2 class="section-title">Über uns</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Ihr Partner für Gaming-PCs in der Schweiz</h3>
-                    <p>Elite Gaming Schweiz wurde 2020 von leidenschaftlichen Gamern und Hardware-Enthusiasten gegründet. Unser Ziel ist es, hochwertige Gaming-Systeme anzubieten, die perfekt auf die Bedürfnisse unserer Kunden abgestimmt sind.</p>
-                    <p>Wir legen Wert auf beste Qualität, individuelle Beratung und schnellen Versand innerhalb der Schweiz. Jeder PC wird von unseren Experten sorgfältig zusammengebaut und ausgiebig getestet, bevor er zu Ihnen nach Hause geliefert wird.</p>
-                    <p>Unser Team besteht aus erfahrenen Technikern und begeisterten Gamern, die ihr Wissen und ihre Leidenschaft in jedes System stecken. Wir stehen Ihnen auch nach dem Kauf mit Rat und Tat zur Seite.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Elite Gaming Team">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PCs Section -->
-    <section class="section" id="pcs">
-        <div class="container">
-            <h2 class="section-title">Unsere Komplett-PCs</h2>
-            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Wählen Sie aus unseren leistungsstarken vorkonfigurierten Systemen oder lassen Sie sich ein individuelles System nach Ihren Wünschen zusammenstellen.
-            </p>
+            <h2 class="section-title">Vorkonfigurierte Gaming-PCs</h2>
             
             <div class="pcs-grid">
                 <!-- PC 1 -->
@@ -681,13 +497,12 @@
                             <li>NVIDIA GeForce RTX 3060 (12GB)</li>
                             <li>16GB DDR4 RAM (3200MHz)</li>
                             <li>500GB NVMe SSD</li>
-                            <li>600W 80+ Gold Netzteil</li>
                         </ul>
                         <div class="pc-price">CHF 1'299.-</div>
                         <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 3-5 Werktagen
+                            <i class="fas fa-check-circle"></i> Lieferbar in 3-5 Tagen
                         </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
+                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
                     </div>
                 </div>
                 
@@ -703,13 +518,12 @@
                             <li>NVIDIA GeForce RTX 3070 Ti (8GB)</li>
                             <li>32GB DDR4 RAM (3600MHz)</li>
                             <li>1TB NVMe SSD + 2TB HDD</li>
-                            <li>750W 80+ Platinum Netzteil</li>
                         </ul>
                         <div class="pc-price">CHF 2'199.-</div>
                         <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 5-7 Werktagen
+                            <i class="fas fa-check-circle"></i> Lieferbar in 5-7 Tagen
                         </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
+                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
                     </div>
                 </div>
                 
@@ -725,13 +539,12 @@
                             <li>NVIDIA GeForce RTX 3080 (10GB)</li>
                             <li>32GB DDR4 RAM (3600MHz)</li>
                             <li>1TB NVMe SSD + 2TB SSD</li>
-                            <li>850W 80+ Platinum Netzteil</li>
                         </ul>
                         <div class="pc-price">CHF 2'899.-</div>
                         <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 7-10 Werktagen
+                            <i class="fas fa-check-circle"></i> Lieferbar in 7-10 Tagen
                         </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
+                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
                     </div>
                 </div>
                 
@@ -747,13 +560,12 @@
                             <li>NVIDIA GeForce RTX 3090 (24GB)</li>
                             <li>64GB DDR5 RAM (5200MHz)</li>
                             <li>2TB NVMe SSD + 4TB SSD</li>
-                            <li>1000W 80+ Titanium Netzteil</li>
                         </ul>
                         <div class="pc-price">CHF 4'499.-</div>
                         <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 10-14 Werktagen
+                            <i class="fas fa-check-circle"></i> Lieferbar in 10-14 Tagen
                         </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
+                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
                     </div>
                 </div>
                 
@@ -769,13 +581,12 @@
                             <li>NVIDIA GeForce RTX 3070 (8GB)</li>
                             <li>32GB DDR4 RAM (3200MHz)</li>
                             <li>1TB NVMe SSD + 2TB HDD</li>
-                            <li>750W 80+ Gold Netzteil</li>
                         </ul>
                         <div class="pc-price">CHF 2'399.-</div>
                         <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 5-7 Werktagen
+                            <i class="fas fa-check-circle"></i> Lieferbar in 5-7 Tagen
                         </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
+                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
                     </div>
                 </div>
                 
@@ -791,149 +602,150 @@
                             <li>NVIDIA GeForce RTX 3060 Ti (8GB)</li>
                             <li>16GB DDR4 RAM (3200MHz)</li>
                             <li>500GB NVMe SSD</li>
-                            <li>550W 80+ Gold Netzteil</li>
                         </ul>
                         <div class="pc-price">CHF 1'599.-</div>
                         <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 3-5 Werktagen
+                            <i class="fas fa-check-circle"></i> Lieferbar in 3-5 Tagen
                         </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
-                    </div>
-                </div>
-                
-                <!-- PC 7 -->
-                <div class="pc-card">
-                    <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="VR Ready PC">
-                    </div>
-                    <div class="pc-details">
-                        <h3 class="pc-name">VR Ready</h3>
-                        <ul class="pc-specs">
-                            <li>AMD Ryzen 7 5700G (8x 3.8GHz)</li>
-                            <li>NVIDIA GeForce RTX 3080 Ti (12GB)</li>
-                            <li>32GB DDR4 RAM (3600MHz)</li>
-                            <li>1TB NVMe SSD + 1TB SSD</li>
-                            <li>850W 80+ Platinum Netzteil</li>
-                        </ul>
-                        <div class="pc-price">CHF 3'299.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 7-10 Werktagen
-                        </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
-                    </div>
-                </div>
-                
-                <!-- PC 8 -->
-                <div class="pc-card">
-                    <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1563212034-a5f8f8a6c1c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Budget Gaming PC">
-                    </div>
-                    <div class="pc-details">
-                        <h3 class="pc-name">Budget Fighter</h3>
-                        <ul class="pc-specs">
-                            <li>AMD Ryzen 5 3600 (6x 3.6GHz)</li>
-                            <li>NVIDIA GeForce GTX 1660 Super (6GB)</li>
-                            <li>16GB DDR4 RAM (3000MHz)</li>
-                            <li>500GB SSD</li>
-                            <li>500W 80+ Bronze Netzteil</li>
-                        </ul>
-                        <div class="pc-price">CHF 899.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Sofort lieferbar
-                        </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
-                    </div>
-                </div>
-                
-                <!-- PC 9 -->
-                <div class="pc-card">
-                    <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="4K Gaming PC">
-                    </div>
-                    <div class="pc-details">
-                        <h3 class="pc-name">4K Ultimate</h3>
-                        <ul class="pc-specs">
-                            <li>Intel Core i9-12900KS (16x 3.4GHz)</li>
-                            <li>NVIDIA GeForce RTX 3090 Ti (24GB)</li>
-                            <li>64GB DDR5 RAM (5600MHz)</li>
-                            <li>2TB NVMe SSD + 4TB SSD</li>
-                            <li>1200W 80+ Titanium Netzteil</li>
-                        </ul>
-                        <div class="pc-price">CHF 5'299.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 14-21 Werktagen
-                        </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
-                    </div>
-                </div>
-                
-                <!-- PC 10 -->
-                <div class="pc-card">
-                    <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1587202372775-e229f1723e1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="RGB Gaming PC">
-                    </div>
-                    <div class="pc-details">
-                        <h3 class="pc-name">RGB Beast</h3>
-                        <ul class="pc-specs">
-                            <li>AMD Ryzen 9 5950X (16x 3.4GHz)</li>
-                            <li>NVIDIA GeForce RTX 3080 (10GB)</li>
-                            <li>32GB DDR4 RGB RAM (3600MHz)</li>
-                            <li>1TB NVMe SSD + 2TB SSD</li>
-                            <li>850W 80+ Platinum RGB Netzteil</li>
-                        </ul>
-                        <div class="pc-price">CHF 3'599.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 7-10 Werktagen
-                        </div>
-                        <a href="#contact" class="btn">Jetzt anfragen</a>
+                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Kontaktformular -->
     <section class="section" id="contact">
         <div class="container">
-            <h2 class="section-title">Kontakt</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Kontaktinformationen</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> Elite Gaming Schweiz<br>Musterstrasse 123<br>8000 Zürich</p>
-                        <p><i class="fas fa-phone"></i> +41 44 123 45 67</p>
-                        <p><i class="fas fa-envelope"></i> info@elitegaming.ch</p>
+            <h2 class="section-title">PC bestellen oder Anfrage senden</h2>
+            
+            <div class="contact-form">
+                <form id="orderForm" onsubmit="event.preventDefault(); submitOrder();">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     
-                    <div class="opening-hours">
-                        <h3>Öffnungszeiten</h3>
-                        <table class="opening-hours-table">
-                            <tr>
-                                <td>Montag - Freitag</td>
-                                <td>09:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Samstag</td>
-                                <td>10:00 - 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>Sonntag</td>
-                                <td>Geschlossen</td>
-                            </tr>
-                        </table>
+                    <div class="form-group">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
-                        <a href="#" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone">
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="pc-model">Interessierter PC</label>
+                        <select id="pc-model" name="pc-model">
+                            <option value="">-- Bitte auswählen --</option>
+                            <option value="Starter Edition">Starter Edition - CHF 1'299.-</option>
+                            <option value="Pro Gamer">Pro Gamer - CHF 2'199.-</option>
+                            <option value="Elite Performance">Elite Performance - CHF 2'899.-</option>
+                            <option value="Extreme Edition">Extreme Edition - CHF 4'499.-</option>
+                            <option value="Streaming Pro">Streaming Pro - CHF 2'399.-</option>
+                            <option value="Compact Gamer">Compact Gamer - CHF 1'599.-</option>
+                            <option value="individuelle Beratung">Individuelle Beratung gewünscht</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Anfrage senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Elite Gaming Schweiz</h3>
+                    <p>Ihr Partner für High-End Gaming-PCs in der Schweiz. Qualität, Leistung und Service aus einer Hand.</p>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name
+                <div class="footer-column">
+                    <h3>Informationen</h3>
+                    <ul>
+                        <li><a href="#about">Über uns</a></li>
+                        <li><a href="#pcs">Vorkonfigurierte PCs</a></li>
+                        <li><a href="#configurator">PC-Konfigurator</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="#">AGB</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Widerrufsrecht</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <ul>
+                        <li>Musterstrasse 123</li>
+                        <li>8000 Zürich</li>
+                        <li>+41 44 123 45 67</li>
+                        <li>info@elitegaming.ch</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elite Gaming Schweiz. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainMenu').classList.toggle('active');
+        });
+        
+        // Form Submission
+        function submitOrder() {
+            const form = document.getElementById('orderForm');
+            const formData = new FormData(form);
+            const data = {};
+            
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Hier würden Sie normalerweise die Daten an Ihren Server senden
+            console.log('Bestelldaten:', data);
+            
+            // Bestätigungsnachricht für den Benutzer
+            alert('Vielen Dank für Ihre Anfrage! Wir werden uns schnellstmöglich bei Ihnen melden.');
+            
+            // Formular zurücksetzen
+            form.reset();
+            
+            // Zurück zum Seitenanfang scrollen
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Alle "Jetzt bestellen" Buttons mit PC-Modell Präfill
+        document.querySelectorAll('.pc-card .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const pcName = this.closest('.pc-card').querySelector('.pc-name').textContent;
+                document.getElementById('pc-model').value = pcName;
+                
+                // Zum Formular scrollen
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
