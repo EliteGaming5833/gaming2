@@ -7,14 +7,17 @@
   <title>Elite Gaming Schweiz</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background-color: #000;
-      color: #00ffff;
+      background: linear-gradient(120deg, #001f33, #003344);
+      color: #ccfaff;
     }
     header {
-      background-color: #111;
+      background-color: #00111a;
       padding: 20px;
       text-align: center;
     }
@@ -22,18 +25,18 @@
       max-width: 200px;
     }
     nav {
-      background-color: #111;
+      background-color: #001a26;
       padding: 10px;
       text-align: center;
     }
     nav a {
-      color: #00ffff;
+      color: #00e6e6;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
     nav a:hover {
-      color: #ff0033;
+      color: #ff4d4d;
     }
     section {
       padding: 40px;
@@ -41,64 +44,79 @@
       margin: auto;
     }
     h1, h2, h3 {
-      color: #ff0033;
+      color: #00e6e6;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
     .product {
-      border: 1px solid #00ffff;
+      flex: 1 1 calc(33% - 40px);
+      max-width: calc(33% - 40px);
+      border: 1px solid #00e6e6;
       padding: 20px;
-      margin-bottom: 20px;
       border-radius: 10px;
+      background: linear-gradient(135deg, #002a3a, #00445c);
+      transition: transform 0.3s, box-shadow 0.3s;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 20px;
-      background-color: #111;
+    }
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
     }
     .product img {
-      width: 200px;
+      width: 100%;
       height: auto;
       border-radius: 10px;
     }
     .product button {
-      background-color: #00ffff;
-      color: #000;
+      background-color: #00e6e6;
+      color: #001a1a;
       border: none;
       padding: 10px 20px;
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
+      margin-top: auto;
     }
     .product button:hover {
-      background-color: #ff0033;
+      background-color: #ff4d4d;
       color: #fff;
     }
     footer {
-      background-color: #111;
+      background-color: #001a26;
       color: #ccc;
       padding: 20px;
       text-align: center;
     }
     .kontakt, .rechtliches {
-      background-color: #111;
+      background-color: #001a26;
       color: #ccc;
       padding: 20px;
       margin-top: 20px;
+      border-radius: 10px;
     }
     .hero {
       text-align: center;
       padding: 60px 20px;
-      background-image: linear-gradient(to right, #000000, #001f1f);
+      background: linear-gradient(120deg, #002e40, #004466);
+      color: #fff;
     }
     .hero h2 {
       font-size: 2.5rem;
     }
     .hero p {
       font-size: 1.2rem;
-      color: #ccc;
+      color: #cceeff;
     }
     .hero button {
       margin-top: 20px;
-      background-color: #00ffff;
-      color: #000;
+      background-color: #00e6e6;
+      color: #001a1a;
       padding: 15px 30px;
       border: none;
       border-radius: 5px;
@@ -106,8 +124,14 @@
       cursor: pointer;
     }
     .hero button:hover {
-      background-color: #ff0033;
+      background-color: #ff4d4d;
       color: #fff;
+    }
+    @media (max-width: 768px) {
+      .product {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -134,46 +158,35 @@
 
   <section id="pcs">
     <h2>Unsere Gaming-PCs</h2>
-
-    <!-- Produktbeispiele mit Beispielbildern von Unsplash/Platzhalter -->
-    <div class="product">
-      <img src="https://source.unsplash.com/featured/?gaming-pc,setup1" alt="Elite Starter">
-      <div>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://source.unsplash.com/featured/?gamingpc,setup1" alt="Elite Starter">
         <h3>Elite Starter</h3>
         <p>Intel Core i3, GTX 1650, 16GB RAM, 512GB SSD</p>
         <p><strong>CHF 699.–</strong></p>
-        <button>Jetzt anfragen</button>
+        <button>Anfragen</button>
       </div>
-    </div>
-    <div class="product">
-      <img src="https://source.unsplash.com/featured/?gaming-pc,setup2" alt="Elite Gamer">
-      <div>
+      <div class="product">
+        <img src="https://source.unsplash.com/featured/?gamingpc,setup2" alt="Elite Gamer">
         <h3>Elite Gamer</h3>
         <p>Intel Core i5, RTX 3060, 16GB RAM, 1TB SSD</p>
         <p><strong>CHF 1099.–</strong></p>
-        <button>Jetzt anfragen</button>
+        <button>Anfragen</button>
       </div>
-    </div>
-    <div class="product">
-      <img src="https://source.unsplash.com/featured/?gaming-pc,setup3" alt="Elite Creator">
-      <div>
+      <div class="product">
+        <img src="https://source.unsplash.com/featured/?gamingpc,setup3" alt="Elite Creator">
         <h3>Elite Creator</h3>
         <p>AMD Ryzen 7, RTX 3070, 32GB RAM, 2TB SSD</p>
         <p><strong>CHF 1499.–</strong></p>
-        <button>Jetzt anfragen</button>
+        <button>Anfragen</button>
       </div>
     </div>
-    <!-- Weitere PCs mit Platzhalterbildern folgen auf gleiche Weise -->
   </section>
 
   <section id="kontakt" class="kontakt">
     <h2>Kontakt</h2>
-    <p>Elite Gaming Schweiz<br>
-       Musterstrasse 42<br>
-       8000 Zürich<br>
-       Schweiz</p>
-    <p>Email: info@elite-gaming.ch<br>
-       Telefon: +41 44 123 45 67</p>
+    <p>Elite Gaming Schweiz<br>Musterstrasse 42<br>8000 Zürich<br>Schweiz</p>
+    <p>Email: info@elite-gaming.ch<br>Telefon: +41 44 123 45 67</p>
     <p>Kontaktformular: [Hier könnte ein Formular eingefügt werden]</p>
   </section>
 
