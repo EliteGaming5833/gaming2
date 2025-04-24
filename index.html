@@ -98,49 +98,15 @@
             cursor: pointer;
         }
 
-        /* Hero Section mit neuem Bild */
-        .hero {
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.8)), 
-                        url('https://res.cloudinary.com/dajusgncz/image/upload/v1745534971/320480_fu6acx.jpg') no-repeat center center/cover;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--highlight);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            color: rgba(236, 240, 241, 0.9);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        }
-
-        /* PCs Section */
+        /* PCs Section - jetzt oben */
         .pcs-section {
-            padding: 60px 0;
+            padding: 100px 0 60px;
             background-color: rgba(26, 26, 26, 0.7);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             font-size: 2.2rem;
             color: var(--highlight);
         }
@@ -428,14 +394,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
             nav ul {
                 display: none;
                 position: absolute;
@@ -484,20 +442,11 @@
         </div>
     </header>
 
-    <!-- Hero Section mit neuem Bild -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>High-Performance Gaming-PCs aus der Schweiz</h1>
-            <p>12 sorgfältig konfigurierte Systeme - perfekt abgestimmt für jedes Budget und jede Anforderung</p>
-            <a href="#pcs" class="btn">Zu den Gaming-PCs</a>
-        </div>
-    </section>
-
-    <!-- PCs Section mit 12 Systemen -->
+    <!-- PCs Section - jetzt der erste Hauptinhalt -->
     <section class="pcs-section" id="pcs">
         <div class="container">
-            <h2 class="section-title">Unsere vorkonfigurierten Gaming-PCs</h2>
-            <p class="section-subtitle">Jedes System wird von unseren Experten zusammengebaut und ausgiebig getestet</p>
+            <h2 class="section-title">Vorkonfigurierte Gaming-PCs</h2>
+            <p class="section-subtitle">12 sorgfältig konfigurierte Systeme - perfekt abgestimmt für jedes Budget und jede Anforderung</p>
             
             <div class="pcs-grid">
                 <!-- PC 1 -->
