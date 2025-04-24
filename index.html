@@ -7,35 +7,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #2ecc71;  /* Hauptgrün */
-            --secondary: #e74c3c;  /* Akzentrot */
-            --dark: #1a1a1a;      /* Dunkler Hintergrund */
-            --light: #ecf0f1;     /* Hellgrau/Weiß */
-            --gray: #95a5a6;      /* Grau */
-            --success: #27ae60;   /* Erfolgsgrün */
-            --highlight: #ffffff; /* Weiß für Highlights */
+            --primary: #2ecc71;
+            --secondary: #e74c3c;
+            --dark: #1a1a1a;
+            --light: #ecf0f1;
+            --gray: #95a5a6;
+            --success: #27ae60;
+            --highlight: #ffffff;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: var(--dark);
             color: var(--light);
             line-height: 1.6;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
         header {
             background-color: rgba(26, 26, 26, 0.9);
@@ -45,50 +45,50 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(46, 204, 113, 0.3);
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo img {
             height: 50px;
             margin-right: 10px;
         }
-        
+
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--highlight);
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 30px;
         }
-        
+
         nav ul li a {
             color: var(--light);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         nav ul li a:hover {
             color: var(--primary);
         }
-        
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -97,80 +97,148 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
-        /* Hero mit direkter PC-Verknüpfung */
+
+        /* Hero Section mit neuem Bild */
         .hero {
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 80vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.8)), 
+                        url('https://res.cloudinary.com/dajusgncz/image/upload/v1745534971/320480_fu6acx.jpg') no-repeat center center/cover;
+            height: 70vh;
             display: flex;
             align-items: center;
             padding-top: 80px;
+            text-align: center;
         }
-        
+
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            padding: 0 20px;
         }
-        
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 40px;
-        }
-        
+
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             color: var(--highlight);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
-        
+
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
-            color: rgba(236, 240, 241, 0.8);
+            color: rgba(236, 240, 241, 0.9);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
-        
-        .hero-pc {
-            flex: 1;
-            min-width: 300px;
+
+        /* PCs Section */
+        .pcs-section {
+            padding: 60px 0;
+            background-color: rgba(26, 26, 26, 0.7);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: var(--highlight);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: rgba(236, 240, 241, 0.8);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pcs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .pc-card {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+        }
+
+        .pc-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2);
+            border-color: var(--primary);
+        }
+
+        .pc-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .pc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .pc-card:hover .pc-image img {
+            transform: scale(1.05);
+        }
+
+        .pc-details {
             padding: 20px;
-            border: 1px solid rgba(46, 204, 113, 0.3);
         }
-        
-        .hero-pc-title {
-            font-size: 1.5rem;
+
+        .pc-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--highlight);
+        }
+
+        .pc-specs {
             margin-bottom: 15px;
-            color: var(--primary);
+            color: rgba(236, 240, 241, 0.7);
         }
-        
-        .hero-pc-specs li {
-            margin-bottom: 8px;
+
+        .pc-specs li {
+            margin-bottom: 5px;
             list-style-type: none;
             position: relative;
             padding-left: 20px;
-            color: rgba(236, 240, 241, 0.8);
         }
-        
-        .hero-pc-specs li::before {
+
+        .pc-specs li::before {
             content: '•';
             color: var(--primary);
             position: absolute;
             left: 0;
         }
-        
-        .hero-pc-price {
+
+        .pc-price {
             font-size: 1.8rem;
             font-weight: 700;
             margin: 20px 0;
             color: var(--primary);
         }
-        
+
+        .pc-availability {
+            color: var(--success);
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pc-availability i {
+            margin-right: 8px;
+        }
+
         /* Button Styles */
         .btn {
             display: inline-block;
@@ -184,162 +252,65 @@
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
         }
-        
+
         .btn-block {
             display: block;
             width: 100%;
             text-align: center;
         }
-        
-        /* PCs Section - Direkt nach Hero */
-        .pcs-section {
-            padding: 60px 0;
-            background-color: rgba(26, 26, 26, 0.7);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.2rem;
-            color: var(--highlight);
-        }
-        
-        .pcs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-        }
-        
-        .pc-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(46, 204, 113, 0.2);
-        }
-        
-        .pc-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2);
-            border-color: var(--primary);
-        }
-        
-        .pc-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .pc-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .pc-card:hover .pc-image img {
-            transform: scale(1.05);
-        }
-        
-        .pc-details {
-            padding: 20px;
-        }
-        
-        .pc-name {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--highlight);
-        }
-        
-        .pc-specs {
-            margin-bottom: 15px;
-            color: rgba(236, 240, 241, 0.7);
-        }
-        
-        .pc-specs li {
-            margin-bottom: 5px;
-            list-style-type: none;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .pc-specs li::before {
-            content: '•';
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-        }
-        
-        .pc-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 20px 0;
-            color: var(--primary);
-        }
-        
-        .pc-availability {
-            color: var(--success);
-            font-weight: 500;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .pc-availability i {
-            margin-right: 8px;
-        }
-        
+
         /* Über uns Section */
         .section {
             padding: 80px 0;
         }
-        
+
         .about-content {
             display: flex;
             align-items: center;
             gap: 50px;
         }
-        
+
         .about-text {
             flex: 1;
         }
-        
+
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--highlight);
         }
-        
+
         .about-text p, .about-text ul {
             margin-bottom: 15px;
             color: rgba(236, 240, 241, 0.8);
         }
-        
+
         .about-text ul {
             padding-left: 20px;
         }
-        
+
         .about-text li {
             margin-bottom: 10px;
         }
-        
+
         .about-image {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
         }
-        
+
         /* Kontaktformular */
         .contact-form {
             background-color: rgba(255, 255, 255, 0.05);
@@ -347,18 +318,18 @@
             border-radius: 10px;
             margin-top: 40px;
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--highlight);
         }
-        
+
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -370,12 +341,12 @@
             color: white;
             font-size: 1rem;
         }
-        
+
         .form-group textarea {
             min-height: 150px;
             resize: vertical;
         }
-        
+
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
@@ -383,46 +354,46 @@
             border-color: var(--primary);
             background-color: rgba(46, 204, 113, 0.1);
         }
-        
+
         /* Footer */
         footer {
             background-color: #1a1a1a;
             padding: 60px 0 20px;
             border-top: 1px solid rgba(46, 204, 113, 0.3);
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         .footer-column h3 {
             color: var(--primary);
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
-        
+
         .footer-column ul {
             list-style: none;
         }
-        
+
         .footer-column ul li {
             margin-bottom: 10px;
             color: rgba(236, 240, 241, 0.7);
         }
-        
+
         .footer-column ul li a {
             color: rgba(236, 240, 241, 0.7);
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .footer-column ul li a:hover {
             color: var(--primary);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
@@ -430,31 +401,41 @@
             color: rgba(236, 240, 241, 0.5);
             font-size: 0.9rem;
         }
-        
+
         /* Responsive */
-        @media (max-width: 992px) {
-            .hero-content,
+        @media (max-width: 1200px) {
+            .pcs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .pcs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             .about-content {
                 flex-direction: column;
             }
             
-            .hero-text,
-            .about-text,
             .about-image {
-                width: 100%;
-            }
-            
-            .hero-text {
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
-            
-            .pcs-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                margin-top: 30px;
             }
         }
-        
-        @media (max-width: 768px) {
+
+        @media (max-width: 600px) {
+            .pcs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
             nav ul {
                 display: none;
                 position: absolute;
@@ -477,19 +458,6 @@
             
             .mobile-menu-btn {
                 display: block;
-            }
-            
-            .hero {
-                height: auto;
-                padding: 100px 0 60px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
             }
         }
     </style>
@@ -516,118 +484,235 @@
         </div>
     </header>
 
-    <!-- Hero mit PC-Teil -->
+    <!-- Hero Section mit neuem Bild -->
     <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>High-Performance Gaming-PCs aus der Schweiz</h1>
-                <p>Premium-Systeme für anspruchsvolle Gamer - maßgeschneidert, getestet und bereit für dein nächstes Gaming-Abenteuer</p>
-                <a href="#pcs" class="btn">Alle PCs anzeigen</a>
-            </div>
-            
-            <div class="hero-pc">
-                <h3 class="hero-pc-title">Top-Angebot: Pro Gamer</h3>
-                <ul class="hero-pc-specs">
-                    <li>Intel Core i7-12700K (12x 3.6GHz)</li>
-                    <li>NVIDIA GeForce RTX 3070 Ti (8GB)</li>
-                    <li>32GB DDR4 RAM (3600MHz)</li>
-                    <li>1TB NVMe SSD + 2TB HDD</li>
-                </ul>
-                <div class="hero-pc-price">CHF 2'199.-</div>
-                <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
-            </div>
+        <div class="hero-content">
+            <h1>High-Performance Gaming-PCs aus der Schweiz</h1>
+            <p>12 sorgfältig konfigurierte Systeme - perfekt abgestimmt für jedes Budget und jede Anforderung</p>
+            <a href="#pcs" class="btn">Zu den Gaming-PCs</a>
         </div>
     </section>
 
-    <!-- PCs Section - Direkt nach Hero -->
+    <!-- PCs Section mit 12 Systemen -->
     <section class="pcs-section" id="pcs">
         <div class="container">
-            <h2 class="section-title">Vorkonfigurierte Gaming-PCs</h2>
+            <h2 class="section-title">Unsere vorkonfigurierten Gaming-PCs</h2>
+            <p class="section-subtitle">Jedes System wird von unseren Experten zusammengebaut und ausgiebig getestet</p>
             
             <div class="pcs-grid">
-                <!-- PC 1 - Lian Li -->
+                <!-- PC 1 -->
                 <div class="pc-card">
                     <div class="pc-image">
-                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="Lian Li O11 Vision Compact">
+                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="Entry Level PC">
                     </div>
                     <div class="pc-details">
-                        <h3 class="pc-name">Lian Li Vision</h3>
+                        <h3 class="pc-name">Entry Level</h3>
                         <ul class="pc-specs">
-                            <li>AMD Ryzen 7 5800X (8x 3.8GHz)</li>
-                            <li>NVIDIA GeForce RTX 4070 (12GB)</li>
-                            <li>32GB DDR4 RAM (3600MHz)</li>
-                            <li>1TB NVMe SSD + 2TB SSD</li>
-                            <li>Lian Li O11 Vision Compact Gehäuse</li>
+                            <li>AMD Ryzen 5 5600X</li>
+                            <li>RTX 3060 (12GB)</li>
+                            <li>16GB DDR4 3200MHz</li>
+                            <li>500GB NVMe SSD</li>
                         </ul>
-                        <div class="pc-price">CHF 2'499.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 3-5 Tagen
-                        </div>
-                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
+                        <div class="pc-price">CHF 1'299.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
                     </div>
                 </div>
-                
-                <!-- PC 2 - Corsair -->
+
+                <!-- PC 2 -->
                 <div class="pc-card">
                     <div class="pc-image">
-                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="Corsair iCUE 5000D RGB AIRFLOW">
+                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="Mid Range PC">
                     </div>
                     <div class="pc-details">
-                        <h3 class="pc-name">Corsair Airflow</h3>
+                        <h3 class="pc-name">Mid Range</h3>
                         <ul class="pc-specs">
-                            <li>Intel Core i9-12900K (16x 3.2GHz)</li>
-                            <li>NVIDIA GeForce RTX 4080 (16GB)</li>
-                            <li>32GB DDR5 RAM (5200MHz)</li>
-                            <li>2TB NVMe SSD</li>
-                            <li>Corsair 5000D RGB Airflow Gehäuse</li>
+                            <li>Intel i5-12600K</li>
+                            <li>RTX 4060 Ti (8GB)</li>
+                            <li>32GB DDR4 3600MHz</li>
+                            <li>1TB NVMe SSD</li>
                         </ul>
-                        <div class="pc-price">CHF 3'299.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 5-7 Tagen
-                        </div>
-                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
+                        <div class="pc-price">CHF 1'899.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
                     </div>
                 </div>
-                
+
                 <!-- PC 3 -->
                 <div class="pc-card">
                     <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1587202372775-e229f1723e1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Elite Gaming PC">
+                        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704" alt="Pro Gamer">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">Pro Gamer</h3>
+                        <ul class="pc-specs">
+                            <li>Intel i7-12700K</li>
+                            <li>RTX 4070 (12GB)</li>
+                            <li>32GB DDR5 5200MHz</li>
+                            <li>1TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 2'499.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 4 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5" alt="Elite Performance">
                     </div>
                     <div class="pc-details">
                         <h3 class="pc-name">Elite Performance</h3>
                         <ul class="pc-specs">
-                            <li>AMD Ryzen 9 5900X (12x 3.7GHz)</li>
-                            <li>NVIDIA GeForce RTX 3080 (10GB)</li>
-                            <li>32GB DDR4 RAM (3600MHz)</li>
-                            <li>1TB NVMe SSD + 2TB SSD</li>
+                            <li>AMD Ryzen 7 7800X3D</li>
+                            <li>RTX 4080 (16GB)</li>
+                            <li>32GB DDR5 6000MHz</li>
+                            <li>2TB NVMe SSD</li>
                         </ul>
-                        <div class="pc-price">CHF 2'899.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 7-10 Tagen
-                        </div>
-                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
+                        <div class="pc-price">CHF 3'299.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
                     </div>
                 </div>
-                
-                <!-- PC 4 -->
+
+                <!-- PC 5 -->
                 <div class="pc-card">
                     <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Extreme Gaming PC">
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f1723e1b" alt="Streaming Pro">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">Streaming Pro</h3>
+                        <ul class="pc-specs">
+                            <li>AMD Ryzen 9 5900X</li>
+                            <li>RTX 3080 (10GB)</li>
+                            <li>64GB DDR4 3600MHz</li>
+                            <li>2TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 2'899.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 6 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a345" alt="Extreme Edition">
                     </div>
                     <div class="pc-details">
                         <h3 class="pc-name">Extreme Edition</h3>
                         <ul class="pc-specs">
-                            <li>Intel Core i9-12900K (16x 3.2GHz)</li>
-                            <li>NVIDIA GeForce RTX 3090 (24GB)</li>
-                            <li>64GB DDR5 RAM (5200MHz)</li>
-                            <li>2TB NVMe SSD + 4TB SSD</li>
+                            <li>Intel i9-13900K</li>
+                            <li>RTX 4090 (24GB)</li>
+                            <li>64GB DDR5 6400MHz</li>
+                            <li>4TB NVMe SSD</li>
                         </ul>
-                        <div class="pc-price">CHF 4'499.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 10-14 Tagen
-                        </div>
-                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
+                        <div class="pc-price">CHF 4'999.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 7 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1563212034-a5f8f8a6c1c0" alt="Compact Gamer">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">Compact Gamer</h3>
+                        <ul class="pc-specs">
+                            <li>Intel i5-13600KF</li>
+                            <li>RTX 4070 (12GB)</li>
+                            <li>32GB DDR5 5600MHz</li>
+                            <li>2TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 2'699.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 8 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620" alt="VR Ready">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">VR Ready</h3>
+                        <ul class="pc-specs">
+                            <li>AMD Ryzen 7 7700X</li>
+                            <li>RTX 4080 (16GB)</li>
+                            <li>32GB DDR5 6000MHz</li>
+                            <li>2TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 3'599.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 9 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5" alt="4K Ultimate">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">4K Ultimate</h3>
+                        <ul class="pc-specs">
+                            <li>Intel i9-13900KS</li>
+                            <li>RTX 4090 (24GB)</li>
+                            <li>128GB DDR5 6400MHz</li>
+                            <li>4TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 5'999.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 10 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f1723e1b" alt="Budget Fighter">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">Budget Fighter</h3>
+                        <ul class="pc-specs">
+                            <li>AMD Ryzen 5 7600</li>
+                            <li>RTX 4060 (8GB)</li>
+                            <li>16GB DDR5 5200MHz</li>
+                            <li>1TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 1'599.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 11 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a345" alt="RGB Beast">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">RGB Beast</h3>
+                        <ul class="pc-specs">
+                            <li>AMD Ryzen 9 7950X3D</li>
+                            <li>RTX 4090 (24GB)</li>
+                            <li>64GB DDR5 6000MHz</li>
+                            <li>4TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 6'499.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
+                    </div>
+                </div>
+
+                <!-- PC 12 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <img src="https://images.unsplash.com/photo-1563212034-a5f8f8a6c1c0" alt="Workstation Pro">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">Workstation Pro</h3>
+                        <ul class="pc-specs">
+                            <li>Intel i9-13900K</li>
+                            <li>RTX 4080 (16GB)</li>
+                            <li>128GB DDR5 5600MHz</li>
+                            <li>8TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 5'299.-</div>
+                        <button class="btn btn-block">Konfigurieren</button>
                     </div>
                 </div>
             </div>
@@ -683,10 +768,10 @@
                         <label for="pc-model">Interessierter PC</label>
                         <select id="pc-model" name="pc-model">
                             <option value="">-- Bitte auswählen --</option>
-                            <option value="Lian Li Vision">Lian Li Vision - CHF 2'499.-</option>
-                            <option value="Corsair Airflow">Corsair Airflow - CHF 3'299.-</option>
-                            <option value="Elite Performance">Elite Performance - CHF 2'899.-</option>
-                            <option value="Extreme Edition">Extreme Edition - CHF 4'499.-</option>
+                            <option value="Entry Level">Entry Level - CHF 1'299.-</option>
+                            <option value="Mid Range">Mid Range - CHF 1'899.-</option>
+                            <option value="Pro Gamer">Pro Gamer - CHF 2'499.-</option>
+                            <option value="Elite Performance">Elite Performance - CHF 3'299.-</option>
                             <option value="individuelle Beratung">Individuelle Beratung gewünscht</option>
                         </select>
                     </div>
@@ -777,7 +862,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
-        // Alle "Jetzt bestellen" Buttons mit PC-Modell Präfill
+        // Alle "Konfigurieren" Buttons mit PC-Modell Präfill
         document.querySelectorAll('.pc-card .btn').forEach(button => {
             button.addEventListener('click', function() {
                 const pcName = this.closest('.pc-card').querySelector('.pc-name').textContent;
