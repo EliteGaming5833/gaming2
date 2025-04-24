@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #6a00f4;
-            --secondary: #ff3d00;
-            --dark: #0a0a1a;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-            --success: #28a745;
+            --primary: #2ecc71;  /* Hauptgrün */
+            --secondary: #e74c3c;  /* Akzentrot */
+            --dark: #1a1a1a;      /* Dunkler Hintergrund */
+            --light: #ecf0f1;     /* Hellgrau/Weiß */
+            --gray: #95a5a6;      /* Grau */
+            --success: #27ae60;   /* Erfolgsgrün */
+            --highlight: #ffffff; /* Weiß für Highlights */
         }
         
         * {
@@ -37,12 +38,12 @@
         
         /* Header */
         header {
-            background-color: rgba(10, 10, 26, 0.9);
+            background-color: rgba(26, 26, 26, 0.9);
             position: fixed;
             width: 100%;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(106, 0, 244, 0.3);
+            border-bottom: 1px solid rgba(46, 204, 113, 0.3);
         }
         
         .header-container {
@@ -58,17 +59,14 @@
         }
         
         .logo img {
-            height: 50px; /* Etwas größer für bessere Sichtbarkeit */
+            height: 50px;
             margin-right: 10px;
         }
         
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--highlight);
         }
         
         nav ul {
@@ -102,7 +100,7 @@
         
         /* Hero mit direkter PC-Verknüpfung */
         .hero {
-            background: linear-gradient(rgba(10, 10, 26, 0.7), rgba(10, 10, 26, 0.9)), url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             height: 80vh;
             display: flex;
             align-items: center;
@@ -127,16 +125,13 @@
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--highlight);
         }
         
         .hero p {
             font-size: 1.1rem;
             margin-bottom: 30px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(236, 240, 241, 0.8);
         }
         
         .hero-pc {
@@ -145,7 +140,7 @@
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             padding: 20px;
-            border: 1px solid rgba(106, 0, 244, 0.3);
+            border: 1px solid rgba(46, 204, 113, 0.3);
         }
         
         .hero-pc-title {
@@ -159,7 +154,7 @@
             list-style-type: none;
             position: relative;
             padding-left: 20px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(236, 240, 241, 0.8);
         }
         
         .hero-pc-specs li::before {
@@ -180,7 +175,7 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            background: linear-gradient(45deg, var(--primary), var(--success));
             color: white;
             border: none;
             border-radius: 30px;
@@ -192,7 +187,7 @@
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(106, 0, 244, 0.3);
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
         }
         
         .btn-block {
@@ -204,13 +199,14 @@
         /* PCs Section - Direkt nach Hero */
         .pcs-section {
             padding: 60px 0;
-            background-color: rgba(10, 10, 26, 0.7);
+            background-color: rgba(26, 26, 26, 0.7);
         }
         
         .section-title {
             text-align: center;
             margin-bottom: 40px;
             font-size: 2.2rem;
+            color: var(--highlight);
         }
         
         .pcs-grid {
@@ -224,12 +220,12 @@
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(106, 0, 244, 0.2);
+            border: 1px solid rgba(46, 204, 113, 0.2);
         }
         
         .pc-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(106, 0, 244, 0.2);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2);
             border-color: var(--primary);
         }
         
@@ -256,12 +252,12 @@
         .pc-name {
             font-size: 1.4rem;
             margin-bottom: 10px;
-            color: white;
+            color: var(--highlight);
         }
         
         .pc-specs {
             margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(236, 240, 241, 0.7);
         }
         
         .pc-specs li {
@@ -297,6 +293,53 @@
             margin-right: 8px;
         }
         
+        /* Über uns Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--highlight);
+        }
+        
+        .about-text p, .about-text ul {
+            margin-bottom: 15px;
+            color: rgba(236, 240, 241, 0.8);
+        }
+        
+        .about-text ul {
+            padding-left: 20px;
+        }
+        
+        .about-text li {
+            margin-bottom: 10px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         /* Kontaktformular */
         .contact-form {
             background-color: rgba(255, 255, 255, 0.05);
@@ -313,6 +356,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
+            color: var(--highlight);
         }
         
         .form-group input,
@@ -332,11 +376,19 @@
             resize: vertical;
         }
         
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
         /* Footer */
         footer {
-            background-color: #0a0a1a;
+            background-color: #1a1a1a;
             padding: 60px 0 20px;
-            border-top: 1px solid rgba(106, 0, 244, 0.3);
+            border-top: 1px solid rgba(46, 204, 113, 0.3);
         }
         
         .footer-content {
@@ -358,10 +410,11 @@
         
         .footer-column ul li {
             margin-bottom: 10px;
+            color: rgba(236, 240, 241, 0.7);
         }
         
         .footer-column ul li a {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(236, 240, 241, 0.7);
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -374,14 +427,21 @@
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(236, 240, 241, 0.5);
             font-size: 0.9rem;
         }
         
         /* Responsive */
         @media (max-width: 992px) {
-            .hero-content {
+            .hero-content,
+            .about-content {
                 flex-direction: column;
+            }
+            
+            .hero-text,
+            .about-text,
+            .about-image {
+                width: 100%;
             }
             
             .hero-text {
@@ -404,7 +464,7 @@
                 background-color: var(--dark);
                 flex-direction: column;
                 padding: 20px;
-                border-top: 1px solid rgba(106, 0, 244, 0.3);
+                border-top: 1px solid rgba(46, 204, 113, 0.3);
             }
             
             nav ul.active {
@@ -435,7 +495,7 @@
     </style>
 </head>
 <body>
-    <!-- Header mit neuem Logo -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -485,20 +545,21 @@
             <h2 class="section-title">Vorkonfigurierte Gaming-PCs</h2>
             
             <div class="pcs-grid">
-                <!-- PC 1 -->
+                <!-- PC 1 - Lian Li -->
                 <div class="pc-card">
                     <div class="pc-image">
-                        <img src="hhttps://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Starter Gaming PC">
+                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="Lian Li O11 Vision Compact">
                     </div>
                     <div class="pc-details">
-                        <h3 class="pc-name">Starter Edition</h3>
+                        <h3 class="pc-name">Lian Li Vision</h3>
                         <ul class="pc-specs">
-                            <li>AMD Ryzen 5 5600X (6x 3.7GHz)</li>
-                            <li>NVIDIA GeForce RTX 3060 (12GB)</li>
-                            <li>16GB DDR4 RAM (3200MHz)</li>
-                            <li>500GB NVMe SSD</li>
+                            <li>AMD Ryzen 7 5800X (8x 3.8GHz)</li>
+                            <li>NVIDIA GeForce RTX 4070 (12GB)</li>
+                            <li>32GB DDR4 RAM (3600MHz)</li>
+                            <li>1TB NVMe SSD + 2TB SSD</li>
+                            <li>Lian Li O11 Vision Compact Gehäuse</li>
                         </ul>
-                        <div class="pc-price">CHF 1'299.-</div>
+                        <div class="pc-price">CHF 2'499.-</div>
                         <div class="pc-availability">
                             <i class="fas fa-check-circle"></i> Lieferbar in 3-5 Tagen
                         </div>
@@ -506,20 +567,21 @@
                     </div>
                 </div>
                 
-                <!-- PC 2 -->
+                <!-- PC 2 - Corsair -->
                 <div class="pc-card">
                     <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pro Gaming PC">
+                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="Corsair iCUE 5000D RGB AIRFLOW">
                     </div>
                     <div class="pc-details">
-                        <h3 class="pc-name">Pro Gamer</h3>
+                        <h3 class="pc-name">Corsair Airflow</h3>
                         <ul class="pc-specs">
-                            <li>Intel Core i7-12700K (12x 3.6GHz)</li>
-                            <li>NVIDIA GeForce RTX 3070 Ti (8GB)</li>
-                            <li>32GB DDR4 RAM (3600MHz)</li>
-                            <li>1TB NVMe SSD + 2TB HDD</li>
+                            <li>Intel Core i9-12900K (16x 3.2GHz)</li>
+                            <li>NVIDIA GeForce RTX 4080 (16GB)</li>
+                            <li>32GB DDR5 RAM (5200MHz)</li>
+                            <li>2TB NVMe SSD</li>
+                            <li>Corsair 5000D RGB Airflow Gehäuse</li>
                         </ul>
-                        <div class="pc-price">CHF 2'199.-</div>
+                        <div class="pc-price">CHF 3'299.-</div>
                         <div class="pc-availability">
                             <i class="fas fa-check-circle"></i> Lieferbar in 5-7 Tagen
                         </div>
@@ -568,47 +630,28 @@
                         <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
                     </div>
                 </div>
-                
-                <!-- PC 5 -->
-                <div class="pc-card">
-                    <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1563212034-a5f8f8a6c1c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Streaming PC">
-                    </div>
-                    <div class="pc-details">
-                        <h3 class="pc-name">Streaming Pro</h3>
-                        <ul class="pc-specs">
-                            <li>AMD Ryzen 7 5800X (8x 3.8GHz)</li>
-                            <li>NVIDIA GeForce RTX 3070 (8GB)</li>
-                            <li>32GB DDR4 RAM (3200MHz)</li>
-                            <li>1TB NVMe SSD + 2TB HDD</li>
-                        </ul>
-                        <div class="pc-price">CHF 2'399.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 5-7 Tagen
-                        </div>
-                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über uns Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Über Elite Gaming Schweiz</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Ihr zuverlässiger Partner für Gaming-PCs</h3>
+                    <p>Seit 2020 bieten wir hochwertige Gaming-Systeme aus der Schweiz an. Unser Team besteht aus leidenschaftlichen Gamern und Hardware-Experten, die jedes System sorgfältig zusammenbauen und testen.</p>
+                    <p>Unsere Mission ist es, die beste Preis-Leistung mit exzellentem Service zu kombinieren. Wir bieten:</p>
+                    <ul>
+                        <li>Persönliche Beratung vor und nach dem Kauf</li>
+                        <li>2 Jahre Garantie auf alle Systeme</li>
+                        <li>Schnellen Versand innerhalb der Schweiz</li>
+                        <li>Kostenlose technische Unterstützung</li>
+                    </ul>
                 </div>
-                
-                <!-- PC 6 -->
-                <div class="pc-card">
-                    <div class="pc-image">
-                        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Compact Gaming PC">
-                    </div>
-                    <div class="pc-details">
-                        <h3 class="pc-name">Compact Gamer</h3>
-                        <ul class="pc-specs">
-                            <li>Intel Core i5-12400F (6x 2.5GHz)</li>
-                            <li>NVIDIA GeForce RTX 3060 Ti (8GB)</li>
-                            <li>16GB DDR4 RAM (3200MHz)</li>
-                            <li>500GB NVMe SSD</li>
-                        </ul>
-                        <div class="pc-price">CHF 1'599.-</div>
-                        <div class="pc-availability">
-                            <i class="fas fa-check-circle"></i> Lieferbar in 3-5 Tagen
-                        </div>
-                        <button class="btn btn-block" onclick="window.location.href='#contact'">Jetzt bestellen</button>
-                    </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Unser Team">
                 </div>
             </div>
         </div>
@@ -640,12 +683,10 @@
                         <label for="pc-model">Interessierter PC</label>
                         <select id="pc-model" name="pc-model">
                             <option value="">-- Bitte auswählen --</option>
-                            <option value="Starter Edition">Starter Edition - CHF 1'299.-</option>
-                            <option value="Pro Gamer">Pro Gamer - CHF 2'199.-</option>
+                            <option value="Lian Li Vision">Lian Li Vision - CHF 2'499.-</option>
+                            <option value="Corsair Airflow">Corsair Airflow - CHF 3'299.-</option>
                             <option value="Elite Performance">Elite Performance - CHF 2'899.-</option>
                             <option value="Extreme Edition">Extreme Edition - CHF 4'499.-</option>
-                            <option value="Streaming Pro">Streaming Pro - CHF 2'399.-</option>
-                            <option value="Compact Gamer">Compact Gamer - CHF 1'599.-</option>
                             <option value="individuelle Beratung">Individuelle Beratung gewünscht</option>
                         </select>
                     </div>
@@ -683,10 +724,10 @@
                 <div class="footer-column">
                     <h3>Rechtliches</h3>
                     <ul>
-                        <li><a href="#">AGB</a></li>
-                        <li><a href="#">Datenschutz</a></li>
-                        <li><a href="#">Impressum</a></li>
-                        <li><a href="#">Widerrufsrecht</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="widerrufsrecht.html">Widerrufsrecht</a></li>
                     </ul>
                 </div>
                 
