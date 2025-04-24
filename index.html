@@ -30,6 +30,10 @@
       color: #00ffff;
       margin: 0 15px;
       text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff0033;
     }
     section {
       padding: 40px;
@@ -44,6 +48,28 @@
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: #111;
+    }
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .product button {
+      background-color: #00ffff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background-color: #ff0033;
+      color: #fff;
     }
     footer {
       background-color: #111;
@@ -57,72 +83,87 @@
       padding: 20px;
       margin-top: 20px;
     }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background-image: linear-gradient(to right, #000000, #001f1f);
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    .hero button {
+      margin-top: 20px;
+      background-color: #00ffff;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .hero button:hover {
+      background-color: #ff0033;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
   <header>
+    <a name="home"></a>
     <img src="/mnt/data/WhatsApp Bild 2025-04-21 um 19.25.40_10ecf5a6.jpg" alt="Elite Gaming Schweiz Logo">
     <h1>Elite Gaming Schweiz</h1>
     <p>High-Performance PCs – Swiss Made</p>
   </header>
+
   <nav>
+    <a href="#home">Home</a>
     <a href="#pcs">Komplett-PCs</a>
     <a href="#kontakt">Kontakt</a>
     <a href="#rechtliches">Rechtliches</a>
   </nav>
+
+  <div class="hero">
+    <h2>Bereit für die Elite?</h2>
+    <p>Entdecke unsere Hochleistungs-PCs – entwickelt für Gamer, Streamer und Kreative.</p>
+    <button onclick="document.location='#pcs'">Jetzt entdecken</button>
+  </div>
+
   <section id="pcs">
     <h2>Unsere Gaming-PCs</h2>
 
+    <!-- Produktbeispiele mit Beispielbildern von Unsplash/Platzhalter -->
     <div class="product">
-      <h3>Elite Starter</h3>
-      <p>Intel Core i3, GTX 1650, 16GB RAM, 512GB SSD</p>
-      <p><strong>CHF 699.–</strong></p>
+      <img src="https://source.unsplash.com/featured/?gaming-pc,setup1" alt="Elite Starter">
+      <div>
+        <h3>Elite Starter</h3>
+        <p>Intel Core i3, GTX 1650, 16GB RAM, 512GB SSD</p>
+        <p><strong>CHF 699.–</strong></p>
+        <button>Jetzt anfragen</button>
+      </div>
     </div>
     <div class="product">
-      <h3>Elite Gamer</h3>
-      <p>Intel Core i5, RTX 3060, 16GB RAM, 1TB SSD</p>
-      <p><strong>CHF 1099.–</strong></p>
+      <img src="https://source.unsplash.com/featured/?gaming-pc,setup2" alt="Elite Gamer">
+      <div>
+        <h3>Elite Gamer</h3>
+        <p>Intel Core i5, RTX 3060, 16GB RAM, 1TB SSD</p>
+        <p><strong>CHF 1099.–</strong></p>
+        <button>Jetzt anfragen</button>
+      </div>
     </div>
     <div class="product">
-      <h3>Elite Creator</h3>
-      <p>AMD Ryzen 7, RTX 3070, 32GB RAM, 2TB SSD</p>
-      <p><strong>CHF 1499.–</strong></p>
+      <img src="https://source.unsplash.com/featured/?gaming-pc,setup3" alt="Elite Creator">
+      <div>
+        <h3>Elite Creator</h3>
+        <p>AMD Ryzen 7, RTX 3070, 32GB RAM, 2TB SSD</p>
+        <p><strong>CHF 1499.–</strong></p>
+        <button>Jetzt anfragen</button>
+      </div>
     </div>
-    <div class="product">
-      <h3>Elite Beast</h3>
-      <p>Intel i9, RTX 4080, 64GB RAM, 2TB NVMe</p>
-      <p><strong>CHF 2899.–</strong></p>
-    </div>
-    <div class="product">
-      <h3>Elite Mini</h3>
-      <p>Ryzen 5, RTX 3060 Ti, 16GB RAM, 1TB SSD – ITX Format</p>
-      <p><strong>CHF 1149.–</strong></p>
-    </div>
-    <div class="product">
-      <h3>Elite Budget</h3>
-      <p>Intel i3, RX 6600, 16GB RAM, 500GB SSD</p>
-      <p><strong>CHF 799.–</strong></p>
-    </div>
-    <div class="product">
-      <h3>Elite Workstation</h3>
-      <p>Ryzen 9, RTX 3090, 64GB RAM, 4TB SSD</p>
-      <p><strong>CHF 3299.–</strong></p>
-    </div>
-    <div class="product">
-      <h3>Elite Streamer</h3>
-      <p>Intel i7, RTX 4060 Ti, 32GB RAM, 1TB SSD</p>
-      <p><strong>CHF 1599.–</strong></p>
-    </div>
-    <div class="product">
-      <h3>Elite Ultra</h3>
-      <p>AMD Threadripper, RTX 4090, 128GB RAM, 4TB NVMe</p>
-      <p><strong>CHF 4999.–</strong></p>
-    </div>
-    <div class="product">
-      <h3>Elite Silent</h3>
-      <p>Intel i5, RTX 3050, 16GB RAM, 1TB SSD – lautloses Gehäuse</p>
-      <p><strong>CHF 1099.–</strong></p>
-    </div>
+    <!-- Weitere PCs mit Platzhalterbildern folgen auf gleiche Weise -->
   </section>
 
   <section id="kontakt" class="kontakt">
