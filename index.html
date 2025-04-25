@@ -283,4 +283,496 @@
         }
 
         .pc-card:hover {
-            transform: translate
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pc-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .pc-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .pc-card:hover .pc-image img {
+            transform: scale(1.05);
+        }
+
+        .pc-details {
+            padding: 20px;
+        }
+
+        .pc-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .pc-specs {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .pc-specs li {
+            margin-bottom: 5px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .pc-specs li::before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .pc-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--primary);
+        }
+
+        .pc-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(236, 240, 241, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(236, 240, 241, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .search-box {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .header-top {
+                display: none;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .pcs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .pcs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pc-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container header-top-container">
+            <div class="header-contact">
+                <a href="tel:+41441234567"><i class="fas fa-phone"></i> +41 44 123 45 67</a>
+                <a href="mailto:info@elitegaming.ch"><i class="fas fa-envelope"></i> info@elitegaming.ch</a>
+            </div>
+            <div class="header-actions">
+                <a href="#"><i class="fas fa-user"></i> Mein Konto</a>
+                <a href="#"><i class="fas fa-heart"></i> Wunschliste</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Main -->
+    <header class="header-main">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745258496/elite_gaming_logo_nhzdgk.jpg" alt="Elite Gaming Logo">
+                <span class="logo-text">Elite Gaming Schweiz</span>
+            </div>
+            
+            <div class="search-cart">
+                <div class="search-box">
+                    <input type="text" placeholder="Suche nach Produkten...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <nav>
+            <div class="container nav-container">
+                <ul class="main-nav">
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Gaming PCs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Vorkonfigurierte PCs</a></li>
+                            <li><a href="#">PC Konfigurator</a></li>
+                            <li><a href="#">PC-Zubehör</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Monitore</a></li>
+                    <li><a href="#">Zubehör</a></li>
+                    <li><a href="#">Angebote</a></li>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>High-End Gaming PCs aus der Schweiz</h1>
+                <p>Individuell konfigurierte Gaming-Systeme mit Top-Komponenten und 3 Jahren Garantie</p>
+                <a href="#" class="btn">Jetzt konfigurieren</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section">
+        <div class="container">
+            <div class="categories">
+                <div class="category-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Gaming PCs</h3>
+                    <p>Vorkonfigurierte Systeme</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>PC Konfigurator</h3>
+                    <p>Individuelle Zusammenstellung</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>Gaming Monitore</h3>
+                    <p>High Refresh Rate & QHD</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>Gaming Zubehör</h3>
+                    <p>Mäuse, Tastaturen & mehr</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PCs Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Unsere Gaming PCs</h2>
+            <p class="section-subtitle">12 sorgfältig konfigurierte Systeme - perfekt abgestimmt für jedes Budget und jede Anforderung</p>
+            
+            <div class="pcs-grid">
+                <!-- PC 1 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <span class="pc-badge">Bestseller</span>
+                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="Entry Level PC">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">Entry Level</h3>
+                        <ul class="pc-specs">
+                            <li>AMD Ryzen 5 5600X</li>
+                            <li>RTX 3060 (12GB)</li>
+                            <li>16GB DDR4 3200MHz</li>
+                            <li>500GB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 1'299.-</div>
+                        <div class="pc-actions">
+                            <button class="btn">In den Warenkorb</button>
+                            <button class="btn btn-outline">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PC 2 -->
+                <div class="pc-card">
+                    <div class="pc-image">
+                        <span class="pc-badge">Neu</span>
+                        <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="Mid Range PC">
+                    </div>
+                    <div class="pc-details">
+                        <h3 class="pc-name">Mid Range</h3>
+                        <ul class="pc-specs">
+                            <li>Intel i5-12600K</li>
+                            <li>RTX 4060 Ti (8GB)</li>
+                            <li>32GB DDR4 3600MHz</li>
+                            <li>1TB NVMe SSD</li>
+                        </ul>
+                        <div class="pc-price">CHF 1'899.-</div>
+                        <div class="pc-actions">
+                            <button class="btn">In den Warenkorb</button>
+                            <button class="btn btn-outline">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weitere PCs... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Elite Gaming Schweiz</h3>
+                    <p>Ihr Partner für High-End Gaming-PCs in der Schweiz. Qualität, Leistung und Service aus einer Hand.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Informationen</h3>
+                    <ul>
+                        <li><a href="#">Über uns</a></li>
+                        <li><a href="#">Vorkonfigurierte PCs</a></li>
+                        <li><a href="#">PC-Konfigurator</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Service</h3>
+                    <ul>
+                        <li><a href="#">Versand & Lieferung</a></li>
+                        <li><a href="#">Zahlungsmethoden</a></li>
+                        <li><a href="#">Rücksendungen</a></li>
+                        <li><a href="#">Garantie</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="#">AGB</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Widerrufsrecht</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Musterstrasse 123, 8000 Zürich</li>
+                        <li><i class="fas fa-phone"></i> +41 44 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@elitegaming.ch</li>
+                        <li><i class="fas fa-clock"></i> Mo-Fr: 09:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elite Gaming Schweiz. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+        
+        // Warenkorb Funktionen
+        let cartCount = 0;
+        const cartButtons = document.querySelectorAll('.pc-card .btn:not(.btn-outline)');
+        
+        cartButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                cartCount++;
+                document.querySelector('.cart-count').textContent = cartCount;
+                
+                // Hier würden Sie normalerweise das Produkt zum Warenkorb hinzufügen
+                const pcCard = this.closest('.pc-card');
+                const pcName = pcCard.querySelector('.pc-name').textContent;
+                const pcPrice = pcCard.querySelector('.pc-price').textContent;
+                
+                alert(`${pcName} wurde zum Warenkorb hinzugefügt\n${pcPrice}`);
+            });
+        });
+        
+        // Suchfunktion
+        const searchForm = document.querySelector('.search-box');
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = this.querySelector('input').value;
+            alert(`Suche nach: ${searchTerm}`);
+            // Hier würden Sie normalerweise die Suche durchführen
+        });
+    </script>
+</body>
+</html>
