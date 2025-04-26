@@ -2602,7 +2602,46 @@
             button.addEventListener('click', () => {
                 categoryButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                // Here you would normally filter the products
+                // Filter products based on price range
+                const priceRange = button.textContent.trim();
+                const products = document.querySelectorAll('.product-card');
+                
+                products.forEach(product => {
+                    const priceText = product.querySelector('.product-price').textContent;
+                    const price = parseFloat(priceText.replace(/[^\d.]/g, ''));
+                    
+                    let shouldShow = true;
+                    
+                    if (priceRange === 'Bis CHF 1\'000.-' && price > 1000) {
+                        shouldShow = false;
+                    } else if (priceRange === 'CHF 1\'000-1\'500' && (price <= 1000 || price > 1500)) {
+                        shouldShow = false;
+                    } else if (priceRange === 'CHF 1\'500-2\'000' && (price <= 1500 || price > 2000)) {
+                        shouldShow = false;
+                    } else if (priceRange === 'Über CHF 2\'000.-' && price <= 2000) {
+                        shouldShow = false;
+                    }
+                    
+                    product.style.display = shouldShow ? 'block' : 'none';
+                });
+            });
+        });
+        
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.btn-secondary');
+        const cartCount = document.querySelector('.cart-count');
+        let cartItems = 3; // Initial cart count
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                cartItems++;
+                cartCount.textContent = cartItems;
+                
+                // Show confirmation
+                const productCard = button.closest('.product-card');
+                const productTitle = productCard.querySelector('.product-title').textContent;
+                
+                alert(`${productTitle} wurde zum Warenkorb hinzugefügt!`);
             });
         });
         
@@ -2623,6 +2662,31 @@
         
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        const searchButton = document.querySelector('.search-bar button');
+        
+        searchButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            performSearch();
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                alert(`Suche nach: ${searchTerm}\n(Diese Funktion würde normalerweise zu einer Suchergebnisseite führen)`);
+                // In a real implementation, you would redirect to a search results page:
+                // window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+            }
+        }
     </script>
 </body>
 </html>
