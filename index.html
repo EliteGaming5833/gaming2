@@ -2292,4 +2292,103 @@
                     <a href="#">AGB</a>
                     <a href="#">Datenschutz</a>
                     <a href="#">Impressum</a>
-                    <a href="#">Widerrufs
+                    <a href="#">Widerrufsrecht</a>
+                    <a href="#">Cookie-Einstellungen</a>
+                </div>
+                
+                <div>
+                    &copy; 2023 PCMeister GmbH. Alle Rechte vorbehalten. Alle Preise in CHF inkl. MwSt.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Wishlist buttons
+        const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+        wishlistButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const icon = button.querySelector('i');
+                if (button.classList.contains('active')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                }
+            });
+        });
+        
+        // Category filter buttons
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                // Here you would normally filter the products
+            });
+        });
+        
+        // Tab functionality for product detail pages
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        if (tabButtons.length > 0) {
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+        
+        // Simple animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
