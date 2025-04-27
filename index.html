@@ -61,20 +61,20 @@
       align-items: center;
       gap: 0.75rem;
       color: var(--light);
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 700;
       text-decoration: none;
     }
 
     .logo-icon {
       color: var(--primary);
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
 
     /* Navigation */
     nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
     }
 
     .nav-link {
@@ -87,6 +87,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 0.9rem;
     }
 
     .nav-link:hover, .nav-link.active {
@@ -96,13 +97,13 @@
     }
 
     .nav-link i {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .cta-button {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
-      padding: 0.75rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 0.5rem;
       font-weight: 600;
       text-decoration: none;
@@ -111,6 +112,7 @@
       gap: 0.5rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .cta-button:hover {
@@ -145,8 +147,8 @@
     .hero {
       background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9)), 
                   url('https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 80vh;
-      min-height: 600px;
+      height: 50vh;
+      min-height: 400px;
       display: flex;
       align-items: center;
       padding: 0 2rem;
@@ -156,11 +158,12 @@
       max-width: 1400px;
       margin: 0 auto;
       width: 100%;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
       line-height: 1.2;
       background: linear-gradient(to right, var(--light), var(--gray));
       -webkit-background-clip: text;
@@ -169,22 +172,28 @@
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1rem;
       max-width: 600px;
-      margin-bottom: 2rem;
+      margin: 0 auto 1.5rem;
       color: var(--gray);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
     }
 
     /* Main Content */
     main {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 2rem;
     }
 
     .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
       position: relative;
       display: inline-block;
     }
@@ -192,10 +201,10 @@
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
       left: 0;
       width: 60%;
-      height: 4px;
+      height: 3px;
       background: linear-gradient(to right, var(--primary), transparent);
       border-radius: 2px;
     }
@@ -203,76 +212,84 @@
     /* PC Grid */
     .pc-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
     }
 
     .pc-card {
       background: var(--card-bg);
-      border-radius: 0.75rem;
+      border-radius: 0.5rem;
       overflow: hidden;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .pc-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
       border-color: var(--primary);
     }
 
+    .pc-image-container {
+      position: relative;
+      height: 160px;
+      overflow: hidden;
+    }
+
     .pc-image {
-      height: 220px;
       width: 100%;
-      object-fit: cover;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background-color: #0f172a;
     }
 
     .pc-badge {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 0.5rem;
+      right: 0.5rem;
       background-color: var(--primary);
       color: white;
-      padding: 0.25rem 0.75rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 9999px;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       font-weight: 600;
     }
 
     .pc-content {
-      padding: 1.5rem;
+      padding: 1rem;
     }
 
     .pc-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
       color: white;
     }
 
     .pc-specs {
-      margin: 1.5rem 0;
+      margin: 1rem 0;
     }
 
     .spec-item {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
     }
 
     .spec-icon {
       color: var(--primary);
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     .pc-price {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--secondary);
-      margin: 1.5rem 0;
+      margin: 1rem 0;
       text-align: center;
     }
 
@@ -283,45 +300,46 @@
 
     .pc-actions {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     /* Configurator */
     .configurator {
       background: var(--card-bg);
-      border-radius: 0.75rem;
-      padding: 2rem;
-      margin: 4rem 0;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 3rem 0;
+      box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .config-steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     .config-step {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .config-step label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       color: white;
+      font-size: 0.9rem;
     }
 
     .config-step select, .config-step input {
       width: 100%;
-      padding: 0.875rem 1rem;
+      padding: 0.75rem 0.8rem;
       background: rgba(255, 255, 255, 0.05);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 0.5rem;
-      font-size: 1rem;
+      border-radius: 0.4rem;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
     }
 
@@ -333,131 +351,134 @@
 
     .config-summary {
       background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin-top: 2rem;
-      border-left: 4px solid var(--primary);
+      padding: 1.2rem;
+      border-radius: 0.4rem;
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--primary);
     }
 
     .total-price {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--secondary);
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       text-align: right;
     }
 
     /* Features Section */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
     }
 
     .feature-card {
       background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
       text-align: center;
       transition: all 0.3s ease;
     }
 
     .feature-icon {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .feature-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
       color: white;
     }
 
     /* Testimonials */
     .testimonials {
-      margin: 4rem 0;
+      margin: 3rem 0;
     }
 
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
     .testimonial-card {
       background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
       position: relative;
     }
 
     .testimonial-quote {
       font-style: italic;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
     }
 
     .testimonial-author {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .author-avatar {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       object-fit: cover;
     }
 
     .author-info h4 {
       color: white;
+      font-size: 0.95rem;
     }
 
     .author-info p {
       color: var(--gray);
-      font-size: 0.875rem;
+      font-size: 0.8rem;
     }
 
     /* Contact Form */
     .contact-form {
       background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      margin: 4rem 0;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 3rem 0;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       font-weight: 600;
       color: white;
+      font-size: 0.9rem;
     }
 
     .form-group input, .form-group textarea, .form-group select {
       width: 100%;
-      padding: 0.875rem 1rem;
+      padding: 0.75rem 0.8rem;
       background: rgba(255, 255, 255, 0.05);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 0.5rem;
-      font-size: 1rem;
+      border-radius: 0.4rem;
+      font-size: 0.9rem;
     }
 
     .form-group textarea {
-      min-height: 150px;
+      min-height: 120px;
       resize: vertical;
     }
 
     /* Footer */
     footer {
       background: var(--darker);
-      padding: 4rem 2rem 2rem;
+      padding: 3rem 2rem 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -465,34 +486,35 @@
       max-width: 1400px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
     }
 
     .footer-logo {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
       color: var(--light);
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
       text-decoration: none;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .footer-about p {
       color: var(--gray);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
     }
 
     .social-links {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .social-link {
       color: var(--gray);
-      font-size: 1.25rem;
+      font-size: 1rem;
       transition: color 0.3s ease;
     }
 
@@ -502,20 +524,20 @@
 
     .footer-links h3 {
       color: white;
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
       position: relative;
     }
 
     .footer-links h3::after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -6px;
       left: 0;
-      width: 40px;
-      height: 3px;
+      width: 30px;
+      height: 2px;
       background: var(--primary);
-      border-radius: 3px;
+      border-radius: 2px;
     }
 
     .footer-links ul {
@@ -523,7 +545,7 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .footer-links a {
@@ -532,7 +554,8 @@
       transition: color 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
+      font-size: 0.85rem;
     }
 
     .footer-links a:hover {
@@ -540,34 +563,36 @@
     }
 
     .footer-links i {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
     }
 
     .footer-contact p {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
       color: var(--gray);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
     }
 
     .footer-contact i {
       color: var(--primary);
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
 
     .copyright {
       text-align: center;
-      padding-top: 2rem;
-      margin-top: 2rem;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--gray);
+      font-size: 0.8rem;
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .hero h1 {
-        font-size: 3rem;
+      .pc-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       }
     }
 
@@ -586,21 +611,14 @@
 
       .hero {
         height: auto;
-        padding: 6rem 1rem;
-        text-align: center;
+        padding: 4rem 1rem;
       }
 
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
 
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-content {
-        display: flex;
+      .hero-actions {
         flex-direction: column;
         align-items: center;
       }
@@ -612,11 +630,11 @@
 
     @media (max-width: 480px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       .section-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .pc-grid {
@@ -668,7 +686,7 @@
     <div class="hero-content">
       <h1>Dein perfekter Gaming PC aus der Schweiz</h1>
       <p>Hochleistungs-Systeme maßgeschneidert für deine Bedürfnisse. 100% Schweizer Qualität mit Premium-Komponenten.</p>
-      <div style="display: flex; gap: 1rem;">
+      <div class="hero-actions">
         <a href="#configurator" class="cta-button">
           <i class="fas fa-sliders-h"></i> PC konfigurieren
         </a>
@@ -684,14 +702,14 @@
     <!-- Gaming PCs Section -->
     <section id="pcs">
       <h2 class="section-title">Unsere Gaming PC Kollektion</h2>
-      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
+      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 0.95rem;">
         Wähle aus unseren sorgfältig zusammengestellten High-End Gaming Systemen oder konfiguriere deinen individuellen Traum-PC.
       </p>
       
       <div class="pc-grid">
         <!-- PC 1 - 1000FR Edition -->
         <div class="pc-card">
-          <div style="position: relative;">
+          <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="1000FR Edition Gaming PC" class="pc-image">
             <span class="pc-badge">Bestseller</span>
           </div>
@@ -700,7 +718,7 @@
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 5600 (6x 3.5GHz / 4.4GHz Turbo)</span>
+                <span>AMD Ryzen 5 5600</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -708,15 +726,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>16GB (2x8GB) DDR4 3600MHz</span>
+                <span>16GB DDR4 3600MHz</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB WD Blue SN580</span>
               </div>
             </div>
             <div class="pc-price">1,000</div>
@@ -733,13 +747,15 @@
         
         <!-- PC 2 - 1150FR Edition -->
         <div class="pc-card">
-          <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="1150FR Edition Gaming PC" class="pc-image">
+          <div class="pc-image-container">
+            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="1150FR Edition Gaming PC" class="pc-image">
+          </div>
           <div class="pc-content">
             <h3 class="pc-title">1150FR EDITION</h3>
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 5600 (6x 3.5GHz / 4.4GHz Turbo)</span>
+                <span>AMD Ryzen 5 5600</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -747,15 +763,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>16GB (2x8GB) DDR4 3600MHz</span>
+                <span>16GB DDR4 3600MHz</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB WD Blue SN580</span>
               </div>
             </div>
             <div class="pc-price">1,150</div>
@@ -772,7 +784,7 @@
         
         <!-- PC 3 - 1350FR Edition -->
         <div class="pc-card">
-          <div style="position: relative;">
+          <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="1350FR Edition Gaming PC" class="pc-image">
             <span class="pc-badge">Neu</span>
           </div>
@@ -781,7 +793,7 @@
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F (6x 3.7GHz / 5.0GHz Turbo)</span>
+                <span>AMD Ryzen 5 7500F</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -789,15 +801,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz</span>
+                <span>32GB DDR5 6000MHz</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB WD Blue SN580</span>
               </div>
             </div>
             <div class="pc-price">1,350</div>
@@ -814,13 +822,15 @@
 
         <!-- PC 4 - 1500FR Edition -->
         <div class="pc-card">
-          <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="1500FR Edition Gaming PC" class="pc-image">
+          <div class="pc-image-container">
+            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="1500FR Edition Gaming PC" class="pc-image">
+          </div>
           <div class="pc-content">
             <h3 class="pc-title">1500FR EDITION</h3>
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F (6x 3.7GHz / 5.0GHz Turbo)</span>
+                <span>AMD Ryzen 5 7500F</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -828,15 +838,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz</span>
+                <span>32GB DDR5 6000MHz</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB WD Blue SN580</span>
               </div>
             </div>
             <div class="pc-price">1,500</div>
@@ -853,7 +859,7 @@
 
         <!-- PC 5 - 1700FR Edition -->
         <div class="pc-card">
-          <div style="position: relative;">
+          <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="1700FR Edition Gaming PC" class="pc-image">
             <span class="pc-badge">Weiß Edition</span>
           </div>
@@ -862,7 +868,7 @@
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F (6x 3.7GHz / 5.0GHz Turbo)</span>
+                <span>AMD Ryzen 5 7500F</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -870,15 +876,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz RGB, weiß</span>
+                <span>32GB DDR5 6000MHz RGB</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB WD Blue SN580</span>
               </div>
             </div>
             <div class="pc-price">1,700</div>
@@ -895,13 +897,15 @@
 
         <!-- PC 6 - 1900FR Edition Weiss -->
         <div class="pc-card">
-          <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="1900FR Edition Weiss Gaming PC" class="pc-image">
+          <div class="pc-image-container">
+            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="1900FR Edition Weiss Gaming PC" class="pc-image">
+          </div>
           <div class="pc-content">
             <h3 class="pc-title">1900FR EDITION WEISS</h3>
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F (6x 3.7GHz / 5.0GHz Turbo)</span>
+                <span>AMD Ryzen 5 7500F</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -909,15 +913,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz RGB, weiß</span>
+                <span>32GB DDR5 6000MHz RGB</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB WD Blue SN580</span>
               </div>
             </div>
             <div class="pc-price">1,900</div>
@@ -934,7 +934,7 @@
 
         <!-- PC 7 - 2100FR Edition -->
         <div class="pc-card">
-          <div style="position: relative;">
+          <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="2100FR Edition Gaming PC" class="pc-image">
             <span class="pc-badge">Premium</span>
           </div>
@@ -943,7 +943,7 @@
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F (6x 3.7GHz / 5.0GHz Turbo)</span>
+                <span>AMD Ryzen 5 7500F</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -951,15 +951,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz RGB</span>
+                <span>32GB DDR5 6000MHz RGB</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB Kingston KC3000 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB Kingston KC3000</span>
               </div>
             </div>
             <div class="pc-price">2,100</div>
@@ -976,13 +972,15 @@
 
         <!-- PC 8 - 2200FR Edition -->
         <div class="pc-card">
-          <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2200FR Edition Gaming PC" class="pc-image">
+          <div class="pc-image-container">
+            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2200FR Edition Gaming PC" class="pc-image">
+          </div>
           <div class="pc-content">
             <h3 class="pc-title">2200FR EDITION</h3>
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F (6x 3.7GHz / 5.0GHz Turbo)</span>
+                <span>AMD Ryzen 5 7500F</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -990,15 +988,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz RGB</span>
+                <span>32GB DDR5 6000MHz RGB</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB Kingston KC3000 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>1TB Kingston KC3000</span>
               </div>
             </div>
             <div class="pc-price">2,200</div>
@@ -1015,7 +1009,7 @@
 
         <!-- PC 9 - 2400FR Edition -->
         <div class="pc-card">
-          <div style="position: relative;">
+          <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="2400FR Edition Gaming PC" class="pc-image">
             <span class="pc-badge">Top-Performer</span>
           </div>
@@ -1024,7 +1018,7 @@
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 7 7800X3D (8x 4.2GHz / 5.00GHz Turbo)</span>
+                <span>AMD Ryzen 7 7800X3D</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -1032,15 +1026,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz RGB</span>
+                <span>32GB DDR5 6000MHz RGB</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>2TB Lexar NM790 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>2TB Lexar NM790</span>
               </div>
             </div>
             <div class="pc-price">2,400</div>
@@ -1057,13 +1047,15 @@
 
         <!-- PC 10 - 2600FR Edition -->
         <div class="pc-card">
-          <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2600FR Edition Gaming PC" class="pc-image">
+          <div class="pc-image-container">
+            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2600FR Edition Gaming PC" class="pc-image">
+          </div>
           <div class="pc-content">
             <h3 class="pc-title">2600FR EDITION</h3>
             <div class="pc-specs">
               <div class="spec-item">
                 <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 7 9800X3D (8x 4.7GHz / 5.2GHz Turbo)</span>
+                <span>AMD Ryzen 7 9800X3D</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-gamepad spec-icon"></i>
@@ -1071,15 +1063,11 @@
               </div>
               <div class="spec-item">
                 <i class="fas fa-memory spec-icon"></i>
-                <span>32GB (2x16GB) DDR5 6000MHz RGB</span>
+                <span>32GB DDR5 6000MHz RGB</span>
               </div>
               <div class="spec-item">
                 <i class="fas fa-hdd spec-icon"></i>
-                <span>2TB Lexar NM790 NVMe SSD</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-shield-alt spec-icon"></i>
-                <span>2 Jahre Garantie</span>
+                <span>2TB Lexar NM790</span>
               </div>
             </div>
             <div class="pc-price">2,600</div>
@@ -1099,7 +1087,7 @@
     <!-- Configurator Section -->
     <section class="configurator" id="configurator">
       <h2 class="section-title">PC Konfigurator</h2>
-      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
+      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 0.95rem;">
         Stelle deinen individuellen Gaming PC zusammen. Wähle aus hochwertigen Komponenten und erhalte eine sofortige Preisberechnung.
       </p>
       
@@ -1168,7 +1156,7 @@
     <!-- Features Section -->
     <section id="features">
       <h2 class="section-title">Warum ELITE GAMING?</h2>
-      <p style="max-width: 800px; margin-bottom: 2rem; color: var(--gray);">
+      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 0.95rem;">
         Wir bieten nicht nur hochwertige Gaming PCs, sondern ein komplettes Premium-Erlebnis aus der Schweiz.
       </p>
       
@@ -1179,7 +1167,7 @@
             <i class="fas fa-shield-alt"></i>
           </div>
           <h3 class="feature-title">2 Jahre Garantie</h3>
-          <p style="color: var(--gray);">
+          <p style="color: var(--gray); font-size: 0.9rem;">
             Alle unsere Systeme werden mit 2 Jahren Vollgarantie geliefert, inklusive Vor-Ort-Service in der ganzen Schweiz.
           </p>
         </div>
@@ -1190,7 +1178,7 @@
             <i class="fas fa-tools"></i>
           </div>
           <h3 class="feature-title">Individuelle Konfiguration</h3>
-          <p style="color: var(--gray);">
+          <p style="color: var(--gray); font-size: 0.9rem;">
             Jeder PC wird nach deinen Wünschen zusammengestellt und vor der Auslieferung ausführlich getestet.
           </p>
         </div>
@@ -1201,7 +1189,7 @@
             <i class="fas fa-truck"></i>
           </div>
           <h3 class="feature-title">Kostenloser Versand</h3>
-          <p style="color: var(--gray);">
+          <p style="color: var(--gray); font-size: 0.9rem;">
             Kostenfreier und versicherter Expressversand in die ganze Schweiz innerhalb von 1-3 Werktagen.
           </p>
         </div>
@@ -1212,7 +1200,7 @@
             <i class="fas fa-hand-holding-usd"></i>
           </div>
           <h3 class="feature-title">Finanzierung möglich</h3>
-          <p style="color: var(--gray);">
+          <p style="color: var(--gray); font-size: 0.9rem;">
             Flexible Ratenzahlung über 6-36 Monate möglich. 0% Finanzierung bei Zahlung innerhalb von 12 Monaten.
           </p>
         </div>
