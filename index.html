@@ -191,7 +191,6 @@
       color: var(--light);
       font-size: 1.5rem;
       cursor: pointer;
-      padding: 0.5rem;
       transition: all 0.3s ease;
     }
 
@@ -214,7 +213,7 @@
     /* Hero Section */
     .hero {
       background: linear-gradient(rgba(5, 5, 16, 0.7), rgba(2, 2, 10, 0.9)), 
-                  url(https://res.cloudinary.com/dajusgncz/image/upload/v1754080478/Screenshot_2025-08-01_223301_re2qm8.png) no-repeat center center/cover;
+                  url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       height: 70vh;
       min-height: 500px;
       display: flex;
@@ -335,475 +334,40 @@
       box-shadow: 0 0 10px var(--primary);
     }
 
-    /* PC Grid */
-    .pc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
+    /* Terms & Conditions Section */
+    .terms-section {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 2rem;
       margin: 3rem 0;
-    }
-
-    .pc-card {
-      background: var(--card-bg);
-      border-radius: 0.75rem;
-      overflow: hidden;
-      box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
       border: 1px solid rgba(0, 247, 255, 0.2);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      position: relative;
     }
 
-    .pc-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(0, 247, 255, 0.1) 0%, transparent 50%, rgba(255, 0, 170, 0.1) 100%);
-      z-index: -1;
-    }
-
-    .pc-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px -5px rgba(0, 247, 255, 0.3);
-      border-color: var(--primary);
-    }
-
-    .pc-image-container {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(0, 247, 255, 0.2);
-    }
-
-    .pc-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      background-color: rgba(10, 10, 26, 0.5);
-      transition: transform 0.5s ease;
-    }
-
-    .pc-card:hover .pc-image {
-      transform: scale(1.05);
-    }
-
-    .pc-badge {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      background: var(--darker);
+    .terms-section h2 {
+      margin-bottom: 1.5rem;
       color: var(--primary);
-      padding: 0.3rem 0.8rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      border: 1px solid var(--primary);
-      box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
-      text-transform: uppercase;
     }
 
-    .pc-content {
-      padding: 1.5rem;
-    }
-
-    .pc-title {
+    .terms-section h3 {
+      margin: 1.5rem 0 1rem;
+      color: var(--light);
       font-size: 1.3rem;
+    }
+
+    .terms-section p, .terms-section ul {
       margin-bottom: 1rem;
-      color: var(--light);
-      text-shadow: 0 0 5px var(--primary);
-    }
-
-    .pc-specs {
-      margin: 1.2rem 0;
-    }
-
-    .spec-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
       color: var(--gray);
+      line-height: 1.7;
     }
 
-    .spec-icon {
-      color: var(--primary);
-      font-size: 1rem;
-      min-width: 20px;
-      text-align: center;
+    .terms-section ul {
+      padding-left: 1.5rem;
     }
 
-    .pc-price {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin: 1.5rem 0;
-      text-align: center;
-      text-shadow: 0 0 5px var(--secondary);
-      position: relative;
-    }
-
-    .pc-price::after {
-      content: " CHF";
-      font-size: 0.8em;
-    }
-
-    .pc-price::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255, 0, 170, 0.5), transparent);
-    }
-
-    .pc-actions {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .pc-actions .cta-button:nth-child(2) {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .pc-actions .cta-button:nth-child(2):hover {
-      background: rgba(0, 247, 255, 0.1);
-    }
-
-    /* Configurator */
-    .configurator {
-      background: var(--card-bg);
-      border-radius: 0.75rem;
-      padding: 2rem;
-      margin: 4rem 0;
-      box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(0, 247, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .configurator::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 247, 255, 0.05) 0%, transparent 70%);
-      animation: rotate 30s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .config-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .config-step {
-      margin-bottom: 1.5rem;
-    }
-
-    .config-step label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: var(--light);
-      font-size: 0.95rem;
-      text-shadow: 0 0 5px var(--primary);
-    }
-
-    .config-step select, .config-step input {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--light);
-      border: 1px solid rgba(0, 247, 255, 0.3);
-      border-radius: 0.5rem;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      font-family: 'Rajdhani', sans-serif;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300f7ff' width='18' height='18'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      background-size: 1rem;
-    }
-
-    .config-step select:focus, .config-step input:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0, 247, 255, 0.3);
-    }
-
-    .config-step select option {
-      background: var(--darker);
-      color: var(--light);
-    }
-
-    .config-summary {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin-top: 2rem;
-      border-left: 3px solid var(--primary);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .config-summary::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.05), transparent);
-      z-index: -1;
-    }
-
-    .config-summary h3 {
-      color: var(--light);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .config-summary h3 i {
-      color: var(--primary);
-    }
-
-    #config-output {
-      margin-top: 1rem;
-      color: var(--gray);
-      line-height: 1.8;
-    }
-
-    #config-output strong {
-      color: var(--light);
-    }
-
-    .total-price {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-top: 1rem;
-      text-align: right;
-      text-shadow: 0 0 5px var(--secondary);
-      position: relative;
-      padding-top: 1rem;
-    }
-
-    .total-price::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255, 0, 170, 0.5), transparent);
-    }
-
-    /* Features Section */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 247, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(0, 247, 255, 0.1) 0%, transparent 50%, rgba(255, 0, 170, 0.1) 100%);
-      z-index: -1;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px -5px rgba(0, 247, 255, 0.3);
-      border-color: var(--primary);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px var(--primary);
-    }
-
-    .feature-title {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: var(--light);
-      text-shadow: 0 0 5px var(--primary);
-    }
-
-    .feature-card p {
-      color: var(--gray);
-      font-size: 1rem;
-    }
-
-    /* Testimonials */
-    .testimonials {
-      margin: 4rem 0;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .testimonial-card {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      position: relative;
-      border: 1px solid rgba(0, 247, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      font-size: 4rem;
-      color: rgba(0, 247, 255, 0.1);
-      font-family: serif;
-      line-height: 1;
-    }
-
-    .testimonial-quote {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      color: var(--light);
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .author-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--primary);
-      box-shadow: 0 0 10px var(--primary);
-    }
-
-    .author-info h4 {
-      color: var(--light);
-      font-size: 1.1rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .author-info p {
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    /* Contact Form */
-    .contact-form {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      margin: 4rem 0;
-      border: 1px solid rgba(0, 247, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-form::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, rgba(0, 247, 255, 0.05) 0%, transparent 50%, rgba(255, 0, 170, 0.05) 100%);
-      z-index: -1;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
+    .terms-section li {
       margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--light);
-      font-size: 0.95rem;
-      text-shadow: 0 0 5px var(--primary);
-    }
-
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--light);
-      border: 1px solid rgba(0, 247, 255, 0.3);
-      border-radius: 0.5rem;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      font-family: 'Rajdhani', sans-serif;
-    }
-
-    .form-group textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0, 247, 255, 0.3);
     }
 
     /* Footer */
@@ -985,10 +549,6 @@
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .pc-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-      
       .hero h1 {
         font-size: 2.5rem;
       }
@@ -1020,14 +580,6 @@
         flex-direction: column;
         align-items: center;
       }
-
-      .pc-actions {
-        flex-direction: column;
-      }
-      
-      .config-steps {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 480px) {
@@ -1037,10 +589,6 @@
 
       .section-title {
         font-size: 1.6rem;
-      }
-
-      .pc-grid {
-        grid-template-columns: 1fr;
       }
       
       .footer-container {
@@ -1067,637 +615,149 @@
       </button>
       
       <nav>
-        <a href="#" class="nav-link active"><i class="fas fa-home"></i> Startseite</a>
-        <a href="#configurator" class="nav-link"><i class="fas fa-sliders-h"></i> Konfigurator</a>
+        <a href="#" class="nav-link"><i class="fas fa-home"></i> Startseite</a>
         <a href="#pcs" class="nav-link"><i class="fas fa-desktop"></i> Gaming PCs</a>
-        <a href="#features" class="nav-link"><i class="fas fa-star"></i> Vorteile</a>
+        <a href="#configurator" class="nav-link"><i class="fas fa-sliders-h"></i> Konfigurator</a>
+        <a href="#agb" class="nav-link active"><i class="fas fa-file-contract"></i> AGB</a>
+        <a href="#datenschutz" class="nav-link"><i class="fas fa-shield-alt"></i> Datenschutz</a>
         <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Kontakt</a>
-        <a href="#" class="cta-button">
-          <i class="fas fa-shopping-cart"></i> Zum Shop
-        </a>
       </nav>
     </div>
   </header>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#" class="nav-link active"><i class="fas fa-home"></i> Startseite</a>
-    <a href="#configurator" class="nav-link"><i class="fas fa-sliders-h"></i> Konfigurator</a>
+    <a href="#" class="nav-link"><i class="fas fa-home"></i> Startseite</a>
     <a href="#pcs" class="nav-link"><i class="fas fa-desktop"></i> Gaming PCs</a>
-    <a href="#features" class="nav-link"><i class="fas fa-star"></i> Vorteile</a>
+    <a href="#configurator" class="nav-link"><i class="fas fa-sliders-h"></i> Konfigurator</a>
+    <a href="#agb" class="nav-link active"><i class="fas fa-file-contract"></i> AGB</a>
+    <a href="#datenschutz" class="nav-link"><i class="fas fa-shield-alt"></i> Datenschutz</a>
     <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Kontakt</a>
-    <a href="#" class="cta-button" style="justify-content: center; margin-top: 0.5rem;">
-      <i class="fas fa-shopping-cart"></i> Zum Shop
-    </a>
   </div>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="floating-grid"></div>
-    <div class="hero-content">
-      <h1>DEIN PERFEKTER GAMING PC</h1>
-      <p>Hochleistungs-Systeme maßgeschneidert für deine Bedürfnisse. 100% Schweizer Qualität mit Premium-Komponenten.</p>
-      <div class="hero-actions">
-        <a href="#configurator" class="cta-button">
-          <i class="fas fa-sliders-h"></i> PC konfigurieren
-        </a>
-        <a href="#pcs" class="cta-button">
-          <i class="fas fa-eye"></i> Systeme entdecken
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- Main Content -->
   <main>
-    <!-- Gaming PCs Section -->
-    <section id="pcs">
-      <h2 class="section-title">UNSERE GAMING PC KOLLEKTION</h2>
-      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 1.1rem;">
-        Wähle aus unseren sorgfältig zusammengestellten High-End Gaming Systemen oder konfiguriere deinen individuellen Traum-PC.
-      </p>
+    <!-- AGB Section -->
+    <section id="agb" class="terms-section">
+      <h2 class="section-title">ALLGEMEINE GESCHÄFTSBEDINGUNGEN</h2>
       
-      <div class="pc-grid">
-        <!-- PC 1 - 1000FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745765489/Screenshot_2025-04-27_165101_bni4op.png" alt="1000FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge">Bestseller</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">1000FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 5600</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>8GB AMD Radeon RX 7600</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>16GB DDR4 3600MHz</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580</span>
-              </div>
-            </div>
-            <div class="pc-price">1,000</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- PC 2 - 1150FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="1150FR Edition Gaming PC" class="pc-image">
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">1150FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 5600</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>8GB NVIDIA RTX4060</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>16GB DDR4 3600MHz</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580</span>
-              </div>
-            </div>
-            <div class="pc-price">1,150</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- PC 3 - 1350FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="1350FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge">Neu</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">1350FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB NVIDIA RTX5060Ti</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580</span>
-              </div>
-            </div>
-            <div class="pc-price">1,350</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
+      <h3>§ 1 Geltung der Bedingungen</h3>
+      <p>www.elitegaming.ch ist eine Internet-Plattform der Firma EliteGaming Schweiz aus Zürich.</p>
+      <p>Vertrieb, Rechnungsstellung, Garantieabwicklung, Geschäftsbedingungen etc. basiert somit alles auf der im schweizerischen Handelsregister eingetragenen Firma EliteGaming Schweiz.</p>
+      <p>Die Lieferungen, Leistungen und Angebote von EliteGaming Schweiz erfolgen ausschliesslich aufgrund dieser Geschäftsbedingungen, auch wenn sie nicht nochmals ausdrücklich vereinbart werden. Mit Bestellung der Ware oder Leistung gelten diese Bedingungen als angenommen. Abweichungen von diesen Geschäftsbedingungen sind nur wirksam, wenn wir sie schriftlich bestätigen.</p>
 
-        <!-- PC 4 - 1500FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745765701/Screenshot_2025-04-27_165444_fmejcu.png" alt="1500FR Edition Gaming PC" class="pc-image">
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">1500FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB AMD RADEON RX 7800XT</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580</span>
-              </div>
-            </div>
-            <div class="pc-price">1,500</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
+      <h3>§ 2 Angebot und Vertragsschluss</h3>
+      <p>Die Angaben in unseren Verkaufsunterlagen, Inseraten und im Online Shop (Zeichnungen, Abbildungen, Liefertermine, Masse, Gewichte, Spezifikationen und sonstige Leistungen) sind automatisch übermittelte/integrierte Daten der jeweiligen Schweizer Importeure und können in sehr seltenen Fällen abweichen. Die Bilder sind als Hinweise zu verstehen und können vom tatsächlichen Produkt abweichen.</p>
+      <p>EliteGaming Schweiz überprüft nach Bestelleingang die Adresse, Preise, Artikel, Zahlung und hält die Kunden jeweils mit weiteren E-Mails (Statusänderungen) auf den laufenden, was die Abholung, Versand oder weitere Abläufe betrifft.</p>
+      <p>EliteGaming Schweiz kauft keine Waren selbst, direkt im Ausland ein (kein Eigenimport) - es werden nur Produkte von Schweizer Distributoren und Importeuren vertrieben.</p>
 
-        <!-- PC 5 - 1700FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745765232/Screenshot_2025-04-27_164620_zonrxg.png" alt="1700FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge">RGB Edition</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">1700FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB AMD RADEON RX 7800XT WEIß</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz RGB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580</span>
-              </div>
-            </div>
-            <div class="pc-price">1,700</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
+      <h3>§ 3 Preise</h3>
+      <p>Massgebend sind die in unserer Auftragsbestätigung bzw. Rechnung genannten Preise. Preise im Shop und automatischer Bestellbestätigung können in sehr seltenen Ausnahmefällen abweichen bzw. falsch angegeben sein.</p>
+      <p>Die Preise im Shop verstehen sich netto inkl. SWICO und MWST, jedoch falls nicht anders vereinbart, zuzüglich Transportkosten und Verpackung.</p>
 
-        <!-- PC 6 - 1900FR Edition Weiss -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745764430/Screenshot_2025-04-27_163315_qu06rs.png" alt="1900FR Edition Weiss Gaming PC" class="pc-image">
-            <span class="pc-badge">Premium</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">1900FR EDITION WEISS</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB AMD RADEON RX 7800XT WEIß</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz RGB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB WD Blue SN580</span>
-              </div>
-            </div>
-            <div class="pc-price">1,900</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
+      <h3>§ 4 Liefer- und Leistungszeit</h3>
+      <p>Termine und Lieferfristen sind unverbindlich, sofern nicht ausdrücklich schriftlich etwas anderes vereinbart wurde.</p>
+      <p>Die Lieferzeit bei Vorauskassenbestellungen beträgt ca. 1-2 Arbeitstage nach Zahlungseingang bzw. nach der Bestätigung der Deckung bei Kreditkartenzahlung. Vorausgesetzt die Waren sind sofort verfügbar.</p>
+      <p>Bei nicht angenommenen Nachnahmelieferungen werden die entstandenen Versandspesen in Rechnung gestellt.</p>
 
-        <!-- PC 7 - 2100FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="2100FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge">Premium</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">2100FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB AMD RADEON RX 9070</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz RGB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB Kingston KC3000</span>
-              </div>
-            </div>
-            <div class="pc-price">2,100</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
+      <h3>§ 5 Annahmeverzug</h3>
+      <p>Wenn der Käufer nach einer Bestellung und Ablauf einer ihm gesetzten Nachfrist die Annahme der Liefergegenstände verweigert, kann EliteGaming Schweiz die Erfüllung des Vertrages verweigern und die Unkosten wegen Nichterfüllung in der Höhe des effektiv entstandenen Schadens vom Käufer zu fordern.</p>
 
-        <!-- PC 8 - 2200FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2200FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge">Limited</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">2200FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 5 7500F</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB AMD RADEON RX 9070</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz RGB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>1TB Kingston KC3000</span>
-              </div>
-            </div>
-            <div class="pc-price">2,200</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
+      <h3>§ 6 Lieferung</h3>
+      <p>Sichtbare Mengendifferenzen müssen sofort bei Warenerhalt, verdeckte Mengendifferenzen innerhalb von 2 Tagen nach Warenerhalt bei EliteGaming Schweiz und dem Frachtführer schriftlich angezeigt werden.</p>
 
-        <!-- PC 9 - 2400FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745260421/Lian_Li_O11_Vision_Compact_f9gmob.jpg" alt="2400FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge">Top-Performer</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">2400FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 7 7800X3D</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB NVIDIA RTX5070Ti</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz RGB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>2TB Lexar NM790</span>
-              </div>
-            </div>
-            <div class="pc-price">2,400</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
+      <h3>§ 7 Gefahrenübergang</h3>
+      <p>Die Gefahr geht auf den Käufer über, sobald die Sendung an die den Transport ausführende Person übergeben worden ist.</p>
 
-        <!-- PC 10 - 2600FR Edition -->
-        <div class="pc-card">
-          <div class="pc-image-container">
-            <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2600FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge">Flagship</span>
-          </div>
-          <div class="pc-content">
-            <h3 class="pc-title">2600FR EDITION</h3>
-            <div class="pc-specs">
-              <div class="spec-item">
-                <i class="fas fa-microchip spec-icon"></i>
-                <span>AMD Ryzen 7 9800X3D</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-gamepad spec-icon"></i>
-                <span>16GB NVIDIA RTX5080</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-memory spec-icon"></i>
-                <span>32GB DDR5 6000MHz RGB</span>
-              </div>
-              <div class="spec-item">
-                <i class="fas fa-hdd spec-icon"></i>
-                <span>2TB Lexar NM790</span>
-              </div>
-            </div>
-            <div class="pc-price">2,600</div>
-            <div class="pc-actions">
-              <a href="#" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-shopping-cart"></i> Kaufen
-              </a>
-              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
-                <i class="fas fa-cog"></i> Anpassen
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h3>§ 8 Gewährleistung</h3>
+      <p>EliteGaming Schweiz gewährleistet im Rahmen der Herstellergarantie, dass die Produkte frei von Fabrikations- und Materialmängeln sind. Die Gewährleistung beträgt mindestens 2 Jahre.</p>
+      <p>Garantie gewährt EliteGaming Schweiz nur so weit, wie sie danach vom Lieferant oder Hersteller übernommen werden.</p>
+
+      <h3>§ 9 Retouren/Rückgaben</h3>
+      <p>Für Reparaturen bzw. Garantien verlangen wir, dass das defekte Teil bzw. Gerät mit beiliegender Fehlerbeschreibung sowie einer Kopie der Rechnung an EliteGaming Schweiz zur Reparatur, Garantieabklärung eingeschickt wird.</p>
+      <p>Falsch bestellte Waren müssen innert 2 Tagen in ungeöffneter Original-Verpackung zurückgesendet werden.</p>
+
+      <h3>§ 10 Eigentumsvorbehalt</h3>
+      <p>Die gelieferte Ware bleibt bis zur vollständigen Bezahlung aller ausstehenden Forderungen Eigentum von EliteGaming Schweiz.</p>
+
+      <h3>§ 11 Zahlung</h3>
+      <p>Die Rechnungen sind je nach Vereinbarung per Vorauskasse, Nachnahme oder bar rein netto zahlbar soweit nicht anders vereinbart.</p>
+
+      <h3>§ 12 Haftungsbeschränkung</h3>
+      <p>Schadensersatzansprüche aus Unmöglichkeit der Leistung, aus Vertragsverletzung, aus Verschulden bei Vertragsschluss und aus unerlaubter Handlung, sind sowohl gegen uns als auch gegen unsere Erfüllungs- bzw. Verrichtungsgehilfen ausgeschlossen, soweit nicht vorsätzliches oder grob fahrlässiges Handeln vorliegt.</p>
+
+      <h3>§ 13 Gerichtsstand</h3>
+      <p>Zürich ist ausschliesslich Gerichtsstand für alle sich aus dem Vertragsverhältnis unmittelbar oder mittelbar ergebenden Streitigkeiten. Das Rechtsverhältnis untersteht dem schweizerischen Recht.</p>
+
+      <p>Zürich, 01.01.2024<br>
+      EliteGaming Schweiz<br>
+      Musterstraße 123<br>
+      8000 Zürich</p>
     </section>
 
-    <!-- Configurator Section -->
-    <section class="configurator" id="configurator">
-      <h2 class="section-title">PC KONFIGURATOR</h2>
-      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 1.1rem;">
-        Stelle deinen individuellen Gaming PC zusammen. Wähle aus hochwertigen Komponenten und erhalte eine sofortige Preisberechnung.
-      </p>
+    <!-- Datenschutz Section -->
+    <section id="datenschutz" class="terms-section">
+      <h2 class="section-title">DATENSCHUTZERKLÄRUNG</h2>
       
-      <div class="config-steps">
-        <!-- Step 1 -->
-        <div class="config-step">
-          <label for="cpu-type"><i class="fas fa-microchip"></i> Prozessor</label>
-          <select id="cpu-type" onchange="updateConfig()">
-            <option value="">Bitte wählen</option>
-            <option value="amd-ryzen5">AMD Ryzen 5 5600</option>
-            <option value="amd-ryzen5-7500">AMD Ryzen 5 7500F</option>
-            <option value="amd-ryzen7">AMD Ryzen 7 7800X3D</option>
-            <option value="amd-ryzen7-9800">AMD Ryzen 7 9800X3D</option>
-          </select>
-        </div>
-        
-        <!-- Step 2 -->
-        <div class="config-step">
-          <label for="gpu"><i class="fas fa-gamepad"></i> Grafikkarte</label>
-          <select id="gpu" onchange="updateConfig()">
-            <option value="">Bitte wählen</option>
-            <option value="rx7600">AMD Radeon RX 7600</option>
-            <option value="rtx4060">NVIDIA RTX 4060</option>
-            <option value="rtx5060ti">NVIDIA RTX 5060Ti</option>
-            <option value="rx7800xt">AMD RADEON RX 7800XT</option>
-            <option value="rx9070">AMD RADEON RX 9070</option>
-            <option value="rtx5070ti">NVIDIA RTX 5070Ti</option>
-            <option value="rtx5080">NVIDIA RTX 5080</option>
-          </select>
-        </div>
-        
-        <!-- Step 3 -->
-        <div class="config-step">
-          <label for="ram"><i class="fas fa-memory"></i> Arbeitsspeicher</label>
-          <select id="ram" onchange="updateConfig()">
-            <option value="">Bitte wählen</option>
-            <option value="16gb">16GB DDR4 3600MHz</option>
-            <option value="32gb-ddr4">32GB DDR4 3600MHz</option>
-            <option value="32gb-ddr5">32GB DDR5 6000MHz</option>
-            <option value="64gb-ddr5">64GB DDR5 6000MHz</option>
-          </select>
-        </div>
-        
-        <!-- Step 4 -->
-        <div class="config-step">
-          <label for="storage"><i class="fas fa-hdd"></i> Speicher</label>
-          <select id="storage" onchange="updateConfig()">
-            <option value="">Bitte wählen</option>
-            <option value="1tb-wd">1TB WD Blue SN580 NVMe</option>
-            <option value="1tb-kingston">1TB Kingston KC3000 NVMe</option>
-            <option value="2tb-lexar">2TB Lexar NM790 NVMe</option>
-            <option value="1tb+2tb">1TB NVMe + 2TB SSD</option>
-          </select>
-        </div>
-      </div>
-      
-      <div class="config-summary">
-        <h3><i class="fas fa-file-invoice-dollar"></i> Zusammenfassung</h3>
-        <div id="config-output" style="margin-top: 1rem;">
-          <p>Bitte wähle deine Komponenten aus.</p>
-        </div>
-        <div class="total-price" id="total-price">0.00</div>
-      </div>
+      <h3>1. Verantwortlichkeiten und Kontakt</h3>
+      <p>Die Verantwortung über Personendaten und die Datenverarbeitung liegt, als Betreiberin des elitegaming.ch Shops, bei der EliteGaming Schweiz.</p>
+      <p><strong>EliteGaming Schweiz</strong><br>
+      Musterstraße 123<br>
+      8000 Zürich<br>
+      info@elitegaming.ch</p>
+
+      <h3>2. Welche Daten wir sammeln</h3>
+      <p>Wir sammeln nur die notwendigen personenbezogenen Daten für den Betrieb unseres Shops:</p>
+      <ul>
+        <li>Vor- und Nachname</li>
+        <li>Adresse</li>
+        <li>E-Mail-Adresse</li>
+        <li>Telefonnummer (optional)</li>
+        <li>IP-Adresse</li>
+      </ul>
+
+      <h3>3. Wie wir Ihre Daten verwenden</h3>
+      <p>Ihre Daten werden für folgende Zwecke verwendet:</p>
+      <ul>
+        <li>Bestellabwicklung</li>
+        <li>Kundenservice</li>
+        <li>Marketing (mit Einwilligung)</li>
+      </ul>
+
+      <h3>4. Datensicherheit</h3>
+      <p>Wir verwenden moderne Sicherheitsmaßnahmen wie TLS-Verschlüsselung (HTTPS) zum Schutz Ihrer Daten.</p>
+
+      <h3>5. Ihre Rechte</h3>
+      <p>Sie haben das Recht auf:</p>
+      <ul>
+        <li>Auskunft über Ihre Daten</li>
+        <li>Berichtigung falscher Daten</li>
+        <li>Löschung Ihrer Daten</li>
+        <li>Widerruf Ihrer Einwilligung</li>
+      </ul>
+
+      <h3>6. Gültigkeit und Änderungen</h3>
+      <p>Diese Datenschutzerklärung wird regelmäßig überprüft und aktualisiert.</p>
     </section>
 
-    <!-- Features Section -->
-    <section id="features">
-      <h2 class="section-title">WARUM ELITE GAMING?</h2>
-      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 1.1rem;">
-        Wir bieten nicht nur hochwertige Gaming PCs, sondern ein komplettes Premium-Erlebnis aus der Schweiz.
-      </p>
+    <!-- Impressum Section -->
+    <section id="impressum" class="terms-section">
+      <h2 class="section-title">IMPRESSUM</h2>
       
-      <div class="features">
-        <!-- Feature 1 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3 class="feature-title">2 Jahre Garantie</h3>
-          <p style="color: var(--gray); font-size: 1rem;">
-            Alle unsere Systeme werden mit 2 Jahren Vollgarantie geliefert, inklusive Vor-Ort-Service in der ganzen Schweiz.
-          </p>
-        </div>
-        
-        <!-- Feature 2 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3 class="feature-title">Individuelle Konfiguration</h3>
-          <p style="color: var(--gray); font-size: 1rem;">
-            Jeder PC wird nach deinen Wünschen zusammengestellt und vor der Auslieferung ausführlich getestet.
-          </p>
-        </div>
-        
-        <!-- Feature 3 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-truck"></i>
-          </div>
-          <h3 class="feature-title">Kostenloser Versand</h3>
-          <p style="color: var(--gray); font-size: 1rem;">
-            Kostenfreier und versicherter Expressversand in die ganze Schweiz innerhalb von 1-3 Werktagen.
-          </p>
-        </div>
-        
-        <!-- Feature 4 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-hand-holding-usd"></i>
-          </div>
-          <h3 class="feature-title">Finanzierung möglich</h3>
-          <p style="color: var(--gray); font-size: 1rem;">
-            Flexible Ratenzahlung über 6-36 Monate möglich. 0% Finanzierung bei Zahlung innerhalb von 12 Monaten.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-      <h2 class="section-title">DAS SAGEN UNSERE KUNDEN</h2>
+      <h3>Kontakt-Adresse</h3>
+      <p><strong>EliteGaming Schweiz</strong><br>
+      Musterstraße 123<br>
+      8000 Zürich</p>
       
-      <div class="testimonial-grid">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "Mein ELITE GAMING PC übertrifft alle Erwartungen! Der Kundenservice war hervorragend und die Lieferung blitzschnell. Absolute Empfehlung!"
-          </p>
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Markus B." class="author-avatar">
-            <div class="author-info">
-              <h4>Markus B.</h4>
-              <p>Zürich</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "Endlich ein Schweizer Anbieter, der echte Gaming-Power zu fairen Preisen bietet. Mein PC läuft seit Monaten einwandfrei."
-          </p>
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K." class="author-avatar">
-            <div class="author-info">
-              <h4>Sarah K.</h4>
-              <p>Bern</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "Die individuelle Beratung und die Möglichkeit, den PC genau nach meinen Wünschen zu konfigurieren, haben mich überzeugt."
-          </p>
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Thomas L." class="author-avatar">
-            <div class="author-info">
-              <h4>Thomas L.</h4>
-              <p>Genf</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <p>Telefon: +41 44 123 45 67<br>
+      E-Mail: info@elitegaming.ch<br>
+      Internet: www.elitegaming.ch</p>
 
-    <!-- Contact Section -->
-    <section class="contact-form" id="contact">
-      <h2 class="section-title">KONTAKT</h2>
-      <form>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="subject">Betreff</label>
-          <select id="subject">
-            <option value="support">Technischer Support</option>
-            <option value="sales">Verkaufsberatung</option>
-            <option value="other">Sonstiges</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Nachricht</label>
-          <textarea id="message" required></textarea>
-        </div>
-        <button type="submit" class="cta-button" style="width: 100%; justify-content: center;">
-          <i class="fas fa-paper-plane"></i> Nachricht senden
-        </button>
-      </form>
+      <h3>Haftungsausschluss</h3>
+      <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.</p>
+
+      <h3>Urheberrechte</h3>
+      <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website, gehören ausschliesslich der Firma EliteGaming Schweiz oder den speziell genannten Rechteinhabern.</p>
     </section>
   </main>
 
@@ -1724,8 +784,8 @@
           <li><a href="#"><i class="fas fa-chevron-right"></i> Startseite</a></li>
           <li><a href="#pcs"><i class="fas fa-chevron-right"></i> Gaming PCs</a></li>
           <li><a href="#configurator"><i class="fas fa-chevron-right"></i> Konfigurator</a></li>
-          <li><a href="#features"><i class="fas fa-chevron-right"></i> Vorteile</a></li>
-          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Kontakt</a></li>
+          <li><a href="#agb"><i class="fas fa-chevron-right"></i> AGB</a></li>
+          <li><a href="#datenschutz"><i class="fas fa-chevron-right"></i> Datenschutz</a></li>
         </ul>
       </div>
       
@@ -1736,7 +796,6 @@
           <li><a href="#"><i class="fas fa-chevron-right"></i> Versand</a></li>
           <li><a href="#"><i class="fas fa-chevron-right"></i> Zahlungsarten</a></li>
           <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> AGB</a></li>
         </ul>
       </div>
       
@@ -1750,7 +809,7 @@
     </div>
     
     <div class="copyright">
-      <p>&copy; 2023 ELITE GAMING SCHWEIZ. Alle Rechte vorbehalten.</p>
+      <p>&copy; 2024 ELITE GAMING SCHWEIZ. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
 
@@ -1766,86 +825,6 @@
         document.getElementById('mobileMenu').classList.remove('active');
       });
     });
-
-    // PC Configurator
-    function updateConfig() {
-      const cpu = document.getElementById('cpu-type').value;
-      const gpu = document.getElementById('gpu').value;
-      const ram = document.getElementById('ram').value;
-      const storage = document.getElementById('storage').value;
-      
-      let price = 0;
-      let configText = '';
-      
-      // CPU Preise
-      const cpuPrices = {
-        'amd-ryzen5': 150,
-        'amd-ryzen5-7500': 200,
-        'amd-ryzen7': 400,
-        'amd-ryzen7-9800': 600
-      };
-      
-      // GPU Preise
-      const gpuPrices = {
-        'rx7600': 250,
-        'rtx4060': 300,
-        'rtx5060ti': 450,
-        'rx7800xt': 500,
-        'rx9070': 650,
-        'rtx5070ti': 700,
-        'rtx5080': 900
-      };
-      
-      // RAM Preise
-      const ramPrices = {
-        '16gb': 80,
-        '32gb-ddr4': 120,
-        '32gb-ddr5': 180,
-        '64gb-ddr5': 350
-      };
-      
-      // Storage Preise
-      const storagePrices = {
-        '1tb-wd': 80,
-        '1tb-kingston': 100,
-        '2tb-lexar': 180,
-        '1tb+2tb': 200
-      };
-      
-      // Basispreis für Gehäuse, Netzteil, Kühlung etc.
-      const basePrice = 300;
-      
-      // Berechnung
-      if (cpu) {
-        price += cpuPrices[cpu];
-        configText += `<p><strong>Prozessor:</strong> ${document.getElementById('cpu-type').options[document.getElementById('cpu-type').selectedIndex].text}</p>`;
-      }
-      
-      if (gpu) {
-        price += gpuPrices[gpu];
-        configText += `<p><strong>Grafikkarte:</strong> ${document.getElementById('gpu').options[document.getElementById('gpu').selectedIndex].text}</p>`;
-      }
-      
-      if (ram) {
-        price += ramPrices[ram];
-        configText += `<p><strong>Arbeitsspeicher:</strong> ${document.getElementById('ram').options[document.getElementById('ram').selectedIndex].text}</p>`;
-      }
-      
-      if (storage) {
-        price += storagePrices[storage];
-        configText += `<p><strong>Speicher:</strong> ${document.getElementById('storage').options[document.getElementById('storage').selectedIndex].text}</p>`;
-      }
-      
-      // Gesamtpreis anzeigen
-      if (price > 0) {
-        price += basePrice;
-        document.getElementById('config-output').innerHTML = configText;
-        document.getElementById('total-price').textContent = price.toLocaleString('de-CH') + '.00';
-      } else {
-        document.getElementById('config-output').innerHTML = '<p>Bitte wähle deine Komponenten aus.</p>';
-        document.getElementById('total-price').textContent = '0.00';
-      }
-    }
 
     // Create floating particles
     function createParticles() {
