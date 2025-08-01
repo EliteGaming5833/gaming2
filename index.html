@@ -6,20 +6,25 @@
   <meta name="description" content="ELITE GAMING SCHWEIZ - Hochleistungs-Gaming-PCs nach Maß. Konfiguriere deinen Traum-PC oder wähle eines unserer Premium-Systeme.">
   <title>ELITE GAMING SCHWEIZ | Premium Gaming PCs</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #10b981;
-      --accent: #f59e0b;
-      --dark: #0f172a;
-      --darker: #020617;
-      --light: #f8fafc;
-      --gray: #94a3b8;
-      --card-bg: #1e293b;
-      --success: #22c55e;
-      --warning: #f97316;
-      --danger: #ef4444;
+      --primary: #00f7ff;
+      --primary-dark: #00c4cc;
+      --secondary: #ff00aa;
+      --accent: #ffcc00;
+      --dark: #0a0a1a;
+      --darker: #050510;
+      --light: #e0e0ff;
+      --gray: #8a8aa8;
+      --card-bg: rgba(30, 41, 59, 0.6);
+      --success: #00ff88;
+      --warning: #ff7700;
+      --danger: #ff2255;
+      --neon-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+      --neon-shadow-secondary: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary);
     }
 
     * {
@@ -29,22 +34,35 @@
     }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Rajdhani', 'Segoe UI', system-ui, -apple-system, sans-serif;
       background-color: var(--dark);
       color: var(--light);
       line-height: 1.6;
       overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 247, 255, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 170, 0.05) 0%, transparent 20%),
+        linear-gradient(to bottom, var(--darker), var(--dark));
+      background-attachment: fixed;
+    }
+
+    h1, h2, h3, h4, .logo, .cta-button, .section-title, .pc-title, .feature-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     /* Header */
     header {
-      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+      background: rgba(10, 10, 26, 0.8);
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-bottom: 3px solid var(--primary);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.1);
     }
 
     .header-container {
@@ -64,11 +82,19 @@
       font-size: 1.5rem;
       font-weight: 700;
       text-decoration: none;
+      text-shadow: 0 0 5px var(--primary);
     }
 
     .logo-icon {
       color: var(--primary);
       font-size: 1.75rem;
+      filter: drop-shadow(0 0 5px var(--primary));
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; text-shadow: 0 0 10px var(--primary); }
     }
 
     /* Navigation */
@@ -88,12 +114,28 @@
       align-items: center;
       gap: 0.5rem;
       font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+      width: 100%;
     }
 
     .nav-link:hover, .nav-link.active {
-      background-color: var(--primary);
-      color: white;
-      transform: translateY(-2px);
+      color: var(--primary);
+      text-shadow: 0 0 5px var(--primary);
     }
 
     .nav-link i {
@@ -102,7 +144,7 @@
 
     .cta-button {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
+      color: var(--darker);
       padding: 0.6rem 1.2rem;
       border-radius: 0.5rem;
       font-weight: 600;
@@ -110,14 +152,35 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 247, 255, 0.3);
       transition: all 0.3s ease;
       font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+      z-index: -1;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
     }
 
     .cta-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 6px 20px rgba(0, 247, 255, 0.5);
     }
 
     /* Mobile Menu */
@@ -129,6 +192,11 @@
       font-size: 1.5rem;
       cursor: pointer;
       padding: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--primary);
     }
 
     .mobile-menu {
@@ -145,13 +213,26 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9)), 
+      background: linear-gradient(rgba(5, 5, 16, 0.7), rgba(2, 2, 10, 0.9)), 
                   url('https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 50vh;
-      min-height: 400px;
+      height: 70vh;
+      min-height: 500px;
       display: flex;
       align-items: center;
       padding: 0 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, var(--dark), transparent);
+      z-index: 1;
     }
 
     .hero-content {
@@ -159,29 +240,70 @@
       margin: 0 auto;
       width: 100%;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
     .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
       line-height: 1.2;
-      background: linear-gradient(to right, var(--light), var(--gray));
+      background: linear-gradient(to right, var(--light), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+      animation: titleGlow 3s infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      0% { text-shadow: 0 0 10px rgba(0, 247, 255, 0.3); }
+      100% { text-shadow: 0 0 20px rgba(0, 247, 255, 0.6); }
     }
 
     .hero p {
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
       color: var(--gray);
     }
 
     .hero-actions {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       justify-content: center;
+    }
+
+    .hero-actions .cta-button:nth-child(2) {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+    }
+
+    .hero-actions .cta-button:nth-child(2):hover {
+      background: rgba(0, 247, 255, 0.1);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+    }
+
+    /* Floating Grid Animation */
+    .floating-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      background-image: 
+        linear-gradient(rgba(0, 247, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 247, 255, 0.3) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 30s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
     }
 
     /* Main Content */
@@ -189,53 +311,72 @@
       max-width: 1400px;
       margin: 0 auto;
       padding: 2rem;
+      position: relative;
     }
 
     .section-title {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 2rem;
       position: relative;
       display: inline-block;
+      color: var(--light);
+      text-shadow: 0 0 5px var(--primary);
     }
 
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -10px;
       left: 0;
       width: 60%;
       height: 3px;
       background: linear-gradient(to right, var(--primary), transparent);
       border-radius: 2px;
+      box-shadow: 0 0 10px var(--primary);
     }
 
     /* PC Grid */
     .pc-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
     }
 
     .pc-card {
       background: var(--card-bg);
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
       overflow: hidden;
-      box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .pc-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 247, 255, 0.1) 0%, transparent 50%, rgba(255, 0, 170, 0.1) 100%);
+      z-index: -1;
     }
 
     .pc-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px -5px rgba(0, 247, 255, 0.3);
       border-color: var(--primary);
     }
 
     .pc-image-container {
       position: relative;
-      height: 160px;
+      height: 200px;
       overflow: hidden;
+      border-bottom: 1px solid rgba(0, 247, 255, 0.2);
     }
 
     .pc-image {
@@ -243,54 +384,68 @@
       height: 100%;
       object-fit: contain;
       object-position: center;
-      background-color: #0f172a;
+      background-color: rgba(10, 10, 26, 0.5);
+      transition: transform 0.5s ease;
+    }
+
+    .pc-card:hover .pc-image {
+      transform: scale(1.05);
     }
 
     .pc-badge {
       position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background-color: var(--primary);
-      color: white;
-      padding: 0.2rem 0.6rem;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: var(--darker);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
       border-radius: 9999px;
       font-size: 0.75rem;
       font-weight: 600;
+      border: 1px solid var(--primary);
+      box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+      text-transform: uppercase;
     }
 
     .pc-content {
-      padding: 1rem;
+      padding: 1.5rem;
     }
 
     .pc-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-      color: white;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+      text-shadow: 0 0 5px var(--primary);
     }
 
     .pc-specs {
-      margin: 1rem 0;
+      margin: 1.2rem 0;
     }
 
     .spec-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.85rem;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--gray);
     }
 
     .spec-icon {
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 1rem;
+      min-width: 20px;
+      text-align: center;
     }
 
     .pc-price {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--secondary);
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       text-align: center;
+      text-shadow: 0 0 5px var(--secondary);
+      position: relative;
     }
 
     .pc-price::after {
@@ -298,196 +453,385 @@
       font-size: 0.8em;
     }
 
+    .pc-price::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255, 0, 170, 0.5), transparent);
+    }
+
     .pc-actions {
       display: flex;
-      gap: 0.8rem;
+      gap: 1rem;
+    }
+
+    .pc-actions .cta-button:nth-child(2) {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .pc-actions .cta-button:nth-child(2):hover {
+      background: rgba(0, 247, 255, 0.1);
     }
 
     /* Configurator */
     .configurator {
       background: var(--card-bg);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin: 3rem 0;
-      box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      padding: 2rem;
+      margin: 4rem 0;
+      box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .configurator::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 247, 255, 0.05) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .config-steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .config-step {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .config-step label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: white;
-      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      color: var(--light);
+      font-size: 0.95rem;
+      text-shadow: 0 0 5px var(--primary);
     }
 
     .config-step select, .config-step input {
       width: 100%;
-      padding: 0.75rem 0.8rem;
+      padding: 0.85rem 1rem;
       background: rgba(255, 255, 255, 0.05);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 0.4rem;
-      font-size: 0.9rem;
+      color: var(--light);
+      border: 1px solid rgba(0, 247, 255, 0.3);
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
       transition: all 0.3s ease;
+      font-family: 'Rajdhani', sans-serif;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300f7ff' width='18' height='18'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1rem;
     }
 
     .config-step select:focus, .config-step input:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 0 0 3px rgba(0, 247, 255, 0.3);
+    }
+
+    .config-step select option {
+      background: var(--darker);
+      color: var(--light);
     }
 
     .config-summary {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.2rem;
-      border-radius: 0.4rem;
-      margin-top: 1.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-top: 2rem;
       border-left: 3px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .config-summary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.05), transparent);
+      z-index: -1;
+    }
+
+    .config-summary h3 {
+      color: var(--light);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .config-summary h3 i {
+      color: var(--primary);
+    }
+
+    #config-output {
+      margin-top: 1rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    #config-output strong {
+      color: var(--light);
     }
 
     .total-price {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--secondary);
-      margin-top: 0.8rem;
+      margin-top: 1rem;
       text-align: right;
+      text-shadow: 0 0 5px var(--secondary);
+      position: relative;
+      padding-top: 1rem;
+    }
+
+    .total-price::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255, 0, 170, 0.5), transparent);
     }
 
     /* Features Section */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
     }
 
     .feature-card {
       background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
+      padding: 2rem;
+      border-radius: 0.75rem;
       text-align: center;
       transition: all 0.3s ease;
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 247, 255, 0.1) 0%, transparent 50%, rgba(255, 0, 170, 0.1) 100%);
+      z-index: -1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 247, 255, 0.3);
+      border-color: var(--primary);
     }
 
     .feature-icon {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px var(--primary);
     }
 
     .feature-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+      text-shadow: 0 0 5px var(--primary);
+    }
+
+    .feature-card p {
+      color: var(--gray);
+      font-size: 1rem;
     }
 
     /* Testimonials */
     .testimonials {
-      margin: 3rem 0;
+      margin: 4rem 0;
     }
 
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
     .testimonial-card {
       background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
+      padding: 2rem;
+      border-radius: 0.75rem;
       position: relative;
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 4rem;
+      color: rgba(0, 247, 255, 0.1);
+      font-family: serif;
+      line-height: 1;
     }
 
     .testimonial-quote {
       font-style: italic;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: var(--light);
+      position: relative;
+      z-index: 1;
     }
 
     .testimonial-author {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 1rem;
     }
 
     .author-avatar {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       object-fit: cover;
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 10px var(--primary);
     }
 
     .author-info h4 {
-      color: white;
-      font-size: 0.95rem;
+      color: var(--light);
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
     }
 
     .author-info p {
       color: var(--gray);
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
 
     /* Contact Form */
     .contact-form {
       background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin: 3rem 0;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      margin: 4rem 0;
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(0, 247, 255, 0.05) 0%, transparent 50%, rgba(255, 0, 170, 0.05) 100%);
+      z-index: -1;
     }
 
     .form-group {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
       font-weight: 600;
-      color: white;
-      font-size: 0.9rem;
+      color: var(--light);
+      font-size: 0.95rem;
+      text-shadow: 0 0 5px var(--primary);
     }
 
     .form-group input, .form-group textarea, .form-group select {
       width: 100%;
-      padding: 0.75rem 0.8rem;
+      padding: 0.85rem 1rem;
       background: rgba(255, 255, 255, 0.05);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 0.4rem;
-      font-size: 0.9rem;
+      color: var(--light);
+      border: 1px solid rgba(0, 247, 255, 0.3);
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      font-family: 'Rajdhani', sans-serif;
     }
 
     .form-group textarea {
-      min-height: 120px;
+      min-height: 150px;
       resize: vertical;
+    }
+
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 247, 255, 0.3);
     }
 
     /* Footer */
     footer {
-      background: var(--darker);
-      padding: 3rem 2rem 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(5, 5, 16, 0.8);
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(0, 247, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
     }
 
     .footer-container {
       max-width: 1400px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
     }
 
     .footer-logo {
@@ -495,49 +839,68 @@
       align-items: center;
       gap: 0.5rem;
       color: var(--light);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 700;
       text-decoration: none;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 5px var(--primary);
+    }
+
+    .footer-logo i {
+      color: var(--primary);
+      filter: drop-shadow(0 0 5px var(--primary));
     }
 
     .footer-about p {
       color: var(--gray);
-      margin-bottom: 1rem;
-      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
 
     .social-links {
       display: flex;
-      gap: 0.8rem;
+      gap: 1rem;
     }
 
     .social-link {
       color: var(--gray);
-      font-size: 1rem;
-      transition: color 0.3s ease;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0, 247, 255, 0.3);
     }
 
     .social-link:hover {
       color: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+      transform: translateY(-3px);
     }
 
     .footer-links h3 {
-      color: white;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+      color: var(--light);
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
       position: relative;
+      text-shadow: 0 0 5px var(--primary);
     }
 
     .footer-links h3::after {
       content: '';
       position: absolute;
-      bottom: -6px;
+      bottom: -8px;
       left: 0;
-      width: 30px;
+      width: 40px;
       height: 2px;
       background: var(--primary);
       border-radius: 2px;
+      box-shadow: 0 0 5px var(--primary);
     }
 
     .footer-links ul {
@@ -545,54 +908,89 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
     }
 
     .footer-links a {
       color: var(--gray);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
+      gap: 0.5rem;
+      font-size: 0.9rem;
     }
 
     .footer-links a:hover {
       color: var(--primary);
+      text-shadow: 0 0 5px var(--primary);
+      transform: translateX(5px);
     }
 
     .footer-links i {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--primary);
     }
 
     .footer-contact p {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
       color: var(--gray);
-      margin-bottom: 0.8rem;
-      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
 
     .footer-contact i {
       color: var(--primary);
-      font-size: 1rem;
+      font-size: 1.1rem;
+      min-width: 20px;
     }
 
     .copyright {
       text-align: center;
-      padding-top: 1.5rem;
-      margin-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(0, 247, 255, 0.2);
       color: var(--gray);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      background: var(--primary);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
       .pc-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
       }
     }
 
@@ -611,11 +1009,11 @@
 
       .hero {
         height: auto;
-        padding: 4rem 1rem;
+        padding: 5rem 1rem;
       }
 
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .hero-actions {
@@ -626,24 +1024,36 @@
       .pc-actions {
         flex-direction: column;
       }
+      
+      .config-steps {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 480px) {
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       .section-title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
 
       .pc-grid {
         grid-template-columns: 1fr;
       }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+  
   <!-- Header -->
   <header>
     <div class="header-container">
@@ -683,14 +1093,15 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="floating-grid"></div>
     <div class="hero-content">
-      <h1>Dein perfekter Gaming PC aus der Schweiz</h1>
+      <h1>DEIN PERFEKTER GAMING PC</h1>
       <p>Hochleistungs-Systeme maßgeschneidert für deine Bedürfnisse. 100% Schweizer Qualität mit Premium-Komponenten.</p>
       <div class="hero-actions">
         <a href="#configurator" class="cta-button">
           <i class="fas fa-sliders-h"></i> PC konfigurieren
         </a>
-        <a href="#pcs" class="cta-button" style="background: transparent; border: 2px solid var(--primary);">
+        <a href="#pcs" class="cta-button">
           <i class="fas fa-eye"></i> Systeme entdecken
         </a>
       </div>
@@ -701,8 +1112,8 @@
   <main>
     <!-- Gaming PCs Section -->
     <section id="pcs">
-      <h2 class="section-title">Unsere Gaming PC Kollektion</h2>
-      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 0.95rem;">
+      <h2 class="section-title">UNSERE GAMING PC KOLLEKTION</h2>
+      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 1.1rem;">
         Wähle aus unseren sorgfältig zusammengestellten High-End Gaming Systemen oder konfiguriere deinen individuellen Traum-PC.
       </p>
       
@@ -738,7 +1149,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -775,7 +1186,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -813,7 +1224,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -850,7 +1261,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -861,7 +1272,7 @@
         <div class="pc-card">
           <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745765232/Screenshot_2025-04-27_164620_zonrxg.png" alt="1700FR Edition Gaming PC" class="pc-image">
-            <span class="pc-badge"></span>
+            <span class="pc-badge">RGB Edition</span>
           </div>
           <div class="pc-content">
             <h3 class="pc-title">1700FR EDITION</h3>
@@ -888,7 +1299,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -899,6 +1310,7 @@
         <div class="pc-card">
           <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745764430/Screenshot_2025-04-27_163315_qu06rs.png" alt="1900FR Edition Weiss Gaming PC" class="pc-image">
+            <span class="pc-badge">Premium</span>
           </div>
           <div class="pc-content">
             <h3 class="pc-title">1900FR EDITION WEISS</h3>
@@ -925,7 +1337,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -963,7 +1375,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -974,6 +1386,7 @@
         <div class="pc-card">
           <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2200FR Edition Gaming PC" class="pc-image">
+            <span class="pc-badge">Limited</span>
           </div>
           <div class="pc-content">
             <h3 class="pc-title">2200FR EDITION</h3>
@@ -1000,7 +1413,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -1038,7 +1451,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -1049,6 +1462,7 @@
         <div class="pc-card">
           <div class="pc-image-container">
             <img src="https://res.cloudinary.com/dajusgncz/image/upload/v1745252560/Corsair_iCUE_5000D_RGB_AIRFLOW__Tower_Geh_use_1879181_cm2x6i.jpg" alt="2600FR Edition Gaming PC" class="pc-image">
+            <span class="pc-badge">Flagship</span>
           </div>
           <div class="pc-content">
             <h3 class="pc-title">2600FR EDITION</h3>
@@ -1075,7 +1489,7 @@
               <a href="#" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-shopping-cart"></i> Kaufen
               </a>
-              <a href="#configurator" class="cta-button" style="background: transparent; border: 2px solid var(--primary); flex-grow: 1;">
+              <a href="#configurator" class="cta-button" style="flex-grow: 1;">
                 <i class="fas fa-cog"></i> Anpassen
               </a>
             </div>
@@ -1086,8 +1500,8 @@
 
     <!-- Configurator Section -->
     <section class="configurator" id="configurator">
-      <h2 class="section-title">PC Konfigurator</h2>
-      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 0.95rem;">
+      <h2 class="section-title">PC KONFIGURATOR</h2>
+      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 1.1rem;">
         Stelle deinen individuellen Gaming PC zusammen. Wähle aus hochwertigen Komponenten und erhalte eine sofortige Preisberechnung.
       </p>
       
@@ -1155,8 +1569,8 @@
 
     <!-- Features Section -->
     <section id="features">
-      <h2 class="section-title">Warum ELITE GAMING?</h2>
-      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 0.95rem;">
+      <h2 class="section-title">WARUM ELITE GAMING?</h2>
+      <p style="max-width: 800px; margin-bottom: 1.5rem; color: var(--gray); font-size: 1.1rem;">
         Wir bieten nicht nur hochwertige Gaming PCs, sondern ein komplettes Premium-Erlebnis aus der Schweiz.
       </p>
       
@@ -1167,7 +1581,7 @@
             <i class="fas fa-shield-alt"></i>
           </div>
           <h3 class="feature-title">2 Jahre Garantie</h3>
-          <p style="color: var(--gray); font-size: 0.9rem;">
+          <p style="color: var(--gray); font-size: 1rem;">
             Alle unsere Systeme werden mit 2 Jahren Vollgarantie geliefert, inklusive Vor-Ort-Service in der ganzen Schweiz.
           </p>
         </div>
@@ -1178,7 +1592,7 @@
             <i class="fas fa-tools"></i>
           </div>
           <h3 class="feature-title">Individuelle Konfiguration</h3>
-          <p style="color: var(--gray); font-size: 0.9rem;">
+          <p style="color: var(--gray); font-size: 1rem;">
             Jeder PC wird nach deinen Wünschen zusammengestellt und vor der Auslieferung ausführlich getestet.
           </p>
         </div>
@@ -1189,7 +1603,7 @@
             <i class="fas fa-truck"></i>
           </div>
           <h3 class="feature-title">Kostenloser Versand</h3>
-          <p style="color: var(--gray); font-size: 0.9rem;">
+          <p style="color: var(--gray); font-size: 1rem;">
             Kostenfreier und versicherter Expressversand in die ganze Schweiz innerhalb von 1-3 Werktagen.
           </p>
         </div>
@@ -1200,7 +1614,7 @@
             <i class="fas fa-hand-holding-usd"></i>
           </div>
           <h3 class="feature-title">Finanzierung möglich</h3>
-          <p style="color: var(--gray); font-size: 0.9rem;">
+          <p style="color: var(--gray); font-size: 1rem;">
             Flexible Ratenzahlung über 6-36 Monate möglich. 0% Finanzierung bei Zahlung innerhalb von 12 Monaten.
           </p>
         </div>
@@ -1209,7 +1623,7 @@
 
     <!-- Testimonials Section -->
     <section class="testimonials">
-      <h2 class="section-title">Das sagen unsere Kunden</h2>
+      <h2 class="section-title">DAS SAGEN UNSERE KUNDEN</h2>
       
       <div class="testimonial-grid">
         <!-- Testimonial 1 -->
@@ -1258,7 +1672,7 @@
 
     <!-- Contact Section -->
     <section class="contact-form" id="contact">
-      <h2 class="section-title">Kontakt</h2>
+      <h2 class="section-title">KONTAKT</h2>
       <form>
         <div class="form-group">
           <label for="name">Name</label>
@@ -1432,6 +1846,38 @@
         document.getElementById('total-price').textContent = '0.00';
       }
     }
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random size between 1px and 3px
+        const size = Math.random() * 2 + 1;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random position
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.bottom = `-${size}px`;
+        
+        // Random animation duration between 10s and 20s
+        const duration = Math.random() * 10 + 10;
+        particle.style.animation = `float ${duration}s linear infinite`;
+        
+        // Random delay
+        particle.style.animationDelay = `${Math.random() * 10}s`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Initialize particles when DOM is loaded
+    document.addEventListener('DOMContentLoaded', createParticles);
   </script>
 </body>
 </html>
